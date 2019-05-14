@@ -1,17 +1,22 @@
+					   
 module	Player_move	(	
  
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input logic plrHit,
-					input logic keyPad [8:0],
-					input logic keyPress,
-					input logic keyBreak,
+					input logic right,
+					input logic left,
 					output	logic	[10:0]	topLeftX,// output the top left corner 
 					output	logic	[10:0]	topLeftY 
 					
 );
 
+																											  
+  
+						
+													 
+						
 
 // a module used to generate a ball trajectory.  
 
@@ -19,13 +24,10 @@ parameter int INITIAL_X = 320;
 parameter int INITIAL_Y = 450;
 parameter int X_SPEED = 50;
 
-localparam logic [8:0] keyLFT = 9'h1c ;
-localparam logic [8:0] keyRGT = 9'h23 ;
-
-
-
 const int	MULTIPLIER	=	64;
 // multiplier is used to work with integers in high resolution 
+						
+					
 // we devide at the end by multiplier which must be 2^n 
 const int	x_FRAME_SIZE	=	639 * MULTIPLIER;
 const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
@@ -42,24 +44,14 @@ begin
 	if(!resetN)
 		Xspeed	<= 0 ;
 	else 	begin
-		if (keyPress == 1'b1 && keyBreak ==1'b0) begin
-			case (keyPad)
-				keyLFT:
+			if (right)
 					Xspeed <= X_SPEED ;
-				keyRGT:
+			else if (left)
 					Xspeed <= -X_SPEED ;
-				default:
+			else
 					Xspeed <= 0 ;
-			
-			endcase
-		end
-		else
-			Xspeed <= 0 ;
-	
-			
+			end
 	end
-end
-
 
 // position calculate 
 
@@ -72,12 +64,7 @@ begin
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform only 30 times per second 
-						
-	
 					topLeftX_tmp  <= topLeftX_tmp + Xspeed; 
-				
-			
-				 
 			end
 	end
 end

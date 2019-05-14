@@ -6,7 +6,7 @@ module	Invader_move	(
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input	logic	speedUp,  //Speed up the movent of the invaders 
 					input logic oneSec, 
-					input logic changeDirection,
+					input logic chgDir,
 					
 					output	logic	[10:0]	topLeftX,// output the top left corner 
 					output	logic	[10:0]	topLeftY
@@ -14,11 +14,10 @@ module	Invader_move	(
 );
 
 
-
-
 parameter int INITIAL_X = 40;
 parameter int INITIAL_Y = 60;
 parameter int INITIAL_X_SPEED = 30;
+parameter int INITIAL_Y_SPEED = 3;
 
 
 const int	MULTIPLIER	=	64;
@@ -30,28 +29,34 @@ const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
 
 int Xspeed, topLeftX_tmp; // local parameters 
 int Yspeed, topLeftY_tmp;
-
+int prvXspeed;
 
 
 //  calculation x Axis speed 
 
 always_ff@(posedge clk or negedge resetN)
 begin
-	if(!resetN)
+	if(!resetN) begin
 		Xspeed	<= INITIAL_X_SPEED;
+		Yspeed	<= 0;
+		end
 	else 	begin
-			
-			
-				
-			if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
+		if (chgDir==1) begin // hit left border while moving right
+				prvXspeed <= Xspeed ;
+				Xspeed <= 0;
+				Yspeed <= INITIAL_Y_SPEED;
+				end
+				if (oneSec==1) begin
+					Xspeed <= -prvXspeed;
+					Yspeed <= 0;
+					end
+				end
+			/*if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
 				Xspeed <= -Xspeed ; 
 			
 			if ( (topLeftX_tmp >= x_FRAME_SIZE) && (Xspeed > 0 )) // hit right border while moving left
-				Xspeed <= -Xspeed ;
-			
-	end
-end
-
+				Xspeed <= -Xspeed ;*/
+			end
 
 
 // position calculate 
@@ -64,15 +69,11 @@ begin
 		topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;
 	end
 	else begin
-		if (startOfFrame == 1'b1) begin // perform only 30 times per second 
-						
-				 
-					topLeftX_tmp  <= topLeftX_tmp + Xspeed; 
-				
-			
-				
-			end
-	end
+		if (startOfFrame == 1'b1) // perform only 30 times per second 
+					topLeftX_tmp  <= topLeftX_tmp + Xspeed;
+		/*if ((topLeftX_tmp <= 0 ) || (topLeftX_tmp >= x_FRAME_SIZE))
+					topLeftY_tmp  <= topLeftY_tmp + Yspeed;
+			*/end
 end
 
 //get a better (64 times) resolution using integer   
