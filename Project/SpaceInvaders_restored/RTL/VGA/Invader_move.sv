@@ -14,10 +14,10 @@ module	Invader_move	(
 );
 
 
-parameter int INITIAL_X = 40;
-parameter int INITIAL_Y = 60;
-parameter int INITIAL_X_SPEED = 30;
-parameter int INITIAL_Y_SPEED = 3;
+parameter int INIT_X = 20;
+parameter int INIT_Y = 20;
+parameter int INIT_X_S = 80;
+parameter int INIT_Y_S = 30;
 
 
 const int	MULTIPLIER	=	64;
@@ -29,34 +29,69 @@ const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
 
 int Xspeed, topLeftX_tmp; // local parameters 
 int Yspeed, topLeftY_tmp;
-int prvXspeed;
 
+logic chg ;
+
+enum logic [2:0] {idle ,
+						movRGT ,
+						movDTL ,
+						movLFT ,
+						movDTR }
+		prt_st , nxt_st ;
 
 //  calculation x Axis speed 
+always_ff @(posedge clk or negedge resetN)
+begin : fsm_sync
+	if (!resetN)
+		prt_st <= idle ;
+	else
+		prt_st <= nxt_st ;
+end
+	
 
-always_ff@(posedge clk or negedge resetN)
+always_comb
+
 begin
-	if(!resetN) begin
-		Xspeed	<= INITIAL_X_SPEED;
-		Yspeed	<= 0;
+	// default output
+	Xspeed = 0 ;
+	Yspeed = 0 ;
+	chg = 1'b0 ;
+	nxt_st = prt_st ;
+	
+	case (prt_st)
+	
+		idle : begin
+			if (oneSec == 1'b1)
+				nxt_st = movRGT ;
 		end
-	else 	begin
-		if (chgDir==1) begin // hit left border while moving right
-				prvXspeed <= Xspeed ;
-				Xspeed <= 0;
-				Yspeed <= INITIAL_Y_SPEED;
-				end
-				if (oneSec==1) begin
-					Xspeed <= -prvXspeed;
-					Yspeed <= 0;
-					end
-				end
-			/*if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
-				Xspeed <= -Xspeed ; 
 			
-			if ( (topLeftX_tmp >= x_FRAME_SIZE) && (Xspeed > 0 )) // hit right border while moving left
-				Xspeed <= -Xspeed ;*/
-			end
+		movRGT : begin
+			Xspeed = INIT_X_S ;
+			if (topLeftX_tmp >= x_FRAME_SIZE - 1200) 
+				nxt_st = movDTL ;
+		end
+			
+		movDTL : begin
+			Yspeed = INIT_Y_S ;
+			if (oneSec == 1'b1)
+				nxt_st = movLFT ; 
+		end
+		
+		movLFT : begin
+			Xspeed = -INIT_X_S ;
+			if (topLeftX_tmp <= 0)
+				nxt_st = movDTR ;
+		end 
+		
+		movDTR : begin
+			Yspeed = INIT_Y_S ;
+			if (oneSec ==1'b1)
+				nxt_st = movRGT ;
+		end
+			
+			
+	endcase
+end
 
 
 // position calculate 
@@ -65,15 +100,15 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
 	begin
-		topLeftX_tmp	<= INITIAL_X * MULTIPLIER;
-		topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;
+		topLeftX_tmp	<= INIT_X * MULTIPLIER;
+		topLeftY_tmp	<= INIT_Y * MULTIPLIER;
 	end
 	else begin
-		if (startOfFrame == 1'b1) // perform only 30 times per second 
-					topLeftX_tmp  <= topLeftX_tmp + Xspeed;
-		/*if ((topLeftX_tmp <= 0 ) || (topLeftX_tmp >= x_FRAME_SIZE))
-					topLeftY_tmp  <= topLeftY_tmp + Yspeed;
-			*/end
+		if (startOfFrame == 1'b1) begin// perform only 30 times per second 
+					topLeftX_tmp <= topLeftX_tmp + Xspeed ;
+					topLeftY_tmp <= topLeftY_tmp + Yspeed ; 
+		end
+	end
 end
 
 //get a better (64 times) resolution using integer   

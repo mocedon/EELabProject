@@ -12,17 +12,11 @@ module	Player_move	(
 					
 );
 
-																											  
-  
-						
-													 
-						
-
-// a module used to generate a ball trajectory.  
+																											
 
 parameter int INITIAL_X = 320;
 parameter int INITIAL_Y = 450;
-parameter int X_SPEED = 50;
+parameter int X_SPEED = 128;
 
 const int	MULTIPLIER	=	64;
 // multiplier is used to work with integers in high resolution 

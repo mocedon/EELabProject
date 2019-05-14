@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 232 192)
+	(rect 16 16 232 320)
 	(text "objects_mux" (rect 5 0 55 12)(font "Arial" ))
-	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(text "inst" (rect 8 288 20 300)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -69,9 +69,65 @@ agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-		(text "bgrRGB[7..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "bgrRGB[7..0]" (rect 21 123 75 135)(font "Arial" ))
+		(text "bltRGB[7..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "bltRGB[7..0]" (rect 21 123 70 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "bltReq" (rect 0 0 25 12)(font "Arial" ))
+		(text "bltReq" (rect 21 139 46 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "blkRGB[7..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "blkRGB[7..0]" (rect 21 155 72 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "blkReq" (rect 0 0 28 12)(font "Arial" ))
+		(text "blkReq" (rect 21 171 49 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "lrrRGB[7..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "lrrRGB[7..0]" (rect 21 187 70 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "lrrReq" (rect 0 0 25 12)(font "Arial" ))
+		(text "lrrReq" (rect 21 203 46 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "zdgRGB[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "zdgRGB[7..0]" (rect 21 219 75 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "zdgReq" (rect 0 0 30 12)(font "Arial" ))
+		(text "zdgReq" (rect 21 235 51 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "bgrRGB[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "bgrRGB[7..0]" (rect 21 251 75 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
 	)
 	(port
 		(pt 216 32)
@@ -95,6 +151,6 @@ agreement for further details.
 		(line (pt 216 64)(pt 200 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 160)(line_width 1))
+		(rectangle (rect 16 16 200 288)(line_width 1))
 	)
 )

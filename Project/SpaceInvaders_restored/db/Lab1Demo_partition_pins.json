@@ -56,6 +56,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_B[7]",
 					"strict" : false
 				},
@@ -160,11 +164,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[4]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{

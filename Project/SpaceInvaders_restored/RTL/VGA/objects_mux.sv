@@ -14,7 +14,20 @@ module	objects_mux	(
 					input		logic	[7:0] invRGB, 
 					input		logic	invReq,
 					
-										
+					input		logic [7:0] bltRGB,
+					input		logic bltReq,
+					
+					input		logic	[7:0] blkRGB, 
+					input		logic	blkReq,
+					 
+					input		logic	[7:0] lrrRGB, 
+					input		logic	lrrReq,
+					
+					input		logic [7:0] zdgRGB,
+					input		logic zdgReq,
+					
+					
+					
 					// background 
 					input		logic	[7:0] bgrRGB, 
 
@@ -37,17 +50,25 @@ begin
 			tmpRGB	<= 8'b0;
 	else 
 	begin
-		 
+		if (zdgReq == 1'b1 )
+			tmpRGB <= zdgRGB ;
+		else
+		if (lrrReq == 1'b1 )
+			tmpRGB <= lrrRGB ;
+		else
 		if (invReq == 1'b1 )   
-			tmpRGB <= invRGB;  //first priority 
-			
+			tmpRGB <= invRGB ;
 		else 
-		begin
-			if (plrReq == 1'b1 )
-				tmpRGB <= plrRGB ;
-			else
-				tmpRGB <= bgrRGB ;
-		end
+		if (plrReq == 1'b1 )
+			tmpRGB <= plrRGB ;
+		else
+		if (bltReq == 1'b1 )
+			tmpRGB <= bltRGB ;
+		else
+		if (blkReq == 1'b1 )
+			tmpRGB <= blkRGB ;
+		else
+			tmpRGB <= bgrRGB ;
 	end  
 end
 
