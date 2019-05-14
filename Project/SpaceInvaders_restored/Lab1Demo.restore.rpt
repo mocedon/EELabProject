@@ -1,0 +1,124 @@
+Restore Archived Project report for Lab1Demo
+Mon May 13 18:47:42 2019
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Mon May 13 18:47:42 2019 ;
+; Revision Name                   ; Lab1Demo                              ;
+; Top-level Entity Name           ; TOP_Schematic                         ;
+; Family                          ; Cyclone V                             ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders.qar' into the 'C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/' directory
+Info: Generated report 'Lab1Demo.restore.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Mon May 13 18:47:43 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-----------------------------------+
+; Files Restored                    ;
++-----------------------------------+
+; File Name                         ;
++-----------------------------------+
+; qar_info.json                     ;
+; RTL/KEYBOARD/random.sv            ;
+; RTL/VGA/TOP_VGA_DEMO_WITH_MSS.bdf ;
+; boxXcor.bsf                       ;
+; boxXcor.qip                       ;
+; boxXcor.v                         ;
+; boxXcor_bb.v                      ;
+; db/STfor4-5_auto_stripped.stp     ;
+; key1.bsf                          ;
+; key1.qip                          ;
+; key1.v                            ;
+; key1_bb.v                         ;
+; key2.bsf                          ;
+; key2.qip                          ;
+; key2.v                            ;
+; key2_bb.v                         ;
+; output_files/Chain1.cdf           ;
+; output_files/STfor4-5.stp         ;
++-----------------------------------+
+
+
++-------------------------------------------------------+
+; Files Not Restored                                    ;
++-------------------------------------------------------+
+; File Name                                             ;
++-------------------------------------------------------+
+; DE10_Standard_Audio.sdc                               ;
+; Lab1Demo.qpf                                          ;
+; Lab1Demo.qsf                                          ;
+; RTL/KEYBOARD/KBDINTF.bdf                              ;
+; RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf                      ;
+; RTL/KEYBOARD/bitrec.sv                                ;
+; RTL/KEYBOARD/byterec.sv                               ;
+; RTL/KEYBOARD/kbd_interface.sv                         ;
+; RTL/KEYBOARD/keyPad_decoder.sv                        ;
+; RTL/KEYBOARD/keyToggle_decoder.sv                     ;
+; RTL/KEYBOARD/keyToggle_decoderIn.sv                   ;
+; RTL/KEYBOARD/lpf.sv                                   ;
+; RTL/MSS/SinTable.sv                                   ;
+; RTL/MSS/TOP_MSS_DEMO.bdf                              ;
+; RTL/MSS/ToneDecoder.sv                                ;
+; RTL/MSS/addr_counter.sv                               ;
+; RTL/MSS/data_conversion.sv                            ;
+; RTL/MSS/prescaler.sv                                  ;
+; RTL/Seg7/SEG7.SV                                      ;
+; RTL/VGA/NumbersBitMap.sv                              ;
+; RTL/VGA/VGA_Controller.sv                             ;
+; RTL/VGA/back_ground_draw.sv                           ;
+; RTL/VGA/boxBitMap.sv                                  ;
+; RTL/VGA/controller.sv                                 ;
+; RTL/VGA/objects_mux.sv                                ;
+; RTL/VGA/smileyBitMap.sv                               ;
+; RTL/VGA/smileyface_move.sv                            ;
+; RTL/VGA/square_object.sv                              ;
+; RTL/audio_codec_controller/audio_codec_controller.qxp ;
+; assignment_defaults.qdf                               ;
+; pin.tcl                                               ;
++-------------------------------------------------------+
+
+
