@@ -14,8 +14,11 @@ module	objects_mux	(
 					input		logic	[7:0] invRGB, 
 					input		logic	invReq,
 					
-					input		logic [7:0] bltRGB,
-					input		logic bltReq,
+					input		logic [7:0] btpRGB,
+					input		logic btpReq,
+					
+					input		logic [7:0] btiRGB,
+					input		logic btiReq,
 					
 					input		logic	[7:0] blkRGB, 
 					input		logic	blkReq,
@@ -23,8 +26,15 @@ module	objects_mux	(
 					input		logic	[7:0] lrrRGB, 
 					input		logic	lrrReq,
 					
-					input		logic [7:0] zdgRGB,
-					input		logic zdgReq,
+					input		logic [7:0] zppRGB,
+					input		logic zppReq,
+					
+					input		logic [7:0] msgRGB,
+					input		logic msgReq,
+					
+					
+					
+					
 					
 					
 					
@@ -50,8 +60,11 @@ begin
 			tmpRGB	<= 8'b0;
 	else 
 	begin
-		if (zdgReq == 1'b1 )
-			tmpRGB <= zdgRGB ;
+		if (msgReq == 1'b1)
+			tmpRGB <= msgRGB ;
+		else 
+		if (zppReq == 1'b1 )
+			tmpRGB <= zppRGB ;
 		else
 		if (lrrReq == 1'b1 )
 			tmpRGB <= lrrRGB ;
@@ -62,8 +75,11 @@ begin
 		if (plrReq == 1'b1 )
 			tmpRGB <= plrRGB ;
 		else
-		if (bltReq == 1'b1 )
-			tmpRGB <= bltRGB ;
+		if (btpReq == 1'b1 )
+			tmpRGB <= btpRGB ;
+		else
+		if (btiReq == 1'b1 )
+			tmpRGB <= btiRGB ;
 		else
 		if (blkReq == 1'b1 )
 			tmpRGB <= blkRGB ;

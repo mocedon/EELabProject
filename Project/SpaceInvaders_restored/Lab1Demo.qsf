@@ -343,40 +343,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/random.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/one_sec_counter.sv
-set_global_assignment -name SDC_FILE DE10_Standard_Audio.sdc
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/lpf.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoderIn.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoder.sv
-set_global_assignment -name BDF_FILE RTL/KEYBOARD/KBDINTF.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/kbd_interface.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/byterec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/bitrec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/square_object.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/objects_mux.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/back_ground_draw.sv
-set_global_assignment -name TCL_SCRIPT_FILE pin.tcl
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/ToneDecoder.sv
-set_global_assignment -name BDF_FILE RTL/MSS/TOP_MSS_DEMO.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/SinTable.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/prescaler.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/data_conversion.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/addr_counter.sv
-set_global_assignment -name QXP_FILE RTL/audio_codec_controller/audio_codec_controller.qxp
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Seg7/SEG7.SV
-set_global_assignment -name BDF_FILE RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyPad_decoder.sv
-set_global_assignment -name BDF_FILE RTL/TOP_Schematic.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Invader_move.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Player_move.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Bolt_move.sv
-set_global_assignment -name QIP_FILE space.qip
-set_global_assignment -name QIP_FILE right.qip
-set_global_assignment -name QIP_FILE left.qip
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
-set_global_assignment -name SIGNALTAP_FILE output_files/Invader_test.stp
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "Invader_move:mv1|Xspeed[0]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "Invader_move:mv1|Xspeed[10]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "Invader_move:mv1|Xspeed[11]" -section_id auto_signaltap_0
@@ -712,5 +679,41 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=16384" -section_id auto_signaltap_0
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/random.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/one_sec_counter.sv
+set_global_assignment -name SDC_FILE DE10_Standard_Audio.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/lpf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoderIn.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoder.sv
+set_global_assignment -name BDF_FILE RTL/KEYBOARD/KBDINTF.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/kbd_interface.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/byterec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/bitrec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/square_object.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/objects_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/back_ground_draw.sv
+set_global_assignment -name TCL_SCRIPT_FILE pin.tcl
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/ToneDecoder.sv
+set_global_assignment -name BDF_FILE RTL/MSS/TOP_MSS_DEMO.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/SinTable.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/prescaler.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/data_conversion.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/addr_counter.sv
+set_global_assignment -name QXP_FILE RTL/audio_codec_controller/audio_codec_controller.qxp
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Seg7/SEG7.SV
+set_global_assignment -name BDF_FILE RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyPad_decoder.sv
+set_global_assignment -name BDF_FILE RTL/TOP_Schematic.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Invader_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Player_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Bolt_move.sv
+set_global_assignment -name QIP_FILE space.qip
+set_global_assignment -name QIP_FILE right.qip
+set_global_assignment -name QIP_FILE left.qip
+set_global_assignment -name SIGNALTAP_FILE output_files/Invader_test.stp
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Lrrr_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/boltBitMap.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/Invader_test_auto_stripped.stp

@@ -19,12 +19,12 @@ parameter int OFFSET_X = 0;
 parameter int OFFSET_Y = 0;
 parameter int SPEED_Y = 10;
 
-
+const int	HIDDEN	=	-20 ;
 const int	MULTIPLIER	=	64;
 // multiplier is used to work with integers in high resolution 
 // we devide at the end by multiplier which must be 2^n 
 
-
+logic prvSht ;
 
 int topLeftY_tmp, topLeftX_tmp;
 
@@ -37,14 +37,22 @@ begin
 	begin
 		topLeftX_tmp <= 0 ;
 		topLeftY_tmp <= 0 ;
+		prvSht <= 0 ;
 	end
 	else begin 
+		prvSht <= shootCmd ;
+		
 		if (shootCmd== 1'b0) begin
+			topLeftX_tmp <= HIDDEN * MULTIPLIER ;
+			topLeftY_tmp <= HIDDEN * MULTIPLIER ;
+		end				
+		
+		if (prvSht == 1'b0 && shootCmd == 1'b1) begin
 			topLeftX_tmp <= (int'(init_x) + OFFSET_X) * MULTIPLIER ;
 			topLeftY_tmp <= (int'(init_y) + OFFSET_Y) * MULTIPLIER ;
-		end				
-		else
-		if (startOfFrame == 1'b1) begin // perform only 30 times per second 
+		end
+		
+		if (startOfFrame == 1'b1 && prvSht == 1'b1) begin // perform only 30 times per second 
 			topLeftY_tmp <= topLeftY_tmp + (SPEED_Y * MULTIPLIER * DIRECTION) ;
 			topLeftX_tmp <= topLeftX_tmp  ;
 		end

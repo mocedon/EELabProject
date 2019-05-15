@@ -67,7 +67,7 @@ begin
 			
 		movRGT : begin
 			Xspeed = INIT_X_S ;
-			if (topLeftX_tmp >= x_FRAME_SIZE - 1200) 
+			if (topLeftX_tmp >= x_FRAME_SIZE - 1200 || chgDir == 1'b1) 
 				nxt_st = movDTL ;
 		end
 			
@@ -79,7 +79,7 @@ begin
 		
 		movLFT : begin
 			Xspeed = -INIT_X_S ;
-			if (topLeftX_tmp <= 0)
+			if (topLeftX_tmp <= 0 || chgDir == 1'b1)
 				nxt_st = movDTR ;
 		end 
 		
