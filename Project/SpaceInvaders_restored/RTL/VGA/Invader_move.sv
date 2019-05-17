@@ -16,8 +16,8 @@ module	Invader_move	(
 
 parameter int INIT_X = 20;
 parameter int INIT_Y = 20;
-parameter int INIT_X_S = 80;
-parameter int INIT_Y_S = 30;
+parameter int INIT_X_S = 60;
+parameter int INIT_Y_S = 20;
 
 
 const int	MULTIPLIER	=	64;
@@ -30,7 +30,7 @@ const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
 int Xspeed, topLeftX_tmp; // local parameters 
 int Yspeed, topLeftY_tmp;
 
-logic chg ;
+
 
 enum logic [2:0] {idle ,
 						movRGT ,

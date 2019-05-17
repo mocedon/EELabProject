@@ -20,10 +20,10 @@ module	Lrrr_move	(
 // a module used to generate a ball trajectory.  
 
 parameter int INITIAL_X = 40 ;
-parameter int INITIAL_Y = 0 ;
-parameter int INITIAL_X_SPEED = 30;
-parameter int INITIAL_Y_SPEED = 20;
-parameter int OFF_SET = 30;
+parameter int INITIAL_Y = 5 ;
+parameter int INITIAL_X_SPEED = 50;
+parameter int INITIAL_Y_SPEED = 0;
+parameter int OFF_SET = 60 * MULTIPLIER;
 parameter int Y_ACCEL = -1;
 
 const int	MULTIPLIER	=	64;
