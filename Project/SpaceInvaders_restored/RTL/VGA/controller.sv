@@ -6,7 +6,7 @@ module	controller (
 					
 					input logic spcKey ,
 					input logic oneSec ,
-					input logic rndNum ,
+					input logic [6:0] rndNum ,
 					
 					input logic [10:0] pixelX ,
 					input logic [10:0] pixelY ,
@@ -23,12 +23,16 @@ module	controller (
 					input logic lrrReq ,
 					
 					// Bolt inputs
-					input logic [3:0] btpReq ,
-					input logic [3:0] btiReq ,
+					input logic [BOLT_MAX - 1:0] btpReq ,
+					input logic [BOLT_MAX - 1:0] btiReq ,
 					
 					
 					// Block inputs
+<<<<<<< HEAD
 					input logic blkReq,
+=======
+					input logic blkReq ,
+>>>>>>> f58d19a46c562d6985eb5f3c4617ccff367bd14b
 					input logic [10:0] blkOSX ,
 					input logic [10:0] blkOSY ,
 					
@@ -40,21 +44,21 @@ module	controller (
 					
 					// Player outputs
 					output logic plrExs ,
-					output logic plrVer ,
 					output logic plrHit ,
 					
 					// Invader outputs
+					output logic invStr ,
+					output logic invChg ,
 					output logic [7:0][15:0] invExs ,
 					output logic [7:0][15:0] invHit ,
 					
 					//Lrrr outputs
 					output logic lrrExs ,
-					output logic lrrVer ,
 					output logic lrrHit ,
 					
 					// Bolt outputs
-					output logic [3:0] btpExs ,
-					output logic [3:0] btiExs ,
+					output logic [BOLT_MAX - 1:0] btpExs ,
+					output logic [BOLT_MAX - 1:0] btiExs ,
 					output logic [10:0] btxLoc ,
 					output logic [10:0] btyLoc ,
 					
@@ -72,18 +76,33 @@ module	controller (
 					
 );
 
+parameter int BOLT_MAX = 4 ;
 
 const int R_BORDER = 635 ;
 const int L_BORDER = 5 ;
-const int B_BORDER = 400 ;
+const int F_BORDER = 400 ;
+const int T_BORDER = 5 ;
+const int B_BORDER = 465 ;
 
-int pltLives = 3 ;
-int lrrLives = 20 ;
-int score = 0 ;
-int numOfInv = 128 ; 
+int pixX , pixY ;
+int invX , invY ;
+int blkX , blkY ;
+int invI , invJ ;
+
+
+int plrLiv = 3   , prvPlv = 3   ;
+int lrrLiv = 20  , prvLlv = 20  ;
+int invLiv = 128 , prvIlv = 128 ;
+
+int pScore = 0   , prvScr = 0   ;
+ 
+
+logic btpCmd ;
+logic btiCmd ;
 
 enum logic [2:0] {
 						StartGame ,
+						InitGame ,
 						RegularGame ,
 						EndGame 
 						}
@@ -95,6 +114,9 @@ begin : fsm_sync
 	if (!resetN)
 		prt_st <= StartGame ;
 	else
+		prvPlv = plrLiv ;
+		prvLlv = lrrLiv ;
+		prvIlv = invLiv ;
 		prt_st <= nxt_st ;
 end
 	
@@ -103,31 +125,22 @@ always_comb
 
 begin
 	// default output
-	plrExs = 1'b0 ;
-	plrVer = 1'b0 ;
 	plrHit = 1'b0 ;
-	invExs = {128{1'b0}} ;
+	invChg = 1'b0 ;
 	invHit = {128{1'b0}} ;
-	lrrExs = 1'b0 ;
-	lrrVer = 1'b0 ; 
 	lrrHit = 1'b0 ;
-	btpExs = {4{1'b0}} ;
-	btiExs = {4{1'b0}} ;
-	btxLoc = {11{1'b0}} ;
-	btyLoc = {11{1'b0}} ;
-	blkExs =	{128{1'b0}} ;
 	blkHit =	{128{1'b0}} ;
 	stgMsg = 1'b0 ;
 	scrMsg = 1'b0 ;
 	edgMsg = 1'b0 ;
-	scrNum = {12{1'b0}} ;
-	scrLiv = {3{1'b0}} ;
 	sndOut = {3{1'b0}} ;
+	
 	nxt_st = prt_st ;
 	
 	case (prt_st)
 	
 		StartGame : begin
+		
 			stgMsg = 1'b1 ;
 			sndOut <= 4'd7;
 			#100;
@@ -146,31 +159,134 @@ begin
 			sndOut <= 4'd7;
 			#100;
 			if (spcKey == 1'b1)
-				nxt_st = RegularGame ;
+				nxt_st = InitGame ;
 		end
+		
+		
+		InitGame : begin 
+			plrExs = 1'b1 ;
+			invStr = 1'b1 ;
+			btpCmd = 1'b0 ;
+			btiCmd = 1'b0 ;
+			invExs = {128{1'b1}} ;
+			blkExs = {128{1'b1}} ;
+			nxt_st = RegularGame ;
+		end
+		
 			
 		RegularGame : begin
-			// Player hit detection
+			scrMsg = 1'b1 ;
+			scrNum = pScore ;
+			scrLiv = plrLiv ;
 			
-			// Invader hit detection, border hit and start moving
+			pixX = int'(pixelX) ;
+			pixY = int'(pixelY) ;
+			invX = int'(invOSX) >> 5 ;
+			invY = int'(invOSY) >> 5 ;
+			invX = int'(blkOSX) >> 3 ;
+			invY = int'(blkOSY) >> 3 ;
 			
-			// Lrrr hit detection and manifestation
+		// Player hit detection
+			for (int i = 0 ; i < BOLT_MAX ; i++) begin
+				if(plrReq == 1'b1 && btiReq[i]) begin
+					plrLiv = prvPlv - 1;
+					plrHit = 1'b1 ;
+					btiExs[i] = 1'b0 ;
+					
+				end
+			end
+				
+			if (plrReq == 1'b1 && lrrReq == 1'b1) begin
+				plrLiv = prvPlv ;
+				plrHit = 1'b1 ;
+				lrrHit = 1'b1 ;
+				
+			end
+				
+				
+		// Invader hit detection, border hit and
+			for (int i = 0 ; i < BOLT_MAX ; i++) begin
+				if(invReq == 1'b1 && btpReq[i]) begin
+					invLiv = prvIlv - 1 ;
+					invHit[invY][invX] = 1'b1 ;
+					invExs[invY][invX] = 1'b0 ;
+					btpExs[i] = 1'b0 ;
+					pScore = prvScr + 5 ;
+					
+				end
+			end		
+			if (invReq == 1'b1 && pixX == R_BORDER)
+				invChg = 1'b1 ;
+			if (invReq == 1'b1 && pixX == L_BORDER)
+				invChg = 1'b1 ;
+			if (invReq == 1'b1 && pixY == F_BORDER)
+				plrLiv = 0 ;
 			
-			// Player shooting detection
+				
+				
+		// Lrrr hit detection and manifestation
+			if (invLiv < 32)
+				lrrExs = 1'b1 ;
+				
+			if (lrrLiv == 0)
+				lrrExs = 1'b0 ;
 			
-			// Invader shooting randomly
+			for (int i = 0 ; i < BOLT_MAX ; i++) begin
+				if(lrrReq == 1'b1 && btpReq[i]) begin
+					lrrLiv = prvLlv - 1 ;
+					lrrHit = 1'b1 ;
+					
+					btpExs[i] = 1'b0 ;
+					pScore = prvScr + 5 ;
+					
+				end
+			end		
 			
-			// Block hit detection 
+		// Player shooting detection
+			if (spcKey == 1'b1)
+				btpCmd = 1'b1 ;
+			for (int i = 0 ; i < BOLT_MAX ; i++) begin
+				if (btpReq[i] == 1'b1 && pixY == T_BORDER)
+					btpExs[i] = 1'b0 ;
+				if (btpCmd == 1'b1 && btpExs[i] == 1'b0) begin
+					btpExs[i] = 1'b1 ;
+					btpCmd = 1'b0 ;
+				end
+			end
+			btpCmd = 1'b0 ;
+				
+				
+		// Invader shooting randomly
+			invI = rndNum >> 4 ;
+			invJ = rndNum % 16 ;
+			if (invExs[invI][invJ] == 1'b1)
+					btiCmd = 1'b1 ;
+			for (int i = 0 ; i < BOLT_MAX ; i++) begin
+				if (btiReq[i] == 1'b1 && pixY == B_BORDER)
+					btiExs[i] = 1'b0 ;
+				if (btiCmd == 1'b1 && btiExs[i] == 1'b0) begin
+					btiExs[i] = 1'b1 ;
+					btpCmd = 1'b0 ;
+				end
+			end
+			btiCmd = 1'b0 ;
 			
-			if (numOfInv == 0 || cheatput == 1'b1)
+			
+		// Block hit detection 
+			
+		// ENd game conditions
+			if (invLiv == 0 || plrLiv == 0 || cheatput == 1'b1)
 				nxt_st = EndGame ;
 
 		end
 		
 		EndGame : begin
 			edgMsg = 1'b1 ;
+<<<<<<< HEAD
 			if (spcKey == 1'b1)
 				nxt_st = StartGame;
+=======
+>>>>>>> f58d19a46c562d6985eb5f3c4617ccff367bd14b
 
 		end 
 			
@@ -179,15 +295,4 @@ end
 
 
 
-
-//always_ff@(posedge clk or negedge resetN)
-//begin
-//	if(!resetN)	
-//		
-//	//else 
-//	//begin 
-//	
-//		
-//	//end
-//end 
 endmodule 
