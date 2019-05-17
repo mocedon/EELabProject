@@ -4027,14 +4027,14 @@ agreement for further details.
 		(pt 224 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
-		(text "drawingRequest" (rect 138 27 203 39)(font "Arial" ))
+		(text "drawingRequest" (rect 138 27 215 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32))
 	)
 	(port
 		(pt 224 48)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 149 43 203 55)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 149 43 213 55)(font "Arial" ))
 		(line (pt 224 48)(pt 208 48)(line_width 3))
 	)
 	(parameter
@@ -4218,7 +4218,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 200 128))
 	)
-	(annotation_block (parameter)(rect 32 -176 240 -81))
+	(annotation_block (parameter)(rect 32 -192 240 -97))
 )
 (connector
 	(text "clk" (rect -512 256 -498 273)(font "Intel Clear" ))

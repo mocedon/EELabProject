@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for Lab1Demo
-Fri May 17 12:09:33 2019
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Fri May 17 17:45:31 2019
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -81,18 +81,18 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                               ;
-+-----------------------+---------------------------------------------------------+
-; Quartus Prime Version ; Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
-; Timing Analyzer       ; TimeQuest                                               ;
-; Revision Name         ; Lab1Demo                                                ;
-; Device Family         ; Cyclone V                                               ;
-; Device Name           ; 5CSXFC6D6F31C6                                          ;
-; Timing Models         ; Final                                                   ;
-; Delay Model           ; Combined                                                ;
-; Rise/Fall Delays      ; Enabled                                                 ;
-+-----------------------+---------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; Lab1Demo                                            ;
+; Device Family         ; Cyclone V                                           ;
+; Device Name           ; 5CSXFC6D6F31C6                                      ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
 
 
 +------------------------------------------+
@@ -100,17 +100,15 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.63        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.35        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  21.0%      ;
-;     Processor 3            ;  20.8%      ;
-;     Processor 4            ;  20.7%      ;
+;     Processor 2            ;  34.9%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +117,7 @@ agreement for further details.
 +-------------------------+--------+--------------------------+
 ; SDC File Path           ; Status ; Read at                  ;
 +-------------------------+--------+--------------------------+
-; DE10_Standard_Audio.sdc ; OK     ; Fri May 17 12:09:03 2019 ;
+; DE10_Standard_Audio.sdc ; OK     ; Fri May 17 17:44:41 2019 ;
 +-------------------------+--------+--------------------------+
 
 
@@ -142,8 +140,8 @@ agreement for further details.
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
 ; 54.39 MHz  ; 54.39 MHz       ; altera_reserved_tck ;      ;
-; 92.22 MHz  ; 92.22 MHz       ; CLOCK_50            ;      ;
-; 194.89 MHz ; 194.89 MHz      ; clk_audbck          ;      ;
+; 90.95 MHz  ; 90.95 MHz       ; CLOCK_50            ;      ;
+; 178.16 MHz ; 178.16 MHz      ; clk_audbck          ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -159,8 +157,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -6.790 ; -79.499       ;
-; CLOCK_50            ; 9.156  ; 0.000         ;
+; clk_audbck          ; -6.813 ; -78.921       ;
+; CLOCK_50            ; 9.005  ; 0.000         ;
 ; altera_reserved_tck ; 10.807 ; 0.000         ;
 +---------------------+--------+---------------+
 
@@ -170,9 +168,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.211 ; 0.000         ;
-; clk_audbck          ; 0.315 ; 0.000         ;
-; altera_reserved_tck ; 0.565 ; 0.000         ;
+; CLOCK_50            ; 0.219 ; 0.000         ;
+; altera_reserved_tck ; 0.285 ; 0.000         ;
+; clk_audbck          ; 0.320 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -181,9 +179,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -7.742 ; -1440.053     ;
-; CLOCK_50            ; 10.135 ; 0.000         ;
-; altera_reserved_tck ; 35.773 ; 0.000         ;
+; clk_audbck          ; -7.313 ; -1408.602     ;
+; CLOCK_50            ; 10.566 ; 0.000         ;
+; altera_reserved_tck ; 34.964 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -192,9 +190,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; clk_audbck          ; 0.492 ; 0.000         ;
-; altera_reserved_tck ; 0.703 ; 0.000         ;
-; CLOCK_50            ; 1.147 ; 0.000         ;
+; clk_audbck          ; 0.270 ; 0.000         ;
+; altera_reserved_tck ; 0.732 ; 0.000         ;
+; CLOCK_50            ; 1.197 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -203,9 +201,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+---------+-------------------+
 ; Clock               ; Slack   ; End Point TNS     ;
 +---------------------+---------+-------------------+
-; CLOCK_50            ; 8.876   ; 0.000             ;
-; altera_reserved_tck ; 18.356  ; 0.000             ;
-; clk_audbck          ; 140.090 ; 0.000             ;
+; CLOCK_50            ; 8.853   ; 0.000             ;
+; altera_reserved_tck ; 18.398  ; 0.000             ;
+; clk_audbck          ; 140.091 ; 0.000             ;
 +---------------------+---------+-------------------+
 
 
@@ -218,7 +216,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 67
 Shortest Synchronizer Chain: 1 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-Worst Case Available Settling Time: 34.937 ns
+Worst Case Available Settling Time: 36.046 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -233,8 +231,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
 +-----------+-----------------+---------------------+------+
 ; 54.84 MHz ; 54.84 MHz       ; altera_reserved_tck ;      ;
-; 96.96 MHz ; 96.96 MHz       ; CLOCK_50            ;      ;
-; 199.0 MHz ; 199.0 MHz       ; clk_audbck          ;      ;
+; 95.57 MHz ; 95.57 MHz       ; CLOCK_50            ;      ;
+; 180.6 MHz ; 180.6 MHz       ; clk_audbck          ;      ;
 +-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -244,8 +242,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -6.572 ; -77.005       ;
-; CLOCK_50            ; 9.686  ; 0.000         ;
+; clk_audbck          ; -6.633 ; -76.432       ;
+; CLOCK_50            ; 9.537  ; 0.000         ;
 ; altera_reserved_tck ; 10.882 ; 0.000         ;
 +---------------------+--------+---------------+
 
@@ -255,9 +253,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.199 ; 0.000         ;
-; clk_audbck          ; 0.274 ; 0.000         ;
-; altera_reserved_tck ; 0.526 ; 0.000         ;
+; altera_reserved_tck ; 0.199 ; 0.000         ;
+; CLOCK_50            ; 0.208 ; 0.000         ;
+; clk_audbck          ; 0.299 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -266,9 +264,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -7.448 ; -1389.484     ;
-; CLOCK_50            ; 10.583 ; 0.000         ;
-; altera_reserved_tck ; 35.923 ; 0.000         ;
+; clk_audbck          ; -7.023 ; -1357.561     ;
+; CLOCK_50            ; 11.008 ; 0.000         ;
+; altera_reserved_tck ; 35.159 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -277,9 +275,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; clk_audbck          ; 0.327 ; 0.000         ;
-; altera_reserved_tck ; 0.673 ; 0.000         ;
-; CLOCK_50            ; 1.052 ; 0.000         ;
+; clk_audbck          ; 0.171 ; 0.000         ;
+; altera_reserved_tck ; 0.702 ; 0.000         ;
+; CLOCK_50            ; 1.128 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -288,9 +286,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+---------+------------------+
 ; Clock               ; Slack   ; End Point TNS    ;
 +---------------------+---------+------------------+
-; CLOCK_50            ; 8.851   ; 0.000            ;
-; altera_reserved_tck ; 18.356  ; 0.000            ;
-; clk_audbck          ; 140.083 ; 0.000            ;
+; CLOCK_50            ; 8.813   ; 0.000            ;
+; altera_reserved_tck ; 18.382  ; 0.000            ;
+; clk_audbck          ; 140.087 ; 0.000            ;
 +---------------------+---------+------------------+
 
 
@@ -303,7 +301,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 67
 Shortest Synchronizer Chain: 1 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-Worst Case Available Settling Time: 34.947 ns
+Worst Case Available Settling Time: 36.089 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -317,8 +315,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -5.055 ; -59.259       ;
-; CLOCK_50            ; 12.086 ; 0.000         ;
+; clk_audbck          ; -5.169 ; -59.152       ;
+; CLOCK_50            ; 12.162 ; 0.000         ;
 ; altera_reserved_tck ; 12.888 ; 0.000         ;
 +---------------------+--------+---------------+
 
@@ -328,9 +326,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.130 ; 0.000         ;
-; clk_audbck          ; 0.179 ; 0.000         ;
-; altera_reserved_tck ; 0.284 ; 0.000         ;
+; CLOCK_50            ; 0.129 ; 0.000         ;
+; altera_reserved_tck ; 0.141 ; 0.000         ;
+; clk_audbck          ; 0.181 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -339,9 +337,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -4.983 ; -1034.700     ;
-; CLOCK_50            ; 13.224 ; 0.000         ;
-; altera_reserved_tck ; 36.938 ; 0.000         ;
+; clk_audbck          ; -5.320 ; -1054.895     ;
+; CLOCK_50            ; 13.334 ; 0.000         ;
+; altera_reserved_tck ; 36.416 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -350,9 +348,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.343 ; 0.000         ;
-; clk_audbck          ; 0.584 ; 0.000         ;
-; CLOCK_50            ; 0.643 ; 0.000         ;
+; altera_reserved_tck ; 0.392 ; 0.000         ;
+; clk_audbck          ; 0.583 ; 0.000         ;
+; CLOCK_50            ; 0.681 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -361,9 +359,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+---------+-------------------+
 ; Clock               ; Slack   ; End Point TNS     ;
 +---------------------+---------+-------------------+
-; CLOCK_50            ; 8.484   ; 0.000             ;
-; altera_reserved_tck ; 18.153  ; 0.000             ;
-; clk_audbck          ; 139.689 ; 0.000             ;
+; CLOCK_50            ; 8.483   ; 0.000             ;
+; altera_reserved_tck ; 18.150  ; 0.000             ;
+; clk_audbck          ; 139.690 ; 0.000             ;
 +---------------------+---------+-------------------+
 
 
@@ -376,7 +374,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 67
 Shortest Synchronizer Chain: 1 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-Worst Case Available Settling Time: 36.858 ns
+Worst Case Available Settling Time: 37.673 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -390,9 +388,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -4.366 ; -51.380       ;
+; clk_audbck          ; -4.493 ; -51.324       ;
 ; altera_reserved_tck ; 13.011 ; 0.000         ;
-; CLOCK_50            ; 13.141 ; 0.000         ;
+; CLOCK_50            ; 13.169 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -401,9 +399,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.119 ; 0.000         ;
-; clk_audbck          ; 0.156 ; 0.000         ;
-; altera_reserved_tck ; 0.259 ; 0.000         ;
+; CLOCK_50            ; 0.118 ; 0.000         ;
+; altera_reserved_tck ; 0.130 ; 0.000         ;
+; clk_audbck          ; 0.170 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -412,9 +410,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -4.280 ; -894.866      ;
-; CLOCK_50            ; 14.082 ; 0.000         ;
-; altera_reserved_tck ; 37.279 ; 0.000         ;
+; clk_audbck          ; -4.601 ; -912.549      ;
+; CLOCK_50            ; 14.166 ; 0.000         ;
+; altera_reserved_tck ; 36.820 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -423,9 +421,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; clk_audbck          ; 0.159 ; 0.000         ;
-; altera_reserved_tck ; 0.306 ; 0.000         ;
-; CLOCK_50            ; 0.573 ; 0.000         ;
+; clk_audbck          ; 0.197 ; 0.000         ;
+; altera_reserved_tck ; 0.369 ; 0.000         ;
+; CLOCK_50            ; 0.615 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -434,8 +432,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+---------+------------------+
 ; Clock               ; Slack   ; End Point TNS    ;
 +---------------------+---------+------------------+
-; CLOCK_50            ; 8.438   ; 0.000            ;
-; altera_reserved_tck ; 18.192  ; 0.000            ;
+; CLOCK_50            ; 8.435   ; 0.000            ;
+; altera_reserved_tck ; 18.193  ; 0.000            ;
 ; clk_audbck          ; 139.646 ; 0.000            ;
 +---------------------+---------+------------------+
 
@@ -449,7 +447,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 67
 Shortest Synchronizer Chain: 1 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-Worst Case Available Settling Time: 37.061 ns
+Worst Case Available Settling Time: 37.803 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -463,14 +461,14 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------------------+---------+-------+-----------+---------+---------------------+
 ; Clock                ; Setup   ; Hold  ; Recovery  ; Removal ; Minimum Pulse Width ;
 +----------------------+---------+-------+-----------+---------+---------------------+
-; Worst-case Slack     ; -6.790  ; 0.119 ; -7.742    ; 0.159   ; 8.438               ;
-;  CLOCK_50            ; 9.156   ; 0.119 ; 10.135    ; 0.573   ; 8.438               ;
-;  altera_reserved_tck ; 10.807  ; 0.259 ; 35.773    ; 0.306   ; 18.153              ;
-;  clk_audbck          ; -6.790  ; 0.156 ; -7.742    ; 0.159   ; 139.646             ;
-; Design-wide TNS      ; -79.499 ; 0.0   ; -1440.053 ; 0.0     ; 0.0                 ;
+; Worst-case Slack     ; -6.813  ; 0.118 ; -7.313    ; 0.171   ; 8.435               ;
+;  CLOCK_50            ; 9.005   ; 0.118 ; 10.566    ; 0.615   ; 8.435               ;
+;  altera_reserved_tck ; 10.807  ; 0.130 ; 34.964    ; 0.369   ; 18.150              ;
+;  clk_audbck          ; -6.813  ; 0.170 ; -7.313    ; 0.171   ; 139.646             ;
+; Design-wide TNS      ; -78.921 ; 0.0   ; -1408.602 ; 0.0     ; 0.0                 ;
 ;  CLOCK_50            ; 0.000   ; 0.000 ; 0.000     ; 0.000   ; 0.000               ;
 ;  altera_reserved_tck ; 0.000   ; 0.000 ; 0.000     ; 0.000   ; 0.000               ;
-;  clk_audbck          ; -79.499 ; 0.000 ; -1440.053 ; 0.000   ; 0.000               ;
+;  clk_audbck          ; -78.921 ; 0.000 ; -1408.602 ; 0.000   ; 0.000               ;
 +----------------------+---------+-------+-----------+---------+---------------------+
 
 
@@ -957,13 +955,13 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 14462      ; 58       ; 63       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 14505      ; 56       ; 56       ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; clk_audbck          ; 7982       ; 0        ; 4        ; 0        ;
+; clk_audbck          ; clk_audbck          ; 8097       ; 0        ; 4        ; 0        ;
 ; CLOCK_50            ; clk_audbck          ; 18         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 ; clk_audbck          ; CLOCK_50            ; 16         ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 171892     ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 170960     ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -973,13 +971,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 14462      ; 58       ; 63       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 14505      ; 56       ; 56       ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; clk_audbck          ; 7982       ; 0        ; 4        ; 0        ;
+; clk_audbck          ; clk_audbck          ; 8097       ; 0        ; 4        ; 0        ;
 ; CLOCK_50            ; clk_audbck          ; 18         ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 ; clk_audbck          ; CLOCK_50            ; 16         ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 171892     ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 170960     ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -989,8 +987,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 778        ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 212        ; 0        ; 2        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 775        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 213        ; 0        ; 2        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; CLOCK_50            ; 59         ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
@@ -1002,8 +1000,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 778        ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 212        ; 0        ; 2        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 775        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 213        ; 0        ; 2        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 ; CLOCK_50            ; CLOCK_50            ; 59         ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
@@ -1030,7 +1028,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
 ; Unconstrained Input Ports       ; 14    ; 14   ;
-; Unconstrained Input Port Paths  ; 1070  ; 1070 ;
+; Unconstrained Input Port Paths  ; 1062  ; 1062 ;
 ; Unconstrained Output Ports      ; 32    ; 32   ;
 ; Unconstrained Output Port Paths ; 49    ; 49   ;
 +---------------------------------+-------+------+
@@ -1179,11 +1177,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Fri May 17 12:09:00 2019
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Fri May 17 17:44:36 2019
 Info: Command: quartus_sta Lab1Demo -c Lab1Demo
 Info: qsta_default_script.tcl version: #1
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
@@ -1196,67 +1194,67 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 30MHz   
         Info (332166): if { [string equal quartus_fit $::TimeQuestInfo(nameofexecutable)] } { set_max_delay -to [get_ports { altera_reserved_tdo } ] 0 }
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
-Warning (332174): Ignored filter at qsta_default_script.tcl(1297): **fiforam|cells** could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/intelFPGA/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-Warning (332174): Ignored filter at qsta_default_script.tcl(1297): **fiforam|xq** could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/intelFPGA/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is not an object ID File: C:/intelFPGA/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-    Info (332050): read_sdc File: C:/intelFPGA/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
-Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/intelFPGA/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): **fiforam|cells** could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/intelFPGA_lite/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332174): Ignored filter at qsta_default_script.tcl(1297): **fiforam|xq** could not be matched with a clock or keeper or register or port or pin or cell or partition File: C:/intelFPGA_lite/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <from> is not an object ID File: C:/intelFPGA_lite/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+    Info (332050): read_sdc File: C:/intelFPGA_lite/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
+Warning (332049): Ignored set_false_path at qsta_default_script.tcl(1297): Argument <to> is not an object ID File: C:/intelFPGA_lite/17.0/quartus/common/tcl/internal/qsta_default_script.tcl Line: 1297
 Info (332104): Reading SDC File: 'DE10_Standard_Audio.sdc'
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
-    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 9
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 10
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 11
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
+    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 14
 Warning (332043): Overwriting existing clock: altera_reserved_tck
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 39
-Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 39
+Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
     Info (332050): create_generated_clock -source [get_pins {u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
-Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
+                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 38
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
-    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
-    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 67
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
+    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
+    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 63
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 67
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
     Info (332050): set_multicycle_path -from [get_clocks {clk_dram_ext}] \
                     -to [get_clocks {u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                                                  -setup 2 File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: Z:/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
+                                                  -setup 2 File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 81
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/Users/shura/OneDrive/EE/Semester 5/Lab/EELabProject/Project/SpaceInvaders_restored/DE10_Standard_Audio.sdc Line: 83
 Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register VGA_Controller:VGA|V_Cont[5] is being clocked by VGA_Controller:VGA|oVGA_HS
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
@@ -1264,36 +1262,36 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.790
+Info (332146): Worst-case setup slack is -6.813
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.790             -79.499 clk_audbck 
-    Info (332119):     9.156               0.000 CLOCK_50 
+    Info (332119):    -6.813             -78.921 clk_audbck 
+    Info (332119):     9.005               0.000 CLOCK_50 
     Info (332119):    10.807               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.211
+Info (332146): Worst-case hold slack is 0.219
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.211               0.000 CLOCK_50 
-    Info (332119):     0.315               0.000 clk_audbck 
-    Info (332119):     0.565               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -7.742
+    Info (332119):     0.219               0.000 CLOCK_50 
+    Info (332119):     0.285               0.000 altera_reserved_tck 
+    Info (332119):     0.320               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -7.313
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.742           -1440.053 clk_audbck 
-    Info (332119):    10.135               0.000 CLOCK_50 
-    Info (332119):    35.773               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.492
+    Info (332119):    -7.313           -1408.602 clk_audbck 
+    Info (332119):    10.566               0.000 CLOCK_50 
+    Info (332119):    34.964               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.270
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.492               0.000 clk_audbck 
-    Info (332119):     0.703               0.000 altera_reserved_tck 
-    Info (332119):     1.147               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.876
+    Info (332119):     0.270               0.000 clk_audbck 
+    Info (332119):     0.732               0.000 altera_reserved_tck 
+    Info (332119):     1.197               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.853
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.876               0.000 CLOCK_50 
-    Info (332119):    18.356               0.000 altera_reserved_tck 
-    Info (332119):   140.090               0.000 clk_audbck 
+    Info (332119):     8.853               0.000 CLOCK_50 
+    Info (332119):    18.398               0.000 altera_reserved_tck 
+    Info (332119):   140.091               0.000 clk_audbck 
 Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1301,7 +1299,7 @@ Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 67
     Info (332114): Shortest Synchronizer Chain: 1 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-    Info (332114): Worst Case Available Settling Time: 34.937 ns
+    Info (332114): Worst Case Available Settling Time: 36.046 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -1315,36 +1313,36 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.572
+Info (332146): Worst-case setup slack is -6.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.572             -77.005 clk_audbck 
-    Info (332119):     9.686               0.000 CLOCK_50 
+    Info (332119):    -6.633             -76.432 clk_audbck 
+    Info (332119):     9.537               0.000 CLOCK_50 
     Info (332119):    10.882               0.000 altera_reserved_tck 
 Info (332146): Worst-case hold slack is 0.199
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.199               0.000 CLOCK_50 
-    Info (332119):     0.274               0.000 clk_audbck 
-    Info (332119):     0.526               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -7.448
+    Info (332119):     0.199               0.000 altera_reserved_tck 
+    Info (332119):     0.208               0.000 CLOCK_50 
+    Info (332119):     0.299               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -7.023
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.448           -1389.484 clk_audbck 
-    Info (332119):    10.583               0.000 CLOCK_50 
-    Info (332119):    35.923               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.327
+    Info (332119):    -7.023           -1357.561 clk_audbck 
+    Info (332119):    11.008               0.000 CLOCK_50 
+    Info (332119):    35.159               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.171
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.327               0.000 clk_audbck 
-    Info (332119):     0.673               0.000 altera_reserved_tck 
-    Info (332119):     1.052               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.851
+    Info (332119):     0.171               0.000 clk_audbck 
+    Info (332119):     0.702               0.000 altera_reserved_tck 
+    Info (332119):     1.128               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.813
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.851               0.000 CLOCK_50 
-    Info (332119):    18.356               0.000 altera_reserved_tck 
-    Info (332119):   140.083               0.000 clk_audbck 
+    Info (332119):     8.813               0.000 CLOCK_50 
+    Info (332119):    18.382               0.000 altera_reserved_tck 
+    Info (332119):   140.087               0.000 clk_audbck 
 Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1352,7 +1350,7 @@ Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 67
     Info (332114): Shortest Synchronizer Chain: 1 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-    Info (332114): Worst Case Available Settling Time: 34.947 ns
+    Info (332114): Worst Case Available Settling Time: 36.089 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -1366,36 +1364,36 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.055
+Info (332146): Worst-case setup slack is -5.169
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.055             -59.259 clk_audbck 
-    Info (332119):    12.086               0.000 CLOCK_50 
+    Info (332119):    -5.169             -59.152 clk_audbck 
+    Info (332119):    12.162               0.000 CLOCK_50 
     Info (332119):    12.888               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.130
+Info (332146): Worst-case hold slack is 0.129
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.130               0.000 CLOCK_50 
-    Info (332119):     0.179               0.000 clk_audbck 
-    Info (332119):     0.284               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -4.983
+    Info (332119):     0.129               0.000 CLOCK_50 
+    Info (332119):     0.141               0.000 altera_reserved_tck 
+    Info (332119):     0.181               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -5.320
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.983           -1034.700 clk_audbck 
-    Info (332119):    13.224               0.000 CLOCK_50 
-    Info (332119):    36.938               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.343
+    Info (332119):    -5.320           -1054.895 clk_audbck 
+    Info (332119):    13.334               0.000 CLOCK_50 
+    Info (332119):    36.416               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.392
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.343               0.000 altera_reserved_tck 
-    Info (332119):     0.584               0.000 clk_audbck 
-    Info (332119):     0.643               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.484
+    Info (332119):     0.392               0.000 altera_reserved_tck 
+    Info (332119):     0.583               0.000 clk_audbck 
+    Info (332119):     0.681               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.484               0.000 CLOCK_50 
-    Info (332119):    18.153               0.000 altera_reserved_tck 
-    Info (332119):   139.689               0.000 clk_audbck 
+    Info (332119):     8.483               0.000 CLOCK_50 
+    Info (332119):    18.150               0.000 altera_reserved_tck 
+    Info (332119):   139.690               0.000 clk_audbck 
 Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1403,7 +1401,7 @@ Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 67
     Info (332114): Shortest Synchronizer Chain: 1 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-    Info (332114): Worst Case Available Settling Time: 36.858 ns
+    Info (332114): Worst Case Available Settling Time: 37.673 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -1415,35 +1413,35 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.366
+Info (332146): Worst-case setup slack is -4.493
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.366             -51.380 clk_audbck 
+    Info (332119):    -4.493             -51.324 clk_audbck 
     Info (332119):    13.011               0.000 altera_reserved_tck 
-    Info (332119):    13.141               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.119
+    Info (332119):    13.169               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.118
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.119               0.000 CLOCK_50 
-    Info (332119):     0.156               0.000 clk_audbck 
-    Info (332119):     0.259               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -4.280
+    Info (332119):     0.118               0.000 CLOCK_50 
+    Info (332119):     0.130               0.000 altera_reserved_tck 
+    Info (332119):     0.170               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -4.601
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.280            -894.866 clk_audbck 
-    Info (332119):    14.082               0.000 CLOCK_50 
-    Info (332119):    37.279               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.159
+    Info (332119):    -4.601            -912.549 clk_audbck 
+    Info (332119):    14.166               0.000 CLOCK_50 
+    Info (332119):    36.820               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.197
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.159               0.000 clk_audbck 
-    Info (332119):     0.306               0.000 altera_reserved_tck 
-    Info (332119):     0.573               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.438
+    Info (332119):     0.197               0.000 clk_audbck 
+    Info (332119):     0.369               0.000 altera_reserved_tck 
+    Info (332119):     0.615               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.435
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.438               0.000 CLOCK_50 
-    Info (332119):    18.192               0.000 altera_reserved_tck 
+    Info (332119):     8.435               0.000 CLOCK_50 
+    Info (332119):    18.193               0.000 altera_reserved_tck 
     Info (332119):   139.646               0.000 clk_audbck 
 Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1452,7 +1450,7 @@ Info (332114): Report Metastability: Found 67 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 67
     Info (332114): Shortest Synchronizer Chain: 1 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.761
-    Info (332114): Worst Case Available Settling Time: 37.061 ns
+    Info (332114): Worst Case Available Settling Time: 37.803 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -1461,9 +1459,9 @@ Info (332114): Report Metastability: Found 67 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 1175 megabytes
-    Info: Processing ended: Fri May 17 12:09:33 2019
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Peak virtual memory: 5324 megabytes
+    Info: Processing ended: Fri May 17 17:45:31 2019
+    Info: Elapsed time: 00:00:55
+    Info: Total CPU time (on all processors): 00:01:10
 
 
