@@ -28,11 +28,8 @@ module	controller (
 					
 					
 					// Block inputs
-<<<<<<< HEAD
+
 					input logic blkReq,
-=======
-					input logic blkReq ,
->>>>>>> f58d19a46c562d6985eb5f3c4617ccff367bd14b
 					input logic [10:0] blkOSX ,
 					input logic [10:0] blkOSY ,
 					
@@ -63,15 +60,15 @@ module	controller (
 					output logic [10:0] btyLoc ,
 					
 					// Block outputs
-					output logic blkExs[3:0][31:0] ,
-					output logic blkHit[3:0][31:0] ,
+					output logic [3:0][31:0] blkExs ,
+					output logic [3:0][31:0] blkHit ,
 					
 					// On screen info 
 					output logic stgMsg ,
 					output logic scrMsg ,
 					output logic edgMsg ,
 					output logic [2:0][3:0] scrNum ,
-					output logic [2:0] scrLiv ,
+					output logic [1:0] scrLiv ,
 					output logic [3:0] sndOut
 					
 );
@@ -121,7 +118,7 @@ begin : fsm_sync
 end
 	
 
-always_comb
+always
 
 begin
 	// default output
@@ -142,24 +139,26 @@ begin
 		StartGame : begin
 		
 			stgMsg = 1'b1 ;
-			sndOut <= 4'd7;
-			#100;
-			sndOut <= 4'd7;
-			#100;
-			sndOut <= 4'd2;
-			#100;
-			sndOut <= 4'd3;
-			#100;
-			sndOut <= 4'd9;
-			#100;
-			sndOut <= 4'd9;
-			#100;
-			sndOut <= 4'd5;
-			#100;
-			sndOut <= 4'd7;
-			#100;
-			if (spcKey == 1'b1)
+			
+			if (spcKey == 1'b1) begin
+				sndOut <= 4'd7;
+				#100;
+				sndOut <= 4'd7;
+				#100;
+				sndOut <= 4'd2;
+				#100;
+				sndOut <= 4'd3;
+				#100;
+				sndOut <= 4'd9;
+				#100;
+				sndOut <= 4'd9;
+				#100;
+				sndOut <= 4'd5;
+				#100;
+				sndOut <= 4'd7;
+				#100;
 				nxt_st = InitGame ;
+			end
 		end
 		
 		
@@ -235,7 +234,6 @@ begin
 				if(lrrReq == 1'b1 && btpReq[i]) begin
 					lrrLiv = prvLlv - 1 ;
 					lrrHit = 1'b1 ;
-					
 					btpExs[i] = 1'b0 ;
 					pScore = prvScr + 5 ;
 					
@@ -266,6 +264,8 @@ begin
 					btiExs[i] = 1'b0 ;
 				if (btiCmd == 1'b1 && btiExs[i] == 1'b0) begin
 					btiExs[i] = 1'b1 ;
+					btxLoc = pixX + (invJ << 5) ;
+					btyLoc = pixY + (invI << 5) ;
 					btpCmd = 1'b0 ;
 				end
 			end
@@ -282,11 +282,7 @@ begin
 		
 		EndGame : begin
 			edgMsg = 1'b1 ;
-<<<<<<< HEAD
-			if (spcKey == 1'b1)
-				nxt_st = StartGame;
-=======
->>>>>>> f58d19a46c562d6985eb5f3c4617ccff367bd14b
+			scrNum = pScore ;
 
 		end 
 			

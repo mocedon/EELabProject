@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Fri May 17 17:31:44 2019
+Fri May 17 18:39:56 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -62,13 +62,14 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
  54. Parameter Settings for User Entity Instance: scoreY:inst44|lpm_constant:LPM_CONSTANT_component
  55. Parameter Settings for User Entity Instance: NumbersBitMap:inst42
  56. Parameter Settings for User Entity Instance: digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component
- 57. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 58. SignalTap II Logic Analyzer Settings
- 59. Post-Synthesis Netlist Statistics for Top Partition
- 60. Elapsed Time Per Partition
- 61. Connections to In-System Debugging Instance "auto_signaltap_0"
- 62. Analysis & Synthesis Messages
- 63. Analysis & Synthesis Suppressed Messages
+ 57. Parameter Settings for User Entity Instance: controller:inst46
+ 58. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 59. SignalTap II Logic Analyzer Settings
+ 60. Post-Synthesis Netlist Statistics for Top Partition
+ 61. Elapsed Time Per Partition
+ 62. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 63. Analysis & Synthesis Messages
+ 64. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -95,7 +96,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 17 17:31:44 2019           ;
+; Analysis & Synthesis Status     ; Successful - Fri May 17 18:39:56 2019           ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                   ; Lab1Demo                                        ;
 ; Top-level Entity Name           ; TOP_Schematic                                   ;
@@ -260,6 +261,7 @@ agreement for further details.
 ; right.v                                                            ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/right.v                                                            ;             ;
 ; left.v                                                             ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/left.v                                                             ;             ;
 ; RTL/VGA/Lrrr_move.sv                                               ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Lrrr_move.sv                                               ;             ;
+; RTL/VGA/controller.sv                                              ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv                                              ;             ;
 ; RTL/VGA/boltBitMap.sv                                              ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/boltBitMap.sv                                              ;             ;
 ; screenmiddlex.v                                                    ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/screenmiddlex.v                                                    ;             ;
 ; scoreX.v                                                           ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v                                                           ;             ;
@@ -1891,6 +1893,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:inst46 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; BOLT_MAX       ; 4     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
@@ -2371,7 +2383,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Fri May 17 17:30:53 2019
+    Info: Processing started: Fri May 17 18:39:09 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/numbersbitmap.sv
@@ -2473,6 +2485,7 @@ Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(35): created imp
 Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(36): created implicit net for "ext_code" File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 36
 Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(37): created implicit net for "rel_code" File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 37
 Info (12127): Elaborating entity "TOP_Schematic" for the top level hierarchy
+Warning (275013): Port "clk" of type controller and instance "inst46" is missing source signal
 Warning (275009): Pin "KEY" not connected
 Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA"
 Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(58): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/VGA_Controller.sv Line: 58
@@ -2626,6 +2639,422 @@ Info (12133): Instantiated megafunction "digit_tmp:inst45|lpm_constant:LPM_CONST
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
     Info (12134): Parameter "lpm_width" = "12"
+Info (12128): Elaborating entity "controller" for hierarchy "controller:inst46"
+Critical Warning (10237): Verilog HDL warning at controller.sv(117): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 117
+Warning (10230): Verilog HDL assignment warning at controller.sv(178): truncated value with size 32 to match size of target (12) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 178
+Warning (10230): Verilog HDL assignment warning at controller.sv(179): truncated value with size 32 to match size of target (3) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 179
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "plrExs", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invStr", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "btpCmd", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "btiCmd", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "scrLiv", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "pixX", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "pixY", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invX", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invY", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "plrLiv", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "btiExs", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invLiv", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "btpExs", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "pScore", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "lrrExs", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "lrrLiv", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invI", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10240): Verilog HDL Always Construct warning at controller.sv(125): inferring latch(es) for variable "invJ", which holds its previous value in one or more paths through the always construct File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Warning (10034): Output port "btxLoc" at controller.sv(59) has no driver File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 59
+Warning (10034): Output port "btyLoc" at controller.sv(60) has no driver File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 60
+Info (10041): Inferred latch for "lrrLiv[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrLiv[31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "lrrExs" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "pScore[11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btpExs[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btpExs[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btpExs[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btpExs[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invLiv[31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btiExs[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btiExs[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btiExs[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btiExs[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrLiv[31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrLiv[0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrLiv[1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrLiv[2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[0][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[0][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[0][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[0][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[1][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[1][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[1][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[1][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[2][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[2][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[2][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "scrNum[2][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[0][31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[1][31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[2][31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][16]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][17]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][18]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][19]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][20]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][21]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][22]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][23]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][24]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][25]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][26]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][27]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][28]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][29]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][30]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "blkExs[3][31]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[0][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[1][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[2][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[3][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[4][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[5][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[6][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][0]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][1]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][2]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][3]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][4]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][5]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][6]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][7]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][8]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][9]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][10]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][11]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][12]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][13]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][14]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invExs[7][15]" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btiCmd" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "btpCmd" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "invStr" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
+Info (10041): Inferred latch for "plrExs" at controller.sv(125) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 125
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eo84.tdf
     Info (12023): Found entity 1: altsyncram_eo84 File: Z:/EELabProject/Project/SpaceInvaders_restored/db/altsyncram_eo84.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
@@ -2652,7 +3081,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: Z:/EELabProject/Project/SpaceInvaders_restored/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.05.17.17:31:20 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.05.17.18:39:31 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -3103,11 +3532,11 @@ Info (21057): Implemented 6511 device resources after synthesis - the final reso
     Info (21060): Implemented 4 bidirectional pins
     Info (21061): Implemented 6096 logic cells
     Info (21064): Implemented 312 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
-    Info: Peak virtual memory: 883 megabytes
-    Info: Processing ended: Fri May 17 17:31:44 2019
-    Info: Elapsed time: 00:00:51
-    Info: Total CPU time (on all processors): 00:01:04
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 113 warnings
+    Info: Peak virtual memory: 866 megabytes
+    Info: Processing ended: Fri May 17 18:39:56 2019
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:01:02
 
 
 +------------------------------------------+

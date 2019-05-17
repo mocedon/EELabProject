@@ -10,7 +10,7 @@ module	Lrrr_move	(
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input	logic	toggleY, //toggle the y direction  
-					input logic waiting,
+					input logic idleN,
 					output	logic	[10:0]	topLeftX,// output the top left corner 
 					output	logic	[10:0]	topLeftY
 					
@@ -37,16 +37,16 @@ const int OFF_SET = 60 * MULTIPLIER;
 int Xspeed, topLeftX_tmp; // local parameters 
 int Yspeed, topLeftY_tmp;
 logic toggleY_d; 
-logic prvWait ;
+logic prvIdle ;
 
 //  Wait logic
 
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
-		prvWait <= 1'b1 ;
+		prvIdle <= 1'b0 ;
 	else begin
-		prvWait <= waiting ;
+		prvIdle <= idleN ;
 	end
 end
 
@@ -57,10 +57,10 @@ begin
 	if(!resetN)
 		Xspeed	<= 0 ;
 	else 	begin
-			if (waiting == 1'b1)
+			if (idleN == 1'b0)
 				Xspeed <= 0 ;
 			else begin
-				if (prvWait == 1'b1)
+				if (prvIdle == 1'b0)
 					Xspeed <= INITIAL_X_SPEED ;
 					
 				if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
@@ -83,13 +83,13 @@ begin
 		
 	end 
 	else begin
-		if (waiting == 1'b1) 
+		if (idleN == 1'b0) 
 			Yspeed <= 0 ;
 			
-		if (prvWait == 1'b1 && waiting == 1'b0)
+		if (prvIdle == 1'b0 && idleN == 1'b1)
 			Yspeed <= INITIAL_Y_SPEED ;
 				
-		if (prvWait == 1'b0 && waiting == 1'b0) begin
+		if (prvIdle == 1'b1 && idleN == 1'b1) begin
 			toggleY_d <= toggleY ; // for edge detect 
 			if ((toggleY == 1'b1 ) && (toggleY_d== 1'b0)) // detect toggle command rising edge from user  
 				Yspeed <= -Yspeed ; 
@@ -118,7 +118,7 @@ begin
 		topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;
 	end
 	else begin
-		if(waiting == 1'b1 )
+		if(idleN == 1'b0 )
 		begin
 			topLeftX_tmp	<= INITIAL_X * MULTIPLIER;
 			topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;

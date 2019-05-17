@@ -26,17 +26,20 @@ module	objects_mux	(
 					input		logic	[7:0] lrrRGB, 
 					input		logic	lrrReq,
 					
-					input		logic [7:0] zppRGB,
-					input		logic zppReq,
+					input		logic [7:0] smgRGB,
+					input		logic smgReq,
 					
-					input		logic [7:0] msgRGB,
-					input		logic msgReq,
-					
-					
+					input		logic [7:0] emgRGB,
+					input		logic emgReq,
 					
 					
+					input		logic [7:0] scrRGB,
+					input		logic scrReq,
 					
 					
+					
+					
+	
 					
 					// background 
 					input		logic	[7:0] bgrRGB, 
@@ -45,6 +48,8 @@ module	objects_mux	(
 					output	logic	[7:0] greenOut, 
 					output	logic	[7:0] blueOut 
 );
+
+parameter BOLT_MAX = 4 ;
 
 logic [7:0] tmpRGB;
 
@@ -60,12 +65,15 @@ begin
 			tmpRGB	<= 8'b0;
 	else 
 	begin
-		if (msgReq == 1'b1)
-			tmpRGB <= msgRGB ;
+		if (smgReq == 1'b1)
+			tmpRGB <= smgRGB ;
 		else 
-		if (zppReq == 1'b1 )
-			tmpRGB <= zppRGB ;
+		if (emgReq == 1'b1 )
+			tmpRGB <= emgRGB ;
 		else
+		if (scrReq == 1'b1)
+			tmpRGB <= scrRGB ;
+		else 
 		if (lrrReq == 1'b1 )
 			tmpRGB <= lrrRGB ;
 		else
