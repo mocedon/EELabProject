@@ -4,8 +4,8 @@ module	Bolt_move	(
 					input	   logic	resetN,
 					input	   logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input    logic shootCmd,
-					input    logic [10:0]init_x,
-					input    logic [10:0]init_y,
+					input    logic [10:0] init_x,
+					input    logic [10:0] init_y,
 					
 					output	logic	[10:0]	topLeftX, 
 					output	logic	[10:0]	topLeftY
