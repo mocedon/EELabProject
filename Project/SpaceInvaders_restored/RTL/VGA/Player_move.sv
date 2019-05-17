@@ -59,9 +59,7 @@ begin
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform only 30 times per second
-			if ((topLeftX_tmp == x_FRAME_SIZE - offset)|| (topLeftX_tmp == 0 )) //just added
-					topLeftX_tmp  <= topLeftX_tmp - Xspeed; 
-			if ((topLeftX_tmp <= x_FRAME_SIZE - offset)&&(topLeftX_tmp >= 0 )) //just added
+			if ((topLeftX_tmp < x_FRAME_SIZE - offset-2*Xspeed)&&(topLeftX_tmp >(-1)*Xspeed )) // test if this works
 					topLeftX_tmp  <= topLeftX_tmp + Xspeed; 
 			end
 	end

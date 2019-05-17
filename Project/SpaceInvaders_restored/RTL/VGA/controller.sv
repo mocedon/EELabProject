@@ -28,9 +28,9 @@ module	controller (
 					
 					
 					// Block inputs
-					input logic blkReq ;
+					input logic blkReq,
 					input logic [10:0] blkOSX ,
-					input logic [10:0} blkOSY ,
+					input logic [10:0] blkOSY ,
 					
 					
 					
@@ -129,6 +129,22 @@ begin
 	
 		StartGame : begin
 			stgMsg = 1'b1 ;
+			sndOut <= 4'd7;
+			#100;
+			sndOut <= 4'd7;
+			#100;
+			sndOut <= 4'd2;
+			#100;
+			sndOut <= 4'd3;
+			#100;
+			sndOut <= 4'd9;
+			#100;
+			sndOut <= 4'd9;
+			#100;
+			sndOut <= 4'd5;
+			#100;
+			sndOut <= 4'd7;
+			#100;
 			if (spcKey == 1'b1)
 				nxt_st = RegularGame ;
 		end
@@ -153,7 +169,7 @@ begin
 		
 		EndGame : begin
 			edgMsg = 1'b1 ;
-			if (spcKey == 1;b1)
+			if (spcKey == 1'b1)
 				nxt_st = StartGame;
 
 		end 
