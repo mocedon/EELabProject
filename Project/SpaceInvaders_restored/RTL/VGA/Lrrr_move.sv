@@ -18,19 +18,20 @@ module	Lrrr_move	(
 
 
 // a module used to generate a ball trajectory.  
+const int	MULTIPLIER	=	64;
 
 parameter int INITIAL_X = 40 ;
-parameter int INITIAL_Y = 5 ;
+parameter int INITIAL_Y = 100 ;
 parameter int INITIAL_X_SPEED = 50;
 parameter int INITIAL_Y_SPEED = 0;
-parameter int OFF_SET = 60 * MULTIPLIER;
 parameter int Y_ACCEL = -1;
 
-const int	MULTIPLIER	=	64;
+
 // multiplier is used to work with integers in high resolution 
 // we devide at the end by multiplier which must be 2^n 
 const int	x_FRAME_SIZE	=	639 * MULTIPLIER;
 const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
+const int OFF_SET = 60 * MULTIPLIER;
 
 
 int Xspeed, topLeftX_tmp; // local parameters 
@@ -100,7 +101,7 @@ begin
 				if ((topLeftY_tmp <= 0 ) && (Yspeed < 0 )) // hit top border heading up
 					Yspeed <= -Yspeed ; 
 			
-				if ( ( topLeftY_tmp >= y_FRAME_SIZE) && (Yspeed > 0 )) //hit bottom border heading down 
+				if ( ( topLeftY_tmp >= y_FRAME_SIZE-(64*MULTIPLIER)) && (Yspeed > 0 )) //hit bottom border heading down 
 					Yspeed <= -Yspeed ; 
 			end
 		end 

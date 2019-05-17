@@ -4,7 +4,7 @@ module	Invader_move	(
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					input	logic	speedUp,  //Speed up the movent of the invaders 
+					input	logic	idleN,  //Speed up the movent of the invaders 
 					input logic oneSec, 
 					input logic chgDir,
 					
@@ -55,13 +55,12 @@ begin
 	// default output
 	Xspeed = 0 ;
 	Yspeed = 0 ;
-	chg = 1'b0 ;
 	nxt_st = prt_st ;
 	
 	case (prt_st)
 	
 		idle : begin
-			if (oneSec == 1'b1)
+			if (idleN == 1'b1)
 				nxt_st = movRGT ;
 		end
 			

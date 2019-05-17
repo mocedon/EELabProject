@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Fri May 17 10:36:29 2019
+Fri May 17 12:06:33 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -57,13 +57,18 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
  49. Parameter Settings for User Entity Instance: TOP_MSS_DEMO:inst9|sintable:inst1
  50. Parameter Settings for User Entity Instance: TOP_MSS_DEMO:inst9|addr_counter:inst9
  51. Parameter Settings for User Entity Instance: random:inst4
- 52. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 53. SignalTap II Logic Analyzer Settings
- 54. Post-Synthesis Netlist Statistics for Top Partition
- 55. Elapsed Time Per Partition
- 56. Connections to In-System Debugging Instance "auto_signaltap_0"
- 57. Analysis & Synthesis Messages
- 58. Analysis & Synthesis Suppressed Messages
+ 52. Parameter Settings for User Entity Instance: square_object:inst40
+ 53. Parameter Settings for User Entity Instance: scoreX:inst43|lpm_constant:LPM_CONSTANT_component
+ 54. Parameter Settings for User Entity Instance: scoreY:inst44|lpm_constant:LPM_CONSTANT_component
+ 55. Parameter Settings for User Entity Instance: NumbersBitMap:inst42
+ 56. Parameter Settings for User Entity Instance: digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component
+ 57. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 58. SignalTap II Logic Analyzer Settings
+ 59. Post-Synthesis Netlist Statistics for Top Partition
+ 60. Elapsed Time Per Partition
+ 61. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 62. Analysis & Synthesis Messages
+ 63. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -90,13 +95,13 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 17 10:36:28 2019           ;
+; Analysis & Synthesis Status     ; Successful - Fri May 17 12:06:33 2019           ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                   ; Lab1Demo                                        ;
 ; Top-level Entity Name           ; TOP_Schematic                                   ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 3547                                            ;
+; Total registers                 ; 3524                                            ;
 ; Total pins                      ; 98                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 2,539,648                                       ;
@@ -222,6 +227,7 @@ agreement for further details.
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------------+
 ; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                      ; Library     ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------------+
+; RTL/VGA/NumbersBitMap.sv                                           ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/NumbersBitMap.sv                                           ;             ;
 ; RTL/VGA/StartBitMap.sv                                             ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv                                             ;             ;
 ; RTL/VGA/MonsterBitMap.sv                                           ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/MonsterBitMap.sv                                           ;             ;
 ; RTL/VGA/BossBitMap.sv                                              ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/BossBitMap.sv                                              ;             ;
@@ -256,6 +262,9 @@ agreement for further details.
 ; RTL/VGA/Lrrr_move.sv                                               ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Lrrr_move.sv                                               ;             ;
 ; RTL/VGA/boltBitMap.sv                                              ; yes             ; User SystemVerilog HDL File                  ; Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/boltBitMap.sv                                              ;             ;
 ; screenmiddlex.v                                                    ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/screenmiddlex.v                                                    ;             ;
+; scoreX.v                                                           ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v                                                           ;             ;
+; scoreY.v                                                           ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/scoreY.v                                                           ;             ;
+; digit_tmp.v                                                        ; yes             ; User Wizard-Generated File                   ; Z:/EELabProject/Project/SpaceInvaders_restored/digit_tmp.v                                                        ;             ;
 ; lpm_constant.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/lpm_constant.tdf                                                ;             ;
 ; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_signaltap.vhd                                               ;             ;
 ; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga/17.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                          ;             ;
@@ -323,16 +332,16 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 4111           ;
+; Estimate of Logic utilization (ALMs needed) ; 2814           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 5335           ;
-;     -- 7 input functions                    ; 242            ;
-;     -- 6 input functions                    ; 2270           ;
-;     -- 5 input functions                    ; 753            ;
-;     -- 4 input functions                    ; 532            ;
-;     -- <=3 input functions                  ; 1538           ;
+; Combinational ALUT usage for logic          ; 3882           ;
+;     -- 7 input functions                    ; 79             ;
+;     -- 6 input functions                    ; 1275           ;
+;     -- 5 input functions                    ; 696            ;
+;     -- 4 input functions                    ; 381            ;
+;     -- <=3 input functions                  ; 1451           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 3547           ;
+; Dedicated logic registers                   ; 3524           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 98             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -341,9 +350,9 @@ agreement for further details.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 2560           ;
-; Total fan-out                               ; 45971          ;
-; Average fan-out                             ; 4.89           ;
+; Maximum fan-out                             ; 2537           ;
+; Total fan-out                               ; 37669          ;
+; Average fan-out                             ; 4.75           ;
 +---------------------------------------------+----------------+
 
 
@@ -352,7 +361,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                       ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |TOP_Schematic                                                                                                                          ; 5335 (4)            ; 3547 (0)                  ; 2539648           ; 0          ; 98   ; 0            ; |TOP_Schematic                                                                                                                                                                                                                                                                                                                                            ; TOP_Schematic                     ; work         ;
+; |TOP_Schematic                                                                                                                          ; 3882 (4)            ; 3524 (0)                  ; 2539648           ; 0          ; 98   ; 0            ; |TOP_Schematic                                                                                                                                                                                                                                                                                                                                            ; TOP_Schematic                     ; work         ;
 ;    |Bolt_move:inst1|                                                                                                                    ; 14 (14)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst1                                                                                                                                                                                                                                                                                                                            ; Bolt_move                         ; work         ;
 ;    |Bolt_move:inst22|                                                                                                                   ; 32 (32)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst22                                                                                                                                                                                                                                                                                                                           ; Bolt_move                         ; work         ;
 ;    |Bolt_move:inst24|                                                                                                                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst24                                                                                                                                                                                                                                                                                                                           ; Bolt_move                         ; work         ;
@@ -360,19 +369,18 @@ agreement for further details.
 ;    |Bolt_move:inst35|                                                                                                                   ; 23 (23)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst35                                                                                                                                                                                                                                                                                                                           ; Bolt_move                         ; work         ;
 ;    |Bolt_move:inst5|                                                                                                                    ; 14 (14)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst5                                                                                                                                                                                                                                                                                                                            ; Bolt_move                         ; work         ;
 ;    |Bolt_move:inst|                                                                                                                     ; 23 (23)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Bolt_move:inst                                                                                                                                                                                                                                                                                                                             ; Bolt_move                         ; work         ;
-;    |BossBitMap:inst36|                                                                                                                  ; 574 (574)           ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|BossBitMap:inst36                                                                                                                                                                                                                                                                                                                          ; BossBitMap                        ; work         ;
+;    |BossBitMap:inst36|                                                                                                                  ; 573 (573)           ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|BossBitMap:inst36                                                                                                                                                                                                                                                                                                                          ; BossBitMap                        ; work         ;
 ;    |Invader_move:mv1|                                                                                                                   ; 113 (113)           ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Invader_move:mv1                                                                                                                                                                                                                                                                                                                           ; Invader_move                      ; work         ;
-;    |Lrrr_move:inst32|                                                                                                                   ; 284 (284)           ; 130 (130)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Lrrr_move:inst32                                                                                                                                                                                                                                                                                                                           ; Lrrr_move                         ; work         ;
+;    |Lrrr_move:inst32|                                                                                                                   ; 234 (234)           ; 130 (130)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Lrrr_move:inst32                                                                                                                                                                                                                                                                                                                           ; Lrrr_move                         ; work         ;
 ;    |MonsterBitMap:inst34|                                                                                                               ; 172 (172)           ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|MonsterBitMap:inst34                                                                                                                                                                                                                                                                                                                       ; MonsterBitMap                     ; work         ;
-;    |PlayerBitMap:inst31|                                                                                                                ; 500 (500)           ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|PlayerBitMap:inst31                                                                                                                                                                                                                                                                                                                        ; PlayerBitMap                      ; work         ;
-;    |Player_move:mv2|                                                                                                                    ; 122 (122)           ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Player_move:mv2                                                                                                                                                                                                                                                                                                                            ; Player_move                       ; work         ;
-;    |StartBitMap:inst41|                                                                                                                 ; 1384 (1384)         ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|StartBitMap:inst41                                                                                                                                                                                                                                                                                                                         ; StartBitMap                       ; work         ;
-;    |TOP_KBD_DEMOALL:inst8|                                                                                                              ; 98 (0)              ; 58 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8                                                                                                                                                                                                                                                                                                                      ; TOP_KBD_DEMOALL                   ; work         ;
+;    |PlayerBitMap:inst31|                                                                                                                ; 509 (509)           ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|PlayerBitMap:inst31                                                                                                                                                                                                                                                                                                                        ; PlayerBitMap                      ; work         ;
+;    |Player_move:mv2|                                                                                                                    ; 121 (121)           ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|Player_move:mv2                                                                                                                                                                                                                                                                                                                            ; Player_move                       ; work         ;
+;    |TOP_KBD_DEMOALL:inst8|                                                                                                              ; 100 (0)             ; 58 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8                                                                                                                                                                                                                                                                                                                      ; TOP_KBD_DEMOALL                   ; work         ;
 ;       |KBDINTF:inst|                                                                                                                    ; 41 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst                                                                                                                                                                                                                                                                                                         ; KBDINTF                           ; work         ;
 ;          |bitrec:inst2|                                                                                                                 ; 14 (14)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|bitrec:inst2                                                                                                                                                                                                                                                                                            ; bitrec                            ; work         ;
 ;          |byterec:inst1|                                                                                                                ; 22 (22)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|byterec:inst1                                                                                                                                                                                                                                                                                           ; byterec                           ; work         ;
 ;          |lpf:inst3|                                                                                                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|lpf:inst3                                                                                                                                                                                                                                                                                               ; lpf                               ; work         ;
-;       |keyPad_decoder:inst2|                                                                                                            ; 54 (54)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyPad_decoder:inst2                                                                                                                                                                                                                                                                                                 ; keyPad_decoder                    ; work         ;
+;       |keyPad_decoder:inst2|                                                                                                            ; 56 (56)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyPad_decoder:inst2                                                                                                                                                                                                                                                                                                 ; keyPad_decoder                    ; work         ;
 ;       |keyToggle_decoderIn:inst6|                                                                                                       ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyToggle_decoderIn:inst6                                                                                                                                                                                                                                                                                            ; keyToggle_decoderIn               ; work         ;
 ;       |keyToggle_decoderIn:inst7|                                                                                                       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyToggle_decoderIn:inst7                                                                                                                                                                                                                                                                                            ; keyToggle_decoderIn               ; work         ;
 ;    |TOP_MSS_DEMO:inst9|                                                                                                                 ; 527 (0)             ; 601 (0)                   ; 128               ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_MSS_DEMO:inst9                                                                                                                                                                                                                                                                                                                         ; TOP_MSS_DEMO                      ; work         ;
@@ -461,10 +469,10 @@ agreement for further details.
 ;          |i2c:i2c_inst|                                                                                                                 ; 31 (31)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_MSS_DEMO:inst9|audio_codec_controller:inst2|i2c:i2c_inst                                                                                                                                                                                                                                                                               ; i2c                               ; work         ;
 ;       |prescaler:inst3|                                                                                                                 ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_MSS_DEMO:inst9|prescaler:inst3                                                                                                                                                                                                                                                                                                         ; prescaler                         ; work         ;
 ;       |sintable:inst1|                                                                                                                  ; 40 (40)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|TOP_MSS_DEMO:inst9|sintable:inst1                                                                                                                                                                                                                                                                                                          ; sintable                          ; work         ;
-;    |ToneDecoder:inst3|                                                                                                                  ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|ToneDecoder:inst3                                                                                                                                                                                                                                                                                                                          ; ToneDecoder                       ; work         ;
-;    |VGA_Controller:VGA|                                                                                                                 ; 74 (74)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|VGA_Controller:VGA                                                                                                                                                                                                                                                                                                                         ; VGA_Controller                    ; work         ;
-;    |back_ground_draw:inst16|                                                                                                            ; 18 (18)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|back_ground_draw:inst16                                                                                                                                                                                                                                                                                                                    ; back_ground_draw                  ; work         ;
-;    |objects_mux:MUX|                                                                                                                    ; 25 (25)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|objects_mux:MUX                                                                                                                                                                                                                                                                                                                            ; objects_mux                       ; work         ;
+;    |ToneDecoder:inst3|                                                                                                                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|ToneDecoder:inst3                                                                                                                                                                                                                                                                                                                          ; ToneDecoder                       ; work         ;
+;    |VGA_Controller:VGA|                                                                                                                 ; 73 (73)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|VGA_Controller:VGA                                                                                                                                                                                                                                                                                                                         ; VGA_Controller                    ; work         ;
+;    |back_ground_draw:inst16|                                                                                                            ; 17 (17)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|back_ground_draw:inst16                                                                                                                                                                                                                                                                                                                    ; back_ground_draw                  ; work         ;
+;    |objects_mux:MUX|                                                                                                                    ; 21 (21)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|objects_mux:MUX                                                                                                                                                                                                                                                                                                                            ; objects_mux                       ; work         ;
 ;    |one_sec_counter:sec|                                                                                                                ; 32 (32)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|one_sec_counter:sec                                                                                                                                                                                                                                                                                                                        ; one_sec_counter                   ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 92 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 91 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
@@ -666,13 +674,12 @@ agreement for further details.
 ;    |square_object:inst18|                                                                                                               ; 61 (61)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst18                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
 ;    |square_object:inst19|                                                                                                               ; 60 (60)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst19                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
 ;    |square_object:inst20|                                                                                                               ; 60 (60)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst20                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
-;    |square_object:inst21|                                                                                                               ; 70 (70)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst21                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
-;    |square_object:inst23|                                                                                                               ; 71 (71)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst23                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
-;    |square_object:inst25|                                                                                                               ; 13 (13)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst25                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
+;    |square_object:inst21|                                                                                                               ; 71 (71)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst21                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
+;    |square_object:inst23|                                                                                                               ; 72 (72)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst23                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
+;    |square_object:inst25|                                                                                                               ; 15 (15)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst25                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
 ;    |square_object:inst29|                                                                                                               ; 66 (66)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst29                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
-;    |square_object:inst38|                                                                                                               ; 28 (28)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst38                                                                                                                                                                                                                                                                                                                       ; square_object                     ; work         ;
-;    |square_object:inst6|                                                                                                                ; 49 (49)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst6                                                                                                                                                                                                                                                                                                                        ; square_object                     ; work         ;
-;    |square_object:inst7|                                                                                                                ; 37 (37)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst7                                                                                                                                                                                                                                                                                                                        ; square_object                     ; work         ;
+;    |square_object:inst6|                                                                                                                ; 48 (48)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst6                                                                                                                                                                                                                                                                                                                        ; square_object                     ; work         ;
+;    |square_object:inst7|                                                                                                                ; 42 (42)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_Schematic|square_object:inst7                                                                                                                                                                                                                                                                                                                        ; square_object                     ; work         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -702,6 +709,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|right:inst5                                                                                                                                                                                                                                   ; right.v         ;
 ; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|left:inst9                                                                                                                                                                                                                                    ; left.v          ;
 ; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|screenmiddlex:inst39                                                                                                                                                                                                                                                ; screenmiddlex.v ;
+; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|scoreX:inst43                                                                                                                                                                                                                                                       ; scoreX.v        ;
+; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|scoreY:inst44                                                                                                                                                                                                                                                       ; scoreY.v        ;
+; Altera ; LPM_CONSTANT ; 17.0    ; N/A          ; N/A          ; |TOP_Schematic|digit_tmp:inst45                                                                                                                                                                                                                                                    ; digit_tmp.v     ;
 +--------+--------------+---------+--------------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
@@ -799,6 +809,7 @@ Encoding Type:  One-Hot
 ; Bolt_move:inst24|topLeftY_tmp[8,9,11..16]                        ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
 ; Bolt_move:inst26|topLeftX_tmp[8,9,11..16,31]                     ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
 ; Bolt_move:inst26|topLeftY_tmp[8,9,11..16]                        ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
+; StartBitMap:inst41|RGBout[0..7]                                  ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
 ; square_object:inst18|RGBout[0..4,6]                              ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
 ; square_object:inst23|RGBout[4..7]                                ; Merged with Bolt_move:inst24|topLeftX_tmp[11]   ;
 ; back_ground_draw:inst16|BG_RGB[3]                                ; Merged with back_ground_draw:inst16|BG_RGB[2]   ;
@@ -843,7 +854,7 @@ Encoding Type:  One-Hot
 ; Bolt_move:inst5|topLeftY_tmp[17..31]                             ; Lost fanout                                     ;
 ; Bolt_move:inst2|topLeftY_tmp[17..31]                             ; Lost fanout                                     ;
 ; Bolt_move:inst|topLeftY_tmp[17..31]                              ; Lost fanout                                     ;
-; Total Number of Removed Registers = 443                          ;                                                 ;
+; Total Number of Removed Registers = 451                          ;                                                 ;
 +------------------------------------------------------------------+-------------------------------------------------+
 
 
@@ -926,12 +937,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3547  ;
-; Number of registers using Synchronous Clear  ; 509   ;
+; Total registers                              ; 3524  ;
+; Number of registers using Synchronous Clear  ; 514   ;
 ; Number of registers using Synchronous Load   ; 417   ;
-; Number of registers using Asynchronous Clear ; 1635  ;
+; Number of registers using Asynchronous Clear ; 1626  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1423  ;
+; Number of registers using Clock Enable       ; 1421  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -941,7 +952,7 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; VGA_Controller:VGA|oVGA_VS                                                                                                                                                                                                                                                                                                      ; 94      ;
+; VGA_Controller:VGA|oVGA_VS                                                                                                                                                                                                                                                                                                      ; 63      ;
 ; VGA_Controller:VGA|oVGA_HS                                                                                                                                                                                                                                                                                                      ; 14      ;
 ; Invader_move:mv1|topLeftX_tmp[10]                                                                                                                                                                                                                                                                                               ; 5       ;
 ; Invader_move:mv1|topLeftX_tmp[8]                                                                                                                                                                                                                                                                                                ; 5       ;
@@ -953,29 +964,13 @@ Encoding Type:  One-Hot
 ; back_ground_draw:inst16|BG_RGB[7]                                                                                                                                                                                                                                                                                               ; 1       ;
 ; back_ground_draw:inst16|BG_RGB[6]                                                                                                                                                                                                                                                                                               ; 1       ;
 ; back_ground_draw:inst16|BG_RGB[5]                                                                                                                                                                                                                                                                                               ; 1       ;
-; Lrrr_move:inst32|topLeftY_tmp[16]                                                                                                                                                                                                                                                                                               ; 3       ;
-; Lrrr_move:inst32|topLeftY_tmp[15]                                                                                                                                                                                                                                                                                               ; 3       ;
-; Lrrr_move:inst32|topLeftY_tmp[14]                                                                                                                                                                                                                                                                                               ; 4       ;
-; Lrrr_move:inst32|topLeftY_tmp[13]                                                                                                                                                                                                                                                                                               ; 4       ;
-; Lrrr_move:inst32|topLeftY_tmp[12]                                                                                                                                                                                                                                                                                               ; 4       ;
+; Lrrr_move:inst32|topLeftX_tmp[7]                                                                                                                                                                                                                                                                                                ; 4       ;
+; Lrrr_move:inst32|topLeftX_tmp[9]                                                                                                                                                                                                                                                                                                ; 3       ;
+; Lrrr_move:inst32|topLeftY_tmp[7]                                                                                                                                                                                                                                                                                                ; 4       ;
+; Lrrr_move:inst32|topLeftY_tmp[9]                                                                                                                                                                                                                                                                                                ; 4       ;
 ; Player_move:mv2|topLeftX_tmp[14]                                                                                                                                                                                                                                                                                                ; 6       ;
-; Player_move:mv2|topLeftX_tmp[12]                                                                                                                                                                                                                                                                                                ; 7       ;
-; Lrrr_move:inst32|topLeftY_tmp[31]                                                                                                                                                                                                                                                                                               ; 5       ;
-; Lrrr_move:inst32|prvWait                                                                                                                                                                                                                                                                                                        ; 3       ;
-; Lrrr_move:inst32|topLeftY_tmp[18]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[17]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[30]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[29]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[28]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[27]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[26]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[25]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[24]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[23]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[22]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[21]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[20]                                                                                                                                                                                                                                                                                               ; 2       ;
-; Lrrr_move:inst32|topLeftY_tmp[19]                                                                                                                                                                                                                                                                                               ; 2       ;
+; Player_move:mv2|topLeftX_tmp[12]                                                                                                                                                                                                                                                                                                ; 5       ;
+; Lrrr_move:inst32|prvWait                                                                                                                                                                                                                                                                                                        ; 2       ;
 ; TOP_MSS_DEMO:inst9|audio_codec_controller:inst2|i2c:i2c_inst|I2C_clk_0                                                                                                                                                                                                                                                          ; 2       ;
 ; TOP_MSS_DEMO:inst9|audio_codec_controller:inst2|i2c:i2c_inst|I2C_clk_en                                                                                                                                                                                                                                                         ; 2       ;
 ; TOP_MSS_DEMO:inst9|audio_codec_controller:inst2|dac2serial:dac2serial_left_inst|dac_synchronizer:dac_synchronizer_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_p9m1:auto_generated|rdemp_eq_comp_lsb_aeb                                                                                                       ; 2       ;
@@ -1030,7 +1025,7 @@ Encoding Type:  One-Hot
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 89                                                                                                                                                                                                                                                                                         ;         ;
+; Total number of inverted registers = 73                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -1039,41 +1034,40 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyToggle_decoderIn:inst7|keyIsPressed ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |TOP_Schematic|Player_move:mv2|topLeftX_tmp[6]                              ;
-; 3:1                ; 44 bits   ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|topLeftX_tmp[1]                             ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst22|topLeftX_tmp[15]                            ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftX_tmp[13]                            ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst|topLeftX_tmp[6]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyToggle_decoderIn:inst6|keyIsPressed ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |TOP_Schematic|Player_move:mv2|topLeftX_tmp[22]                             ;
+; 3:1                ; 60 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|topLeftX_tmp[24]                            ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst22|topLeftX_tmp[11]                            ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftX_tmp[9]                             ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst|topLeftX_tmp[9]                               ;
 ; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst2|topLeftX_tmp[6]                              ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst5|topLeftX_tmp[16]                             ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst1|topLeftX_tmp[10]                             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|Xspeed[4]                                   ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst22|topLeftY_tmp[30]                            ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst5|topLeftX_tmp[13]                             ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst1|topLeftX_tmp[8]                              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|Xspeed[22]                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst22|topLeftY_tmp[22]                            ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst22|topLeftY_tmp[15]                            ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftY_tmp[27]                            ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftY_tmp[7]                             ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst|topLeftY_tmp[9]                               ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst2|topLeftY_tmp[29]                             ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst5|topLeftY_tmp[9]                              ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst1|topLeftY_tmp[18]                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |TOP_Schematic|objects_mux:MUX|tmpRGB[3]                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TOP_Schematic|objects_mux:MUX|tmpRGB[4]                                    ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|Yspeed[16]                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftY_tmp[18]                            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst35|topLeftY_tmp[16]                            ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst|topLeftY_tmp[13]                              ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst2|topLeftY_tmp[12]                             ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst5|topLeftY_tmp[13]                             ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|Bolt_move:inst1|topLeftY_tmp[20]                             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |TOP_Schematic|objects_mux:MUX|tmpRGB[2]                                    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TOP_Schematic|objects_mux:MUX|tmpRGB[6]                                    ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|Yspeed[15]                                  ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|objects_mux:MUX|tmpRGB[0]                                    ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TOP_Schematic|MonsterBitMap:inst34|RGBout[4]                               ;
-; 129:1              ; 5 bits    ; 430 LEs       ; 345 LEs              ; 85 LEs                 ; Yes        ; |TOP_Schematic|StartBitMap:inst41|RGBout[6]                                 ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 30 LEs               ; 3 LEs                  ; Yes        ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyPad_decoder:inst2|key[3]            ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 30 LEs               ; 3 LEs                  ; Yes        ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|keyPad_decoder:inst2|key[1]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP_Schematic|Player_move:mv2|topLeftX_tmp[12]                             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|topLeftY_tmp[26]                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_Schematic|Lrrr_move:inst32|topLeftY_tmp[7]                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |TOP_Schematic|back_ground_draw:inst16|BG_RGB[6]                            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TOP_Schematic|MonsterBitMap:inst34|Mux155                                  ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |TOP_Schematic|Lrrr_move:inst32|Add1                                        ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|bitrec:inst2|Selector7    ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |TOP_Schematic|Invader_move:mv1|Selector0                                   ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|bitrec:inst2|Selector4    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |TOP_Schematic|Invader_move:mv1|Selector1                                   ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|byterec:inst1|Selector3   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |TOP_Schematic|Invader_move:mv1|Selector3                                   ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |TOP_Schematic|TOP_KBD_DEMOALL:inst8|KBDINTF:inst|byterec:inst1|Selector6   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 
 
@@ -1770,11 +1764,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+-------------------------------------+
 ; Parameter Name  ; Value ; Type                                ;
 +-----------------+-------+-------------------------------------+
-; INITIAL_X       ; 0     ; Signed Integer                      ;
-; INITIAL_Y       ; -64   ; Signed Integer                      ;
-; INITIAL_X_SPEED ; 30    ; Signed Integer                      ;
-; INITIAL_Y_SPEED ; 20    ; Signed Integer                      ;
-; OFF_SET         ; 30    ; Signed Integer                      ;
+; INITIAL_X       ; 10    ; Signed Integer                      ;
+; INITIAL_Y       ; 10    ; Signed Integer                      ;
+; INITIAL_X_SPEED ; 50    ; Signed Integer                      ;
+; INITIAL_Y_SPEED ; 0     ; Signed Integer                      ;
 ; Y_ACCEL         ; -1    ; Signed Integer                      ;
 +-----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -1834,6 +1827,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; MIN_VAL        ; 0     ; Signed Integer                   ;
 ; MAX_VAL        ; 61    ; Signed Integer                   ;
 +----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: square_object:inst40 ;
++-----------------+----------+--------------------------------------+
+; Parameter Name  ; Value    ; Type                                 ;
++-----------------+----------+--------------------------------------+
+; OBJECT_WIDTH_X  ; 400      ; Signed Integer                       ;
+; OBJECT_HEIGHT_Y ; 320      ; Signed Integer                       ;
+; OBJECT_COLOR    ; 01011100 ; Unsigned Binary                      ;
++-----------------+----------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scoreX:inst43|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+--------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                   ;
++--------------------+------------------+--------------------------------------------------------+
+; LPM_WIDTH          ; 11               ; Signed Integer                                         ;
+; LPM_CVALUE         ; 500              ; Signed Integer                                         ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                ;
+; CBXI_PARAMETER     ; lpm_constant_fk6 ; Untyped                                                ;
++--------------------+------------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scoreY:inst44|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+--------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                   ;
++--------------------+------------------+--------------------------------------------------------+
+; LPM_WIDTH          ; 11               ; Signed Integer                                         ;
+; LPM_CVALUE         ; 64               ; Signed Integer                                         ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                ;
+; CBXI_PARAMETER     ; lpm_constant_oi6 ; Untyped                                                ;
++--------------------+------------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: NumbersBitMap:inst42 ;
++----------------+----------+---------------------------------------+
+; Parameter Name ; Value    ; Type                                  ;
++----------------+----------+---------------------------------------+
+; digit_color    ; 11111111 ; Unsigned Binary                       ;
++----------------+----------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+-----------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                      ;
++--------------------+------------------+-----------------------------------------------------------+
+; LPM_WIDTH          ; 12               ; Signed Integer                                            ;
+; LPM_CVALUE         ; 1638             ; Signed Integer                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                   ;
+; CBXI_PARAMETER     ; lpm_constant_7j6 ; Untyped                                                   ;
++--------------------+------------------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1917,31 +1971,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------+---------------+
 ; Type                                ; Count         ;
 +-------------------------------------+---------------+
-; arriav_ff                           ; 633           ;
-;     CLR                             ; 149           ;
-;     CLR SCLR                        ; 80            ;
-;     ENA CLR                         ; 132           ;
-;     ENA CLR SCLR                    ; 116           ;
+; arriav_ff                           ; 610           ;
+;     CLR                             ; 125           ;
+;     CLR SCLR                        ; 83            ;
+;     ENA CLR                         ; 128           ;
+;     ENA CLR SCLR                    ; 132           ;
 ;     ENA CLR SLD                     ; 108           ;
-;     ENA SCLR                        ; 48            ;
-; arriav_lcell_comb                   ; 4204          ;
-;     arith                           ; 640           ;
-;         0 data inputs               ; 24            ;
+;     ENA SCLR                        ; 34            ;
+; arriav_lcell_comb                   ; 2751          ;
+;     arith                           ; 620           ;
+;         0 data inputs               ; 22            ;
 ;         1 data inputs               ; 405           ;
 ;         2 data inputs               ; 130           ;
 ;         3 data inputs               ; 3             ;
-;         4 data inputs               ; 50            ;
+;         4 data inputs               ; 32            ;
 ;         5 data inputs               ; 28            ;
-;     extend                          ; 237           ;
-;         7 data inputs               ; 237           ;
-;     normal                          ; 3295          ;
+;     extend                          ; 74            ;
+;         7 data inputs               ; 74            ;
+;     normal                          ; 2025          ;
 ;         0 data inputs               ; 2             ;
 ;         1 data inputs               ; 18            ;
-;         2 data inputs               ; 148           ;
-;         3 data inputs               ; 177           ;
-;         4 data inputs               ; 389           ;
-;         5 data inputs               ; 448           ;
-;         6 data inputs               ; 2113          ;
+;         2 data inputs               ; 125           ;
+;         3 data inputs               ; 115           ;
+;         4 data inputs               ; 256           ;
+;         5 data inputs               ; 391           ;
+;         6 data inputs               ; 1118          ;
 ;     shared                          ; 32            ;
 ;         1 data inputs               ; 1             ;
 ;         2 data inputs               ; 31            ;
@@ -1949,8 +2003,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         udio_codec_controller:inst2 ; 1             ;
 ; boundary_port                       ; 189           ;
 ;                                     ;               ;
-; Max LUT depth                       ; 8.10          ;
-; Average LUT depth                   ; 4.70          ;
+; Max LUT depth                       ; 8.00          ;
+; Average LUT depth                   ; 4.46          ;
 +-------------------------------------+---------------+
 
 
@@ -1959,7 +2013,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:28     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -2320,13 +2374,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Fri May 17 10:35:12 2019
+    Info: Processing started: Fri May 17 12:05:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (10229): Verilog HDL Expression warning at StartBitMap.sv(22): truncated literal to match 8 bits File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv Line: 22
-Warning (10229): Verilog HDL Expression warning at StartBitMap.sv(86): truncated literal to match 8 bits File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv Line: 86
-Warning (10229): Verilog HDL Expression warning at StartBitMap.sv(87): truncated literal to match 8 bits File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv Line: 87
-Warning (10229): Verilog HDL Expression warning at StartBitMap.sv(90): truncated literal to match 8 bits File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv Line: 90
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/numbersbitmap.sv
+    Info (12023): Found entity 1: NumbersBitMap File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/NumbersBitMap.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/startbitmap.sv
     Info (12023): Found entity 1: StartBitMap File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/StartBitMap.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/monsterbitmap.sv
@@ -2414,6 +2466,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file screenm
     Info (12023): Found entity 1: screenmiddlex File: Z:/EELabProject/Project/SpaceInvaders_restored/screenmiddlex.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file screenmiddley.v
     Info (12023): Found entity 1: screenmiddley File: Z:/EELabProject/Project/SpaceInvaders_restored/screenmiddley.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file scorex.v
+    Info (12023): Found entity 1: scoreX File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file scorey.v
+    Info (12023): Found entity 1: scoreY File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreY.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file digit_tmp.v
+    Info (12023): Found entity 1: digit_tmp File: Z:/EELabProject/Project/SpaceInvaders_restored/digit_tmp.v Line: 40
 Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(35): created implicit net for "nor_code" File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 35
 Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(36): created implicit net for "ext_code" File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 36
 Warning (10236): Verilog HDL Implicit Net warning at byterec.sv(37): created implicit net for "rel_code" File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 37
@@ -2500,9 +2558,8 @@ Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup
 Info (12128): Elaborating entity "square_object" for hierarchy "square_object:inst6"
 Info (12128): Elaborating entity "Invader_move" for hierarchy "Invader_move:mv1"
 Warning (10036): Verilog HDL or VHDL warning at Invader_move.sv(27): object "y_FRAME_SIZE" assigned a value but never read File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Invader_move.sv Line: 27
-Warning (10036): Verilog HDL or VHDL warning at Invader_move.sv(33): object "chg" assigned a value but never read File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Invader_move.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at Invader_move.sv(114): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Invader_move.sv Line: 114
 Warning (10230): Verilog HDL assignment warning at Invader_move.sv(115): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Invader_move.sv Line: 115
-Warning (10230): Verilog HDL assignment warning at Invader_move.sv(116): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Invader_move.sv Line: 116
 Info (12128): Elaborating entity "one_sec_counter" for hierarchy "one_sec_counter:sec"
 Info (12128): Elaborating entity "square_object" for hierarchy "square_object:inst17"
 Info (12128): Elaborating entity "Bolt_move" for hierarchy "Bolt_move:inst"
@@ -2516,10 +2573,9 @@ Info (12128): Elaborating entity "BossBitMap" for hierarchy "BossBitMap:inst36"
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors" into its bus
 Info (12128): Elaborating entity "square_object" for hierarchy "square_object:inst29"
 Info (12128): Elaborating entity "Lrrr_move" for hierarchy "Lrrr_move:inst32"
-Warning (10230): Verilog HDL assignment warning at Lrrr_move.sv(133): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Lrrr_move.sv Line: 133
 Warning (10230): Verilog HDL assignment warning at Lrrr_move.sv(134): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Lrrr_move.sv Line: 134
+Warning (10230): Verilog HDL assignment warning at Lrrr_move.sv(135): truncated value with size 32 to match size of target (11) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/Lrrr_move.sv Line: 135
 Info (12128): Elaborating entity "StartBitMap" for hierarchy "StartBitMap:inst41"
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors" into its bus
 Info (12128): Elaborating entity "square_object" for hierarchy "square_object:inst38"
 Info (12128): Elaborating entity "screenmiddlex" for hierarchy "screenmiddlex:inst39"
 Info (12128): Elaborating entity "lpm_constant" for hierarchy "screenmiddlex:inst39|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/screenmiddlex.v Line: 49
@@ -2547,6 +2603,32 @@ Info (12128): Elaborating entity "random" for hierarchy "random:inst4"
 Warning (10230): Verilog HDL assignment warning at random.sv(22): truncated value with size 32 to match size of target (6) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/Control/random.sv Line: 22
 Warning (10230): Verilog HDL assignment warning at random.sv(27): truncated value with size 32 to match size of target (6) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/Control/random.sv Line: 27
 Warning (10230): Verilog HDL assignment warning at random.sv(29): truncated value with size 32 to match size of target (6) File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/Control/random.sv Line: 29
+Info (12128): Elaborating entity "scoreX" for hierarchy "scoreX:inst43"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "scoreX:inst43|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v Line: 49
+Info (12130): Elaborated megafunction instantiation "scoreX:inst43|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v Line: 49
+Info (12133): Instantiated megafunction "scoreX:inst43|lpm_constant:LPM_CONSTANT_component" with the following parameter: File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreX.v Line: 49
+    Info (12134): Parameter "lpm_cvalue" = "500"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "11"
+Info (12128): Elaborating entity "scoreY" for hierarchy "scoreY:inst44"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "scoreY:inst44|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreY.v Line: 49
+Info (12130): Elaborated megafunction instantiation "scoreY:inst44|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreY.v Line: 49
+Info (12133): Instantiated megafunction "scoreY:inst44|lpm_constant:LPM_CONSTANT_component" with the following parameter: File: Z:/EELabProject/Project/SpaceInvaders_restored/scoreY.v Line: 49
+    Info (12134): Parameter "lpm_cvalue" = "64"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "11"
+Info (12128): Elaborating entity "NumbersBitMap" for hierarchy "NumbersBitMap:inst42"
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "number_bitmap" into its bus
+Info (12128): Elaborating entity "digit_tmp" for hierarchy "digit_tmp:inst45"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/digit_tmp.v Line: 49
+Info (12130): Elaborated megafunction instantiation "digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component" File: Z:/EELabProject/Project/SpaceInvaders_restored/digit_tmp.v Line: 49
+Info (12133): Instantiated megafunction "digit_tmp:inst45|lpm_constant:LPM_CONSTANT_component" with the following parameter: File: Z:/EELabProject/Project/SpaceInvaders_restored/digit_tmp.v Line: 49
+    Info (12134): Parameter "lpm_cvalue" = "1638"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "12"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eo84.tdf
     Info (12023): Found entity 1: altsyncram_eo84 File: Z:/EELabProject/Project/SpaceInvaders_restored/db/altsyncram_eo84.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_5la.tdf
@@ -2573,7 +2655,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: Z:/EELabProject/Project/SpaceInvaders_restored/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.05.17.10:35:49 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.05.17.12:06:08 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -3018,17 +3100,17 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[1]"
-Info (21057): Implemented 7976 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6522 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 77 output pins
     Info (21060): Implemented 4 bidirectional pins
-    Info (21061): Implemented 7561 logic cells
+    Info (21061): Implemented 6107 logic cells
     Info (21064): Implemented 312 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 902 megabytes
-    Info: Processing ended: Fri May 17 10:36:29 2019
-    Info: Elapsed time: 00:01:17
-    Info: Total CPU time (on all processors): 00:01:32
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
+    Info: Peak virtual memory: 881 megabytes
+    Info: Processing ended: Fri May 17 12:06:34 2019
+    Info: Elapsed time: 00:00:58
+    Info: Total CPU time (on all processors): 00:01:07
 
 
 +------------------------------------------+

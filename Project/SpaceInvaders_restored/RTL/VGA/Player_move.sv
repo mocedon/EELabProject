@@ -29,7 +29,7 @@ const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
 
 int Xspeed; // local parameters 
 int topLeftY_tmp, topLeftX_tmp;
-int offset = 36 * MULTIPLIER;
+int offset = 58 * MULTIPLIER;
 
 
 //  key press module 
@@ -61,7 +61,7 @@ begin
 		if (startOfFrame == 1'b1) begin // perform only 30 times per second
 			if ((topLeftX_tmp == x_FRAME_SIZE - offset)|| (topLeftX_tmp == 0 )) //just added
 					topLeftX_tmp  <= topLeftX_tmp - Xspeed; 
-			if ((topLeftX_tmp < x_FRAME_SIZE - offset)&&(topLeftX_tmp > 0 )) //just added
+			if ((topLeftX_tmp <= x_FRAME_SIZE - offset)&&(topLeftX_tmp >= 0 )) //just added
 					topLeftX_tmp  <= topLeftX_tmp + Xspeed; 
 			end
 	end

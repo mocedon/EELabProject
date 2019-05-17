@@ -11,7 +11,7 @@ module NumbersBitMap	(
 					input 	logic	[10:0] offsetX,// offset from top left  position 
 					input 	logic	[10:0] offsetY,
 					input		logic	InsideRectangle, //input that the pixel is within a bracket 
-					input 	logic	[3:0] digit, // digit to display
+					input 	logic	[2:0][3:0] digit, // digit to display
 					
 					output	logic				drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0]		RGBout
