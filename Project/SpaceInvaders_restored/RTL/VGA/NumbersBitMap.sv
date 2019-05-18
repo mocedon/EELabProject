@@ -672,9 +672,9 @@ begin
 	end
 	else begin
 	for (int i=0;i<3;i++)
-	{
+	begin
 			drawingRequest <= (number_bitmap[score[i][3:0]][offsetY][offsetX<<i]) && (InsideRectangle == 1'b1 );
-	}
+	end
 	end 
 end
 
