@@ -638,14 +638,13 @@ begin
 		RGBout <=	8'h00;
 	end
 	else begin
-	for (int i=0;i<3;i++)
-	{
+	for (int i=0;i<3;i++) begin
 		if (InsideRectangle == 1'b1&& lives[i]==1'b1)  // inside an external bracket 
 			RGBout <= life_colors[offsetY][offsetX<<i];	//get RGB from the colors table  
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
 		end
-			}
+	end
 	end 
 end
 
