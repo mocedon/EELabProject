@@ -1,10 +1,10 @@
-Partition Merge Status : Successful - Mon May 20 20:20:14 2019
+Partition Merge Status : Successful - Mon May 20 22:44:15 2019
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 Revision Name : Lab1Demo
 Top-level Entity Name : TOP_Schematic
 Family : Cyclone V
-Logic utilization (in ALMs) : 3,981 / 41,910 ( 9 % )
-Total registers : 3668
+Logic utilization (in ALMs) : 3,154 / 41,910 ( 8 % )
+Total registers : 3664
 Total pins : 98 / 499 ( 20 % )
 Total virtual pins : 0
 Total block memory bits : 86,144 / 5,662,720 ( 2 % )

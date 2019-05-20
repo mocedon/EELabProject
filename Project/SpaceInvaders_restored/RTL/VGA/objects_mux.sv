@@ -36,6 +36,8 @@ module	objects_mux	(
 					input		logic [7:0] scrRGB,
 					input		logic scrReq,
 					
+					input		logic [7:0] livRGB,
+					input		logic livReq,
 					
 					
 					
@@ -73,6 +75,9 @@ begin
 //		else
 		if (scrReq == 1'b1)
 			tmpRGB <= scrRGB ;
+		else
+		if (livReq == 1'b1)
+			tmpRGB <= livRGB ;
 		else 
 		if (lrrReq == 1'b1 )
 			tmpRGB <= lrrRGB ;

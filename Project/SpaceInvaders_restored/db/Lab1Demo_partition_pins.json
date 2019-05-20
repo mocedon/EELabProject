@@ -140,7 +140,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[0]",
+					"name" : "LEDR0",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR9",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR8",
 					"strict" : false
 				},
 				{

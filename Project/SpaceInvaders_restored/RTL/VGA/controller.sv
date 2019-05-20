@@ -204,8 +204,8 @@ begin : fsm_sync
 			
 			
 		if (btiUpd == 1'b1) begin
-			btxLoc <= (invJ*32) ;
-			btyLoc <= (invI*32) ;
+			btxLoc <= invTLX + (invJ*32) ;
+			btyLoc <= invTLY + (invI*32) ;
 		end			
 					
 		prt_st <= nxt_st ;
@@ -291,61 +291,22 @@ begin
 		// Player shooting detection
 			if (spcKey == 1'b1 && prvKey == 1'b0)
 				btpCmd = 1'b1 ;
-				
-				
-			if ((btpCmd == 1'b1) && (btpExs[0] == 1'b0))begin
-				btpExs[0] = 1'b1 ;
-				btpCmd = 1'b0 ;
-			end
-				
-			if (btpExsT[0] == 1'b1)
-				btpExs[0] = 1'b1 ;
-				
-			if ((btpReq[0] == 1'b1) && (pixelY == T_BORDER))
-				btpExs[0] = 1'b0 ;
 					
-			if ((btpCmd == 1'b1) && (btpExs[0] == 1'b0))begin
-				btpExs[0] = 1'b1 ;
-				btpCmd = 1'b0 ;
+			for (int i=0;i< BOLT_MAX;i++) begin		
+				if (btpExsT[i] == 1'b1)
+					btpExs[i] = 1'b1 ;
+				
+				if ((btpReq[i] == 1'b1) && (pixelY == T_BORDER))
+					btpExs[i] = 1'b0 ;
+					
+				if ((btpCmd == 1'b1) && (btpExs[i] == 1'b0))begin
+					btpExs[i] = 1'b1 ;
+					btpCmd = 1'b0 ;
+				end
 			end
 				
 				
-			if (btpExsT[1] == 1'b1)
-				btpExs[1] = 1'b1 ;
-				
-			if ((btpReq[1] == 1'b1) && (pixelY == T_BORDER))
-				btpExs[1] = 1'b0 ;
-					
-			if ((btpCmd == 1'b1) && (btpExs[1] == 1'b0))begin
-				btpExs[1] = 1'b1 ;
-				btpCmd = 1'b0 ;
-			end
-				
-				
-			if (btpExsT[2] == 1'b1)
-				btpExs[2] = 1'b1 ;
-				
-			if ((btpReq[2] == 1'b1) && (pixelY == T_BORDER))
-				btpExs[2] = 1'b0 ;
-					
-			if ((btpCmd == 1'b1) && (btpExs[2] == 1'b0))begin
-				btpExs[2] = 1'b1 ;
-				btpCmd = 1'b0 ;
-			end
-				
-				
-			if (btpExsT[3] == 1'b1)
-				btpExs[3] = 1'b1 ;
-				
-			if ((btpReq[3] == 1'b1) && (pixelY == T_BORDER))
-				btpExs[3] = 1'b0 ;
-					
-			if ((btpCmd == 1'b1) && (btpExs[3] == 1'b0))begin
-				btpExs[3] = 1'b1 ;
-				btpCmd = 1'b0 ;
-			end
-				
-					
+	
 			
 				
 				
@@ -354,17 +315,19 @@ begin
 					btiCmd = 1'b1 ;
 					
 			for (int i=0;i< BOLT_MAX;i++) begin	
-				if ((btiCmd == 1'b1) && (btiExs[i] == 1'b0)) begin
-					btiExs[i] = 1'b1 ;
-					btiCmd = 1'b0 ;
-					btiUpd = 1'b1 ; //Check if needed to be piped
-				end
+				
 				
 				if (btiExsT[i] == 1'b1)
 					btiExs[i] = 1'b1 ;
 					
 				if (btiReq[i] == 1'b1 && pixelY >= B_BORDER && pixelY <= B_BORDER+20)
 					btiExs[i] = 1'b0 ;
+					
+				if ((btiCmd == 1'b1) && (btiExs[i] == 1'b0)) begin
+					btiExs[i] = 1'b1 ;
+					btiCmd = 1'b0 ;
+					btiUpd = 1'b1 ; //Check if needed to be piped
+				end
 					
 			end
 				
