@@ -131,15 +131,15 @@ always_ff @(posedge clk or negedge resetN)
 begin : fsm_sync
 	if (!resetN) begin
 		prt_st <= StartGame ;
-		invExs = 128'h0 ;
-		invHit = 128'h0 ;
-		blkExs = 128'h0 ;
-		blkHit = 128'h0 ;
+		invExs <= 128'h0 ;
+		invHit <= 128'h0 ;
+		blkExs <= 128'h0 ;
+		blkHit <= 128'h0 ;
 		
-		plrLiv = 3   ;
-		lrrLiv = 20  ;
-		invLiv = 128 ;
-		pScore = 0   ;
+		plrLiv <= 3   ;
+		lrrLiv <= 20  ;
+		invLiv <= 128 ;
+		pScore <= 0   ;
 	end
 	else begin
 	
@@ -200,8 +200,8 @@ begin : fsm_sync
 			
 			
 		if (btiUpd == 1'b1) begin
-			btxLoc <= pixX + (invJ<<5) ;
-			btyLoc <= pixY + (invI<<5) ;
+			btxLoc <= pixX + (invJ*32) ;
+			btyLoc <= pixY + (invI*32) ;
 		end			
 					
 		prt_st <= nxt_st ;
@@ -366,7 +366,7 @@ begin
 				
 				
 		// Lrrr hit detection and manifestation
-			if (invLiv < 64 && lrrReq == 1'b1)
+			if (invLiv < 125 && lrrReq == 1'b1)
 				lrrExs = 1'b1 ;
 				
 			if (lrrLiv <= 0)
@@ -375,7 +375,8 @@ begin
 			for (int i = 0 ; i < BOLT_MAX ; i++) begin
 				if(lrrReq == 1'b1 && btpReq[i]) begin
 					lrrDwn = 1'b1 ;
-					lrrHit = 1'b1 ;
+					if (rndNum > 90)
+						lrrHit = 1'b1 ;
 					btpExs[i] = 1'b0 ;
 					scrInc = 1'b1 ;
 					

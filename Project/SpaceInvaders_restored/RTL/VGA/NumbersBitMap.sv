@@ -4,8 +4,8 @@ module NumbersBitMap	(
 					input 	logic	[10:0] offsetX,// offset from top left  position 
 					input 	logic	[10:0] offsetY,
 					input		logic	InsideRectangle, //input that the pixel is within a bracket 
-					input 	logic	[2:0][3:0] score, // digits to display
-					input		logic [2:0] lives  ,
+					input 	logic	[9:0] score, // digits to display
+					input		logic [1:0] lives  ,
 					
 					output	logic				drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0]		RGBout
@@ -18,6 +18,10 @@ localparam  int LIFE_HEIGHT_Y = 32;
 localparam  int SCORE_WIDTH_X = 32;
 localparam  int SCORE_HEIGHT_Y = 96;
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 					
+
+int digits[2:0] ;
+int num ;
+
 
 bit [0:15] [0:31] [0:15] number_bitmap  = {
 
@@ -648,10 +652,14 @@ begin
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
 	end
 	else begin
+		num <= score ;
+	
 	for (int i=0;i<3;i++)
 	begin
-			drawingRequest <= (number_bitmap[score[i][3:0]][offsetY][offsetX+192+i*32]) && (InsideRectangle == 1'b1 );
+			digits[i] <= num % 10 ;
+			drawingRequest <= (number_bitmap[digits[2-i]][offsetY][offsetX+192+i*32]) && (InsideRectangle == 1'b1 );
 			RGBout <= digit_color ;
+			num <= num / 10 ;
 	end
 	end 
 	end

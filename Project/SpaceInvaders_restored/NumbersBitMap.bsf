@@ -62,15 +62,15 @@ agreement for further details.
 	(port
 		(pt 0 112)
 		(input)
-		(text "score[2..0][3..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "score[2..0][3..0]" (rect 21 107 83 119)(font "Arial" ))
+		(text "score[9..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "score[9..0]" (rect 21 107 63 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
 		(pt 0 128)
 		(input)
-		(text "lives[2..0]" (rect 0 0 37 12)(font "Arial" ))
-		(text "lives[2..0]" (rect 21 123 58 135)(font "Arial" ))
+		(text "lives[1..0]" (rect 0 0 36 12)(font "Arial" ))
+		(text "lives[1..0]" (rect 21 123 57 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port

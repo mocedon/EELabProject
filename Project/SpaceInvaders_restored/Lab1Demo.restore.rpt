@@ -1,5 +1,5 @@
 Restore Archived Project report for Lab1Demo
-Sun May 19 18:48:18 2019
+Mon May 20 06:03:40 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Sun May 19 18:48:18 2019 ;
+; Restore Archived Project Status ; Successful - Mon May 20 06:03:40 2019 ;
 ; Revision Name                   ; Lab1Demo                              ;
 ; Top-level Entity Name           ; TOP_Schematic                         ;
 ; Family                          ; Cyclone V                             ;
@@ -51,10 +51,10 @@ Info: Successfully restored 'Z:/EELabProject/Project/SpaceInvaders.qar' into the
 Info: Generated report 'Lab1Demo.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 4876 megabytes
-    Info: Processing ended: Sun May 19 18:48:20 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 673 megabytes
+    Info: Processing ended: Mon May 20 06:03:42 2019
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------+

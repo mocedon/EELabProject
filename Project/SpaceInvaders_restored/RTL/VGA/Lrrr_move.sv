@@ -39,6 +39,7 @@ int Yspeed, topLeftY_tmp;
 logic toggleY_d; 
 logic prvIdle ;
 logic lrrExs ;
+logic prvLrr ;
 
 //  Wait logic
 
@@ -46,11 +47,16 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
 		prvIdle <= 1'b0 ;
-
+		lrrExs <= 1'b0 ;
 	end
-	else
+	else begin
 		prvIdle <= idleN ;
-
+		prvLrr <= lrrExs ;
+		if (prvIdle == 1'b0 && idleN == 1'b1)
+			lrrExs <= 1'b1 ;
+	end
+			
+	
 end
 
 //  calculation x Axis speed 
@@ -59,17 +65,16 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
 		Xspeed	<= 0 ;
-		lrrExs <= 1'b0 ;
+		
 	end
 	else 	begin
 			if (lrrExs == 1'b0) begin
 				Xspeed <= 0 ;
 			end
 			
-			if (prvIdle == 1'b0 && idleN == 1'b1) begin
+			if (prvLrr == 1'b0 && lrrExs == 1'b1) begin
 				Xspeed <= INITIAL_X_SPEED ;
-				lrrExs <= 1'b1 ;
-			end
+				end
 					
 			if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
 				Xspeed <= -Xspeed ; 
@@ -93,14 +98,13 @@ begin
 		if (lrrExs == 1'b0) 
 			Yspeed <= 0 ;
 			
-		if (prvIdle == 1'b0 && idleN == 1'b1)
-			Yspeed <= INITIAL_Y_SPEED ;
+		
 
 		
 				
 		if (lrrExs == 1'b1) begin
 			toggleY_d <= toggleY ; // for edge detect 
-			if ((toggleY == 1'b1 ) && (toggleY_d== 1'b0)) // detect toggle command rising edge from user  
+			if ((toggleY == 1'b1 ) && (toggleY_d== 1'b0)  && (Yspeed > 0)) // detect toggle command rising edge from user  
 				Yspeed <= -Yspeed ; 
 			else begin ; 
 				if (startOfFrame == 1'b1) 
