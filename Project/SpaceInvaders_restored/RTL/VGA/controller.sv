@@ -19,8 +19,10 @@ module	controller (
 					
 					// Invader inputs
 					input logic invReq ,							// Invader drawing request
-					input logic [10:0]invOSX ,					// Invader offset X
-					input logic [10:0]invOSY ,					// Invader offset y
+					input logic [10:0] invOSX ,				// Invader offset X
+					input logic [10:0] invOSY ,				// Invader offset y
+					input logic [10:0] invTLX ,				// Invader top left X
+					input logic [10:0] invTLY ,				// Invader top left Y
 					
 					// Lrrr inputs
 					input logic lrrReq ,							// Lrrr drawing request
@@ -38,7 +40,6 @@ module	controller (
 					
 					// On screen info
 					input logic stgReq,							// Start game drawing request
-					input logic scrReq,							// Score drawing request
 					input logic edgReq,							// End game Drawing request
 					
 					input logic cheatput,						// Needs no explanation
@@ -71,7 +72,6 @@ module	controller (
 					
 					// On screen info 
 					output logic stgMsg ,						// Show start game massage
-					output logic scrMsg ,						// Show score
 					output logic edgMsg ,						// Show end game massage
 					output logic [9:0] scrNum ,				// Score Value
 					output logic [1:0] scrLiv ,				// Lives left
@@ -85,7 +85,7 @@ const int R_BORDER = 635 ;
 const int L_BORDER = 5 ;
 const int F_BORDER = 400 ;
 const int T_BORDER = 5 ;
-const int B_BORDER = 450 ;
+const int B_BORDER = 440 ;
 
 int pixX , pixY ;
 int invX , invY ;
@@ -204,8 +204,8 @@ begin : fsm_sync
 			
 			
 		if (btiUpd == 1'b1) begin
-			btxLoc <= pixX + (invJ*32) ;
-			btyLoc <= pixY + (invI*32) ;
+			btxLoc <= (invJ*32) ;
+			btyLoc <= (invI*32) ;
 		end			
 					
 		prt_st <= nxt_st ;
@@ -234,7 +234,6 @@ begin
 	btiCmd = 1'b0 ;
 	btiUpd = 1'b0 ;
 	stgMsg = 1'b0 ;
-	scrMsg = 1'b0 ;
 	scrInc = 1'b0 ;
 	edgMsg = 1'b0 ;
 	sndOut = 4'b0000 ;
@@ -284,8 +283,6 @@ begin
 		RegularGame : begin
 			if (plrReq == 1'b1)
 				plrExs = 1'b1 ;
-			if (scrReq == 1'b1)
-				scrMsg = 1'b1 ;
 			invStr = 1'b1 ;
 			scrNum = pScore ;
 			scrLiv = plrLiv ;
@@ -295,20 +292,60 @@ begin
 			if (spcKey == 1'b1 && prvKey == 1'b0)
 				btpCmd = 1'b1 ;
 				
-			for (int i = 0 ; i < BOLT_MAX ; i++) begin
 				
-				if ((btpCmd == 1'b1) && (btpExs[i] == 1'b0))begin
-					btpExs[i] = 1'b1 ;
-					btpCmd = 1'b0 ;
-				end
-				
-				if (btpExsT[i] == 1'b1)
-					btpExs[i] = 1'b1 ;
-					
-				if ((btpReq[i] == 1'b1) && (pixY > T_BORDER))
-					btpExs[i] = 1'b0 ;
-					
+			if ((btpCmd == 1'b1) && (btpExs[0] == 1'b0))begin
+				btpExs[0] = 1'b1 ;
+				btpCmd = 1'b0 ;
 			end
+				
+			if (btpExsT[0] == 1'b1)
+				btpExs[0] = 1'b1 ;
+				
+			if ((btpReq[0] == 1'b1) && (pixelY == T_BORDER))
+				btpExs[0] = 1'b0 ;
+					
+			if ((btpCmd == 1'b1) && (btpExs[0] == 1'b0))begin
+				btpExs[0] = 1'b1 ;
+				btpCmd = 1'b0 ;
+			end
+				
+				
+			if (btpExsT[1] == 1'b1)
+				btpExs[1] = 1'b1 ;
+				
+			if ((btpReq[1] == 1'b1) && (pixelY == T_BORDER))
+				btpExs[1] = 1'b0 ;
+					
+			if ((btpCmd == 1'b1) && (btpExs[1] == 1'b0))begin
+				btpExs[1] = 1'b1 ;
+				btpCmd = 1'b0 ;
+			end
+				
+				
+			if (btpExsT[2] == 1'b1)
+				btpExs[2] = 1'b1 ;
+				
+			if ((btpReq[2] == 1'b1) && (pixelY == T_BORDER))
+				btpExs[2] = 1'b0 ;
+					
+			if ((btpCmd == 1'b1) && (btpExs[2] == 1'b0))begin
+				btpExs[2] = 1'b1 ;
+				btpCmd = 1'b0 ;
+			end
+				
+				
+			if (btpExsT[3] == 1'b1)
+				btpExs[3] = 1'b1 ;
+				
+			if ((btpReq[3] == 1'b1) && (pixelY == T_BORDER))
+				btpExs[3] = 1'b0 ;
+					
+			if ((btpCmd == 1'b1) && (btpExs[3] == 1'b0))begin
+				btpExs[3] = 1'b1 ;
+				btpCmd = 1'b0 ;
+			end
+				
+					
 			
 				
 				
@@ -316,7 +353,7 @@ begin
 			if (fstSec == 1'b1 && invExs[invI][invJ] == 1'b1)
 					btiCmd = 1'b1 ;
 					
-			for (int i = 0 ; i < BOLT_MAX ; i++) begin	
+			for (int i=0;i< BOLT_MAX;i++) begin	
 				if ((btiCmd == 1'b1) && (btiExs[i] == 1'b0)) begin
 					btiExs[i] = 1'b1 ;
 					btiCmd = 1'b0 ;
@@ -326,7 +363,7 @@ begin
 				if (btiExsT[i] == 1'b1)
 					btiExs[i] = 1'b1 ;
 					
-				if (btiReq[i] == 1'b1 && pixY < B_BORDER)
+				if (btiReq[i] == 1'b1 && pixelY >= B_BORDER && pixelY <= B_BORDER+20)
 					btiExs[i] = 1'b0 ;
 					
 			end

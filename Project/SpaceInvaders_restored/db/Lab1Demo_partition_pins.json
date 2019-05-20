@@ -4,6 +4,42 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "MICROPHON_LED",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACDAT",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_XCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_I2C_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_I2C_SDAT",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_VS",
 					"strict" : false
 				},
@@ -13,6 +49,10 @@
 				},
 				{
 					"name" : "VGA_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{
@@ -204,6 +244,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "resetN",
+					"strict" : false
+				},
+				{
 					"name" : "SW[9]",
 					"strict" : false
 				},
@@ -213,50 +257,6 @@
 				},
 				{
 					"name" : "PS2_DAT",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_BLANK_N",
-					"strict" : false
-				},
-				{
-					"name" : "MICROPHON_LED",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_DACDAT",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_XCK",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_I2C_SCLK",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_ADCLRCK",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_BCLK",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_DACLRCK",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_I2C_SDAT",
-					"strict" : false
-				},
-				{
-					"name" : "AUD_ADCDAT",
-					"strict" : false
-				},
-				{
-					"name" : "resetN",
 					"strict" : false
 				}
 			]

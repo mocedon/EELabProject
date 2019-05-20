@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Mon May 20 20:23:17 2019
+Mon May 20 21:48:36 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Mon May 20 20:22:37 2019           ;
+; Flow Status                     ; Successful - Mon May 20 21:47:59 2019           ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                   ; Lab1Demo                                        ;
 ; Top-level Entity Name           ; TOP_Schematic                                   ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSXFC6D6F31C6                                  ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 4,838 / 41,910 ( 12 % )                         ;
-; Total registers                 ; 3699                                            ;
+; Logic utilization (in ALMs)     ; 3,710 / 41,910 ( 9 % )                          ;
+; Total registers                 ; 3807                                            ;
 ; Total pins                      ; 98 / 499 ( 20 % )                               ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 86,144 / 5,662,720 ( 2 % )                      ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/20/2019 20:19:06 ;
+; Start date & time ; 05/20/2019 21:44:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+---------------+------------------+
 ; Assignment Name                     ; Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; Default Value ; Entity Name   ; Section Id       ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+---------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 48710646989348.155837274613424                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; --            ; --            ; --               ;
+; COMPILER_SIGNATURE_ID               ; 48710646989348.155837788812940                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; --            ; --            ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; --            ; --            ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; --            ; --            ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ; --            ; --            ; --               ;
@@ -145,12 +145,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:55     ; 1.0                     ; 877 MB              ; 00:00:57                           ;
-; Partition Merge           ; 00:00:08     ; 1.0                     ; 937 MB              ; 00:00:05                           ;
-; Fitter                    ; 00:01:57     ; 1.2                     ; 2650 MB             ; 00:02:38                           ;
-; Assembler                 ; 00:00:13     ; 1.0                     ; 763 MB              ; 00:00:11                           ;
-; TimeQuest Timing Analyzer ; 00:00:39     ; 1.5                     ; 1155 MB             ; 00:00:50                           ;
-; Total                     ; 00:03:52     ; --                      ; --                  ; 00:04:41                           ;
+; Analysis & Synthesis      ; 00:00:57     ; 1.0                     ; 880 MB              ; 00:01:14                           ;
+; Fitter                    ; 00:01:43     ; 1.3                     ; 2710 MB             ; 00:03:56                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 763 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:36     ; 1.4                     ; 1142 MB             ; 00:00:45                           ;
+; Total                     ; 00:03:28     ; --                      ; --                  ; 00:06:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -160,7 +159,6 @@ agreement for further details.
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
 ; Analysis & Synthesis      ; ee-206-18        ; Windows 7 ; 6.1        ; x86_64         ;
-; Partition Merge           ; ee-206-18        ; Windows 7 ; 6.1        ; x86_64         ;
 ; Fitter                    ; ee-206-18        ; Windows 7 ; 6.1        ; x86_64         ;
 ; Assembler                 ; ee-206-18        ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; ee-206-18        ; Windows 7 ; 6.1        ; x86_64         ;
@@ -170,9 +168,8 @@ agreement for further details.
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo --recompile=on
-quartus_cdb --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo --merge=on --recompile=on
-quartus_fit --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo --recompile=on
+quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
+quartus_fit --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
 quartus_asm --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
 quartus_sta Lab1Demo -c Lab1Demo
 

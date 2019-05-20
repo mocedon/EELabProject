@@ -3984,14 +3984,14 @@ agreement for further details.
 		(pt 160 32)
 		(output)
 		(text "one_sec" (rect 0 0 41 12)(font "Arial" ))
-		(text "one_sec" (rect 105 27 139 39)(font "Arial" ))
+		(text "one_sec" (rect 105 27 146 39)(font "Arial" ))
 		(line (pt 160 32)(pt 144 32))
 	)
 	(port
 		(pt 160 48)
 		(output)
 		(text "duty50" (rect 0 0 34 12)(font "Arial" ))
-		(text "duty50" (rect 111 43 139 55)(font "Arial" ))
+		(text "duty50" (rect 111 43 145 55)(font "Arial" ))
 		(line (pt 160 48)(pt 144 48))
 	)
 	(parameter
@@ -4052,6 +4052,100 @@ agreement for further details.
 		(rectangle (rect 16 16 144 96))
 	)
 	(annotation_block (parameter)(rect -552 992 -356 1030))
+)
+(symbol
+	(rect 280 1328 504 1472)
+	(text "square_object" (rect 5 0 73 12)(font "Arial" ))
+	(text "inst18" (rect 8 128 36 145)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 59 81 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 75 83 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "topLeftX[10..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "topLeftX[10..0]" (rect 21 91 94 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "topLeftY[10..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "topLeftY[10..0]" (rect 21 107 96 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "offsetX[10..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "offsetX[10..0]" (rect 146 27 214 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "offsetY[10..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "offsetY[10..0]" (rect 144 43 214 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
+		(text "drawingRequest" (rect 138 59 215 71)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 149 75 213 87)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80)(line_width 3))
+	)
+	(parameter
+		"OBJECT_WIDTH_X"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"OBJECT_HEIGHT_Y"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"OBJECT_COLOR"
+		"01010011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 208 128))
+	)
+	(annotation_block (parameter)(rect 280 1488 535 1564))
 )
 (symbol
 	(rect 1400 312 1704 744)
@@ -4151,72 +4245,79 @@ agreement for further details.
 	(port
 		(pt 0 240)
 		(input)
-		(text "lrrReq" (rect 0 0 29 12)(font "Arial" ))
-		(text "lrrReq" (rect 21 235 50 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240))
+		(text "invTLX[10..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "invTLX[10..0]" (rect 21 235 85 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
 	)
 	(port
 		(pt 0 256)
 		(input)
-		(text "btpReq[BOLT_MAX-1..0]" (rect 0 0 119 12)(font "Arial" ))
-		(text "btpReq[BOLT_MAX-1..0]" (rect 21 251 140 263)(font "Arial" ))
+		(text "invTLY[10..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "invTLY[10..0]" (rect 21 251 88 263)(font "Arial" ))
 		(line (pt 0 256)(pt 16 256)(line_width 3))
 	)
 	(port
 		(pt 0 272)
 		(input)
-		(text "btiReq[BOLT_MAX-1..0]" (rect 0 0 115 12)(font "Arial" ))
-		(text "btiReq[BOLT_MAX-1..0]" (rect 21 267 136 279)(font "Arial" ))
-		(line (pt 0 272)(pt 16 272)(line_width 3))
+		(text "lrrReq" (rect 0 0 29 12)(font "Arial" ))
+		(text "lrrReq" (rect 21 267 50 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272))
 	)
 	(port
 		(pt 0 288)
 		(input)
-		(text "blkReq" (rect 0 0 34 12)(font "Arial" ))
-		(text "blkReq" (rect 21 283 55 295)(font "Arial" ))
-		(line (pt 0 288)(pt 16 288))
+		(text "btpReq[BOLT_MAX-1..0]" (rect 0 0 119 12)(font "Arial" ))
+		(text "btpReq[BOLT_MAX-1..0]" (rect 21 283 140 295)(font "Arial" ))
+		(line (pt 0 288)(pt 16 288)(line_width 3))
 	)
 	(port
 		(pt 0 304)
 		(input)
-		(text "blkOSX[10..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "blkOSX[10..0]" (rect 21 299 88 311)(font "Arial" ))
+		(text "btiReq[BOLT_MAX-1..0]" (rect 0 0 115 12)(font "Arial" ))
+		(text "btiReq[BOLT_MAX-1..0]" (rect 21 299 136 311)(font "Arial" ))
 		(line (pt 0 304)(pt 16 304)(line_width 3))
 	)
 	(port
 		(pt 0 320)
 		(input)
-		(text "blkOSY[10..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "blkOSY[10..0]" (rect 21 315 90 327)(font "Arial" ))
-		(line (pt 0 320)(pt 16 320)(line_width 3))
+		(text "blkReq" (rect 0 0 34 12)(font "Arial" ))
+		(text "blkReq" (rect 21 315 55 327)(font "Arial" ))
+		(line (pt 0 320)(pt 16 320))
 	)
 	(port
 		(pt 0 336)
 		(input)
-		(text "stgReq" (rect 0 0 35 12)(font "Arial" ))
-		(text "stgReq" (rect 21 331 56 343)(font "Arial" ))
-		(line (pt 0 336)(pt 16 336))
+		(text "blkOSX[10..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "blkOSX[10..0]" (rect 21 331 88 343)(font "Arial" ))
+		(line (pt 0 336)(pt 16 336)(line_width 3))
 	)
 	(port
 		(pt 0 352)
 		(input)
-		(text "scrReq" (rect 0 0 35 12)(font "Arial" ))
-		(text "scrReq" (rect 21 347 56 359)(font "Arial" ))
-		(line (pt 0 352)(pt 16 352))
+		(text "blkOSY[10..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "blkOSY[10..0]" (rect 21 347 90 359)(font "Arial" ))
+		(line (pt 0 352)(pt 16 352)(line_width 3))
 	)
 	(port
 		(pt 0 368)
 		(input)
-		(text "edgReq" (rect 0 0 37 12)(font "Arial" ))
-		(text "edgReq" (rect 21 363 58 375)(font "Arial" ))
+		(text "stgReq" (rect 0 0 35 12)(font "Arial" ))
+		(text "stgReq" (rect 21 363 56 375)(font "Arial" ))
 		(line (pt 0 368)(pt 16 368))
 	)
 	(port
 		(pt 0 384)
 		(input)
-		(text "cheatput" (rect 0 0 42 12)(font "Arial" ))
-		(text "cheatput" (rect 21 379 63 391)(font "Arial" ))
+		(text "edgReq" (rect 0 0 37 12)(font "Arial" ))
+		(text "edgReq" (rect 21 379 58 391)(font "Arial" ))
 		(line (pt 0 384)(pt 16 384))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "cheatput" (rect 0 0 42 12)(font "Arial" ))
+		(text "cheatput" (rect 21 395 63 407)(font "Arial" ))
+		(line (pt 0 400)(pt 16 400))
 	)
 	(port
 		(pt 304 32)
@@ -4326,37 +4427,30 @@ agreement for further details.
 	(port
 		(pt 304 272)
 		(output)
-		(text "scrMsg" (rect 0 0 35 12)(font "Arial" ))
-		(text "scrMsg" (rect 254 267 283 279)(font "Arial" ))
+		(text "edgMsg" (rect 0 0 37 12)(font "Arial" ))
+		(text "edgMsg" (rect 252 267 283 279)(font "Arial" ))
 		(line (pt 304 272)(pt 288 272))
 	)
 	(port
 		(pt 304 288)
 		(output)
-		(text "edgMsg" (rect 0 0 37 12)(font "Arial" ))
-		(text "edgMsg" (rect 252 283 283 295)(font "Arial" ))
-		(line (pt 304 288)(pt 288 288))
+		(text "scrNum[9..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "scrNum[9..0]" (rect 229 283 283 295)(font "Arial" ))
+		(line (pt 304 288)(pt 288 288)(line_width 3))
 	)
 	(port
 		(pt 304 304)
 		(output)
-		(text "scrNum[9..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "scrNum[9..0]" (rect 229 299 283 311)(font "Arial" ))
+		(text "scrLiv[1..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "scrLiv[1..0]" (rect 236 299 283 311)(font "Arial" ))
 		(line (pt 304 304)(pt 288 304)(line_width 3))
 	)
 	(port
 		(pt 304 320)
 		(output)
-		(text "scrLiv[1..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "scrLiv[1..0]" (rect 236 315 283 327)(font "Arial" ))
-		(line (pt 304 320)(pt 288 320)(line_width 3))
-	)
-	(port
-		(pt 304 336)
-		(output)
 		(text "sndOut[3..0]" (rect 0 0 61 12)(font "Arial" ))
-		(text "sndOut[3..0]" (rect 232 331 283 343)(font "Arial" ))
-		(line (pt 304 336)(pt 288 336)(line_width 3))
+		(text "sndOut[3..0]" (rect 232 315 283 327)(font "Arial" ))
+		(line (pt 304 320)(pt 288 320)(line_width 3))
 	)
 	(parameter
 		"BOLT_MAX"
@@ -4367,100 +4461,6 @@ agreement for further details.
 		(rectangle (rect 16 16 288 416))
 	)
 	(annotation_block (parameter)(rect 1400 272 1576 312))
-)
-(symbol
-	(rect 280 1328 504 1472)
-	(text "square_object" (rect 5 0 73 12)(font "Arial" ))
-	(text "inst18" (rect 8 128 36 145)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 59 81 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 75 83 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "topLeftX[10..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "topLeftX[10..0]" (rect 21 91 94 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "topLeftY[10..0]" (rect 0 0 75 12)(font "Arial" ))
-		(text "topLeftY[10..0]" (rect 21 107 96 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "offsetX[10..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "offsetX[10..0]" (rect 146 27 214 39)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
-	)
-	(port
-		(pt 224 48)
-		(output)
-		(text "offsetY[10..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "offsetY[10..0]" (rect 144 43 214 55)(font "Arial" ))
-		(line (pt 224 48)(pt 208 48)(line_width 3))
-	)
-	(port
-		(pt 224 64)
-		(output)
-		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
-		(text "drawingRequest" (rect 138 59 215 71)(font "Arial" ))
-		(line (pt 224 64)(pt 208 64))
-	)
-	(port
-		(pt 224 80)
-		(output)
-		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 149 75 213 87)(font "Arial" ))
-		(line (pt 224 80)(pt 208 80)(line_width 3))
-	)
-	(parameter
-		"OBJECT_WIDTH_X"
-		"4"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"OBJECT_HEIGHT_Y"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"OBJECT_COLOR"
-		"01010011"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(drawing
-		(rectangle (rect 16 16 208 128))
-	)
-	(annotation_block (parameter)(rect 280 1488 535 1564))
 )
 (connector
 	(text "clk" (rect -512 256 -498 273)(font "Intel Clear" ))
@@ -5976,22 +5976,6 @@ agreement for further details.
 	(pt 1768 568)
 )
 (connector
-	(text "scrMsg" (rect 1712 568 1745 585)(font "Intel Clear" ))
-	(pt 1704 584)
-	(pt 1768 584)
-)
-(connector
-	(text "edgMsg" (rect 1712 584 1749 601)(font "Intel Clear" ))
-	(pt 1704 600)
-	(pt 1768 600)
-)
-(connector
-	(text "sound[3..0]" (rect 1712 632 1763 649)(font "Intel Clear" ))
-	(pt 1704 648)
-	(pt 1768 648)
-	(bus)
-)
-(connector
 	(text "sound[3..0]" (rect 2032 736 2083 753)(font "Intel Clear" ))
 	(pt 2008 752)
 	(pt 2104 752)
@@ -6011,12 +5995,6 @@ agreement for further details.
 	(text "inv_req" (rect 1416 -40 1451 -23)(font "Intel Clear" ))
 	(pt 1496 -24)
 	(pt 1408 -24)
-)
-(connector
-	(text "score[9..0]" (rect 1705 600 1753 617)(font "Intel Clear" ))
-	(pt 1704 616)
-	(pt 1768 616)
-	(bus)
 )
 (connector
 	(text "score[3..0]" (rect 2048 192 2096 209)(font "Intel Clear" ))
@@ -6092,12 +6070,6 @@ agreement for further details.
 	(text "btyLoc[10..0]" (rect 1712 504 1773 521)(font "Intel Clear" ))
 	(pt 1704 520)
 	(pt 1768 520)
-	(bus)
-)
-(connector
-	(text "lives[1..0]" (rect 1712 616 1758 633)(font "Intel Clear" ))
-	(pt 1704 632)
-	(pt 1768 632)
 	(bus)
 )
 (connector
@@ -6247,23 +6219,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "lrr_req" (rect 1336 536 1367 553)(font "Intel Clear" ))
-	(pt 1400 552)
-	(pt 1328 552)
-)
-(connector
-	(text "bp_req[3..0]" (rect 1336 552 1392 569)(font "Intel Clear" ))
-	(pt 1400 568)
-	(pt 1328 568)
-	(bus)
-)
-(connector
-	(text "bi_req[3..0]" (rect 1336 568 1389 585)(font "Intel Clear" ))
-	(pt 1400 584)
-	(pt 1328 584)
-	(bus)
-)
-(connector
 	(text "inv_req" (rect 1336 488 1371 505)(font "Intel Clear" ))
 	(pt 1400 504)
 	(pt 1328 504)
@@ -6277,11 +6232,6 @@ agreement for further details.
 	(text "SOFrame" (rect 1336 424 1380 441)(font "Intel Clear" ))
 	(pt 1400 440)
 	(pt 1328 440)
-)
-(connector
-	(text "scr_req" (rect 1336 648 1370 665)(font "Intel Clear" ))
-	(pt 1400 664)
-	(pt 1328 664)
 )
 (connector
 	(text "fstSec" (rect 1336 392 1364 409)(font "Intel Clear" ))
@@ -6366,6 +6316,58 @@ agreement for further details.
 (connector
 	(pt 592 1152)
 	(pt 592 1392)
+)
+(connector
+	(text "lrr_req" (rect 1336 568 1367 585)(font "Intel Clear" ))
+	(pt 1400 584)
+	(pt 1328 584)
+)
+(connector
+	(text "bp_req[3..0]" (rect 1336 584 1392 601)(font "Intel Clear" ))
+	(pt 1400 600)
+	(pt 1328 600)
+	(bus)
+)
+(connector
+	(text "bi_req[3..0]" (rect 1336 600 1389 617)(font "Intel Clear" ))
+	(pt 1400 616)
+	(pt 1328 616)
+	(bus)
+)
+(connector
+	(text "invTX[10..0]" (rect 1336 632 1392 649)(font "Intel Clear" ))
+	(pt 1400 648)
+	(pt 1328 648)
+	(bus)
+)
+(connector
+	(text "invTY[10..0]" (rect 1336 648 1392 665)(font "Intel Clear" ))
+	(pt 1400 664)
+	(pt 1328 664)
+	(bus)
+)
+(connector
+	(text "edgMsg" (rect 1712 568 1749 585)(font "Intel Clear" ))
+	(pt 1704 584)
+	(pt 1768 584)
+)
+(connector
+	(text "sound[3..0]" (rect 1712 616 1763 633)(font "Intel Clear" ))
+	(pt 1704 632)
+	(pt 1768 632)
+	(bus)
+)
+(connector
+	(text "score[9..0]" (rect 1705 584 1753 601)(font "Intel Clear" ))
+	(pt 1704 600)
+	(pt 1768 600)
+	(bus)
+)
+(connector
+	(text "lives[1..0]" (rect 1712 600 1758 617)(font "Intel Clear" ))
+	(pt 1704 616)
+	(pt 1768 616)
+	(bus)
 )
 (junction (pt 464 728))
 (text "Input Block" (rect -648 -344 -582 -325)(font "Intel Clear" (font_size 8)))
