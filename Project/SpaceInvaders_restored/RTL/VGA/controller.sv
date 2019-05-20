@@ -85,7 +85,7 @@ const int R_BORDER = 635 ;
 const int L_BORDER = 5 ;
 const int F_BORDER = 400 ;
 const int T_BORDER = 5 ;
-const int B_BORDER = 440 ;
+const int B_BORDER = 460 ;
 
 int pixX , pixY ;
 int invX , invY ;
@@ -118,7 +118,7 @@ logic	lrrDwnT ;													// Lrrr was hit in this frame
 logic scrIncT ;													// Score will increase this frame
 logic	[BOLT_MAX-1:0] btpExsT ;								// Player's bolt existed last frame
 logic	[BOLT_MAX-1:0] btiExsT ;								// Invader's bolt existed last frame
-
+int counter;
 
 enum logic [2:0] {
 						StartGame ,
@@ -180,7 +180,7 @@ begin : fsm_sync
 			if (scrIncT == 1'b1) 
 				pScore <= pScore + 5 ;
 			
-			if (plrDwnT == 1'b1)
+			if (plrDwnT == 1'b1 && cheatput == 1'b0)
 				plrLiv <= plrLiv - 1 ;
 			
 			if (lrrDwnT == 1'b1)
@@ -251,23 +251,21 @@ begin
 				stgMsg = 1'b1 ;
 			
 			if (spcKey == 1'b1) begin
-				sndOut = 4'd7;
-				#100;
-				sndOut = 4'd7;
-				#100;
-				sndOut = 4'd2;
-				#100;
-				sndOut = 4'd3;
-				#100;
-				sndOut = 4'd9;
-				#100;
-				sndOut = 4'd9;
-				#100;
-				sndOut = 4'd5;
-				#100;
-				sndOut = 4'd7;
-				#100;
-				nxt_st = InitGame ;
+            if (counter>=25000000*0&&counter<25000000*1)
+               sndOut = 4'd7;
+            if (counter>=25000000*1&&counter<25000000*2)
+                    sndOut = 4'd2;
+            if (counter>=25000000*2&&counter<25000000*3)
+                    sndOut = 4'd3;	
+				if (counter>=25000000*3&&counter<25000000*4)
+                    sndOut=4'd9;
+            if (counter>=25000000*4&&counter<25000000*5)
+                    sndOut=4'd9;
+            if (counter>=25000000*5&&counter<25000000*6)
+                    sndOut=4'd5;
+            if (counter>=25000000*6&&counter<25000000*7)
+                  sndOut=4'd7;
+					nxt_st = InitGame ;
 			end
 		end
 		
@@ -371,7 +369,7 @@ begin
 				
 				
 		// Lrrr hit detection and manifestation
-			if (invLiv < 125 && lrrReq == 1'b1)
+			if (invLiv < 100 && lrrReq == 1'b1)
 				lrrExs = 1'b1 ;
 				
 			if (lrrLiv <= 0)
@@ -380,7 +378,7 @@ begin
 			for (int i = 0 ; i < BOLT_MAX ; i++) begin
 				if(lrrReq == 1'b1 && btpReq[i]) begin
 					lrrDwn = 1'b1 ;
-					if (rndNum > 90)
+					if (rndNum > 80)
 						lrrHit = 1'b1 ;
 					btpExs[i] = 1'b0 ;
 					scrInc = 1'b1 ;
@@ -393,22 +391,38 @@ begin
 		// Block hit detection 
 			
 		// End game conditions
-			if (invLiv == 0 || plrLiv == 0 || cheatput == 1'b1)
+			if (invLiv == 0 || plrLiv == 0)
 				nxt_st = EndGame ;
 
 		end
 		
 		EndGame : begin
-			if (edgReq == 1'b1)
+			   if (counter>=25000000*0&&counter<25000000*1)
+               sndOut = 4'd9;
+            if (counter>=25000000*1&&counter<25000000*2)
+                    sndOut = 4'd8;
+            if (counter>=25000000*2&&counter<25000000*3)
+                    sndOut = 4'd7;	
+				if (counter>=25000000*3&&counter<25000000*4)
+                    sndOut=4'd6;
+            if (counter>=25000000*4&&counter<25000000*5)
+                    sndOut=4'd5;
+			if (edgReq == 1'b1) begin
 				edgMsg = 1'b1 ;
 			invStr = 1'b0 ;
 			scrNum = pScore ;
 
 		end 
-			
+		end	
 	endcase
 end
 
-
+always @(posedge fstSec)
+begin
+if (counter==125000000)
+    counter<=0;
+else
+counter <= counter+1;
+end
 
 endmodule 

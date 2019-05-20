@@ -352,55 +352,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/NumbersBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/StartBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/MonsterBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/BossBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/RedLaserBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/PlayerBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/BlueLaserBitMap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/random.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/one_sec_counter.sv
-set_global_assignment -name SDC_FILE DE10_Standard_Audio.sdc
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/lpf.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoderIn.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoder.sv
-set_global_assignment -name BDF_FILE RTL/KEYBOARD/KBDINTF.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/kbd_interface.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/byterec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/bitrec.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/square_object.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/objects_mux.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/back_ground_draw.sv
-set_global_assignment -name TCL_SCRIPT_FILE pin.tcl
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/ToneDecoder.sv
-set_global_assignment -name BDF_FILE RTL/MSS/TOP_MSS_DEMO.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/SinTable.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/prescaler.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/data_conversion.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/addr_counter.sv
-set_global_assignment -name QXP_FILE RTL/audio_codec_controller/audio_codec_controller.qxp
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/Seg7/SEG7.SV
-set_global_assignment -name BDF_FILE RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyPad_decoder.sv
-set_global_assignment -name BDF_FILE RTL/TOP_Schematic.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Invader_move.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Player_move.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Bolt_move.sv
-set_global_assignment -name QIP_FILE space.qip
-set_global_assignment -name QIP_FILE right.qip
-set_global_assignment -name QIP_FILE left.qip
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Lrrr_move.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/boltBitMap.sv
-set_global_assignment -name QIP_FILE screenmiddlex.qip
-set_global_assignment -name QIP_FILE screenmiddley.qip
-set_global_assignment -name QIP_FILE scoreX.qip
-set_global_assignment -name QIP_FILE scoreY.qip
-set_global_assignment -name QIP_FILE digit_tmp.qip
-set_global_assignment -name SIGNALTAP_FILE output_files/play_test.stp
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/LifeBitMap.sv
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "controller:inst46|btiExsT[0]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "controller:inst46|btiExsT[1]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "controller:inst46|btiExsT[2]" -section_id auto_signaltap_0
@@ -586,6 +537,59 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR9
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/EndBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/NumbersBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/StartBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/MonsterBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/BossBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/RedLaserBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/PlayerBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/BlueLaserBitMap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/random.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Control/one_sec_counter.sv
+set_global_assignment -name SDC_FILE DE10_Standard_Audio.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/lpf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoderIn.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyToggle_decoder.sv
+set_global_assignment -name BDF_FILE RTL/KEYBOARD/KBDINTF.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/kbd_interface.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/byterec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/bitrec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/square_object.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/objects_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/back_ground_draw.sv
+set_global_assignment -name TCL_SCRIPT_FILE pin.tcl
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/ToneDecoder.sv
+set_global_assignment -name BDF_FILE RTL/MSS/TOP_MSS_DEMO.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/SinTable.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/prescaler.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/data_conversion.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/MSS/addr_counter.sv
+set_global_assignment -name QXP_FILE RTL/audio_codec_controller/audio_codec_controller.qxp
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Seg7/SEG7.SV
+set_global_assignment -name BDF_FILE RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/KEYBOARD/keyPad_decoder.sv
+set_global_assignment -name BDF_FILE RTL/TOP_Schematic.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Invader_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Player_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Bolt_move.sv
+set_global_assignment -name QIP_FILE space.qip
+set_global_assignment -name QIP_FILE right.qip
+set_global_assignment -name QIP_FILE left.qip
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/Lrrr_move.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/boltBitMap.sv
+set_global_assignment -name QIP_FILE screenmiddlex.qip
+set_global_assignment -name QIP_FILE screenmiddley.qip
+set_global_assignment -name QIP_FILE scoreX.qip
+set_global_assignment -name QIP_FILE scoreY.qip
+set_global_assignment -name QIP_FILE digit_tmp.qip
+set_global_assignment -name SIGNALTAP_FILE output_files/play_test.stp
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/LifeBitMap.sv
 set_global_assignment -name QIP_FILE yZero.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/play_test_auto_stripped.stp

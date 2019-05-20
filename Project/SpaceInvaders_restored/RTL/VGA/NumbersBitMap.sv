@@ -11,7 +11,7 @@ module NumbersBitMap	(
 					input 	logic	[10:0] offsetX,// offset from top left  position 
 					input 	logic	[10:0] offsetY,
 					input		logic	InsideRectangle, //input that the pixel is within a bracket 
-					input 	logic	[3:0] digit, // digit to display
+					input 	logic	[9:0] digit, // digit to display
 					
 					output	logic				drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0]		RGBout
@@ -569,7 +569,12 @@ begin
 		drawingRequest <=	1'b0;
 	end
 	else begin
-			drawingRequest <= (number_bitmap[digit][offsetY][offsetX]) && (InsideRectangle == 1'b1 );	//get value from bitmap  
+	if (offsetX>>4==0)
+			drawingRequest <= (number_bitmap[digit/100][offsetY][offsetX]) && (InsideRectangle == 1'b1 );	//get value from bitmap 
+	else if (offsetX>>4==1)
+			drawingRequest <= (number_bitmap[(digit/10)%10][offsetY][offsetX]) && (InsideRectangle == 1'b1 );
+	else if (offsetX>>4==2)
+			drawingRequest <= (number_bitmap[digit%10][offsetY][offsetX]) && (InsideRectangle == 1'b1 );
 	end 
 end
 

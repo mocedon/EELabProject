@@ -1,10 +1,9 @@
-module	GameOverBitMap	(	
+module	EndBitBitMap	(	
 					input	logic	clk,
 					input	logic	resetN,
 					input logic	[10:0] offsetX,// offset from top left  position 
 					input logic	[10:0] offsetY,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket
-					input logic [1:0] lives,
 					
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
