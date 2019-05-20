@@ -38,39 +38,46 @@ int Xspeed, topLeftX_tmp; // local parameters
 int Yspeed, topLeftY_tmp;
 logic toggleY_d; 
 logic prvIdle ;
+logic lrrExs ;
 
 //  Wait logic
 
 always_ff@(posedge clk or negedge resetN)
 begin
-	if(!resetN)
+	if(!resetN) begin
 		prvIdle <= 1'b0 ;
-	else begin
-		prvIdle <= idleN ;
+
 	end
+	else
+		prvIdle <= idleN ;
+
 end
 
 //  calculation x Axis speed 
 
 always_ff@(posedge clk or negedge resetN)
 begin
-	if(!resetN)
+	if(!resetN) begin
 		Xspeed	<= 0 ;
-	else 	begin
-			if (idleN == 1'b0)
-				Xspeed <= 0 ;
-			else begin
-				if (prvIdle == 1'b0)
-					Xspeed <= INITIAL_X_SPEED ;
-					
-				if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
-					Xspeed <= -Xspeed ; 
-			
-				if ( (topLeftX_tmp >= x_FRAME_SIZE - OFF_SET) && (Xspeed > 0 )) // hit right border while moving left
-					Xspeed <= -Xspeed ; 
-			end
+		lrrExs <= 1'b0 ;
 	end
-end
+	else 	begin
+			if (lrrExs == 1'b0) begin
+				Xspeed <= 0 ;
+			end
+			
+			if (prvIdle == 1'b0 && idleN == 1'b1) begin
+				Xspeed <= INITIAL_X_SPEED ;
+				lrrExs <= 1'b1 ;
+			end
+					
+			if ((topLeftX_tmp <= 0 ) && (Xspeed < 0) ) // hit left border while moving right
+				Xspeed <= -Xspeed ; 
+			
+			if ( (topLeftX_tmp >= x_FRAME_SIZE - OFF_SET) && (Xspeed > 0 )) // hit right border while moving left
+				Xspeed <= -Xspeed ; 
+		end
+	end
 
 
 //  calculation Y Axis speed using gravity
@@ -79,17 +86,19 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin 
 		Yspeed	<= 0;
-		toggleY_d = 1'b0 ;
+		toggleY_d <= 1'b0 ;
 		
 	end 
 	else begin
-		if (idleN == 1'b0) 
+		if (lrrExs == 1'b0) 
 			Yspeed <= 0 ;
 			
 		if (prvIdle == 1'b0 && idleN == 1'b1)
 			Yspeed <= INITIAL_Y_SPEED ;
+
+		
 				
-		if (prvIdle == 1'b1 && idleN == 1'b1) begin
+		if (lrrExs == 1'b1) begin
 			toggleY_d <= toggleY ; // for edge detect 
 			if ((toggleY == 1'b1 ) && (toggleY_d== 1'b0)) // detect toggle command rising edge from user  
 				Yspeed <= -Yspeed ; 
@@ -118,11 +127,7 @@ begin
 		topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;
 	end
 	else begin
-		if(idleN == 1'b0 )
-		begin
-			topLeftX_tmp	<= INITIAL_X * MULTIPLIER;
-			topLeftY_tmp	<= INITIAL_Y * MULTIPLIER;
-		end
+		
 		if (startOfFrame == 1'b1) begin // perform only 30 times per second 
 				topLeftX_tmp  <= topLeftX_tmp + Xspeed; 
 				topLeftY_tmp  <= topLeftY_tmp + Yspeed; 

@@ -65,15 +65,15 @@ begin
 			tmpRGB	<= 8'b0;
 	else 
 	begin
-		if (smgReq == 1'b1)
-			tmpRGB <= smgRGB ;
-		else 
-		if (emgReq == 1'b1 )
-			tmpRGB <= emgRGB ;
-		else
-		if (scrReq == 1'b1)
-			tmpRGB <= scrRGB ;
-		else 
+//		if (smgReq == 1'b1)
+//			tmpRGB <= smgRGB ;
+//		else 
+//		if (emgReq == 1'b1 )
+//			tmpRGB <= emgRGB ;
+//		else
+//		if (scrReq == 1'b1)
+//			tmpRGB <= scrRGB ;
+//		else 
 		if (lrrReq == 1'b1 )
 			tmpRGB <= lrrRGB ;
 		else
@@ -89,9 +89,9 @@ begin
 		if (btiReq == 1'b1 )
 			tmpRGB <= btiRGB ;
 		else
-		if (blkReq == 1'b1 )
-			tmpRGB <= blkRGB ;
-		else
+//		if (blkReq == 1'b1 )
+//			tmpRGB <= blkRGB ;
+//		else
 			tmpRGB <= bgrRGB ;
 	end  
 end

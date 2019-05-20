@@ -32,3 +32,10 @@ present_state.wait_ext_ST 0 0 0 1 0 0 0 0 0 1
 present_state.sample_ext_ST 0 0 1 0 0 0 0 0 0 1 
 present_state.wait_ext_rel_ST 0 1 0 0 0 0 0 0 0 1 
 present_state.sample_ext_rel_ST 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |TOP_Schematic|controller:inst46|prt_st
+Name prt_st.EndGame prt_st.RegularGame prt_st.InitGame prt_st.StartGame 
+prt_st.StartGame 0 0 0 0 
+prt_st.InitGame 0 0 1 1 
+prt_st.RegularGame 0 1 0 1 
+prt_st.EndGame 1 0 0 1 

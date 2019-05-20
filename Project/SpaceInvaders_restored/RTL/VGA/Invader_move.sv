@@ -26,9 +26,9 @@ const int	x_FRAME_SIZE	=	639 * MULTIPLIER;
 const int	y_FRAME_SIZE	=	479 * MULTIPLIER;
 
 
-int Xspeed, topLeftX_tmp; // local parameters 
-int Yspeed, topLeftY_tmp;
-
+int Xspeed , topLeftX_tmp; // local parameters 
+int Yspeed , topLeftY_tmp;
+int crxSpd , crySpd ;
 
 
 enum logic [2:0] {idle ,
@@ -43,6 +43,7 @@ always_ff @(posedge clk or negedge resetN)
 begin : fsm_sync
 	if (!resetN)
 		prt_st <= idle ;
+		
 	else
 		prt_st <= nxt_st ;
 end
@@ -54,6 +55,7 @@ begin
 	// default output
 	Xspeed = 0 ;
 	Yspeed = 0 ;
+
 	nxt_st = prt_st ;
 	
 	case (prt_st)
@@ -64,26 +66,30 @@ begin
 		end
 			
 		movRGT : begin
-			Xspeed = INIT_X_S ;
-			if (topLeftX_tmp >= x_FRAME_SIZE - 1200 || chgDir == 1'b1) 
+			Xspeed = crxSpd ;
+			if (chgDir == 1'b1) 
 				nxt_st = movDTL ;
+			if (idleN == 1'b0)
+				nxt_st = idle ;
 		end
 			
 		movDTL : begin
-			Yspeed = INIT_Y_S ;
+			Yspeed = crySpd ;
 			if (oneSec == 1'b1)
 				nxt_st = movLFT ; 
 		end
 		
 		movLFT : begin
-			Xspeed = -INIT_X_S ;
-			if (topLeftX_tmp <= 0 || chgDir == 1'b1)
+			Xspeed = -crxSpd ;
+			if (topLeftX == 0)
 				nxt_st = movDTR ;
+			if (idleN == 1'b0)
+				nxt_st = idle ;
 		end 
 		
 		movDTR : begin
-			Yspeed = INIT_Y_S ;
-			if (oneSec ==1'b1)
+			Yspeed = crySpd ;
+			if (oneSec == 1'b1)
 				nxt_st = movRGT ;
 		end
 			
@@ -100,11 +106,18 @@ begin
 	begin
 		topLeftX_tmp	<= INIT_X * MULTIPLIER;
 		topLeftY_tmp	<= INIT_Y * MULTIPLIER;
+		crxSpd <= INIT_X_S ;
+		crySpd <= INIT_Y_S ;
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin// perform only 30 times per second 
 					topLeftX_tmp <= topLeftX_tmp + Xspeed ;
-					topLeftY_tmp <= topLeftY_tmp + Yspeed ; 
+					topLeftY_tmp <= topLeftY_tmp + Yspeed ;
+		end
+		
+		if (oneSec == 1'b1) begin
+					crxSpd <= crxSpd + 1 ;
+					crySpd <= crySpd ;
 		end
 	end
 end

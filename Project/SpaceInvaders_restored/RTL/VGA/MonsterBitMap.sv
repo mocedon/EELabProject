@@ -62,7 +62,7 @@ begin
 			RGBout <= object_colors[offsetY][offsetX];	//get RGB from the colors table  
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
-		end 
+	end 
 end
 assign drawingRequest = (RGBout != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 
