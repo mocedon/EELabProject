@@ -72,6 +72,34 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[0]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[0]",
 					"strict" : false
 				},
@@ -188,6 +216,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_BLANK_N",
+					"strict" : false
+				},
+				{
 					"name" : "MICROPHON_LED",
 					"strict" : false
 				},
@@ -221,10 +253,6 @@
 				},
 				{
 					"name" : "AUD_ADCDAT",
-					"strict" : false
-				},
-				{
-					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{

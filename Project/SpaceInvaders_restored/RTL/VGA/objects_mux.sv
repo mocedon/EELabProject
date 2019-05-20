@@ -71,9 +71,9 @@ begin
 //		if (emgReq == 1'b1 )
 //			tmpRGB <= emgRGB ;
 //		else
-//		if (scrReq == 1'b1)
-//			tmpRGB <= scrRGB ;
-//		else 
+		if (scrReq == 1'b1)
+			tmpRGB <= scrRGB ;
+		else 
 		if (lrrReq == 1'b1 )
 			tmpRGB <= lrrRGB ;
 		else

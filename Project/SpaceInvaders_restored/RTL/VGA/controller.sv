@@ -4,8 +4,9 @@ module	controller (
 					input logic clk ,
 					input logic resetN,
 					
-					input logic spcKey ,
-					input logic oneSec ,
+					input logic spcKey ,							// Space key press
+					input logic oneSec ,							//	One sec input
+					input logic fstSec ,
 					input logic [6:0] rndNum ,
 					
 					input logic srtFrm ,
@@ -17,64 +18,64 @@ module	controller (
 					input logic plrReq ,
 					
 					// Invader inputs
-					input logic invReq ,
-					input logic [10:0]invOSX ,
-					input logic [10:0]invOSY ,
+					input logic invReq ,							// Invader drawing request
+					input logic [10:0]invOSX ,					// Invader offset X
+					input logic [10:0]invOSY ,					// Invader offset y
 					
 					// Lrrr inputs
-					input logic lrrReq ,
+					input logic lrrReq ,							// Lrrr drawing request
 					
 					// Bolt inputs
-					input logic [BOLT_MAX - 1:0] btpReq ,
-					input logic [BOLT_MAX - 1:0] btiReq ,
+					input logic [BOLT_MAX - 1:0] btpReq ,	// Player's bolt drawing request
+					input logic [BOLT_MAX - 1:0] btiReq ,	// Invader's bolt drawing request
 					
 					
 					// Block inputs
 
-					input logic blkReq,
-					input logic [10:0] blkOSX ,
-					input logic [10:0] blkOSY ,
+					input logic blkReq,							// Block Drawing request
+					input logic [10:0] blkOSX ,				// Block offset X
+					input logic [10:0] blkOSY ,				// Block offset Y
 					
 					// On screen info
-					input logic stgReq,
-					input logic scrReq,
-					input logic edgReq,
+					input logic stgReq,							// Start game drawing request
+					input logic scrReq,							// Score drawing request
+					input logic edgReq,							// End game Drawing request
 					
-					input logic cheatput,
+					input logic cheatput,						// Needs no explanation
 					
 					
 					
 					// Player outputs
-					output logic plrExs ,
-					output logic plrHit ,
+					output logic plrExs ,						// Player exists (show)
+					output logic plrHit ,						// Player hit
 					
 					// Invader outputs
-					output logic invStr ,
-					output logic invChg ,
-					output logic [7:0][15:0] invExs ,
-					output logic [7:0][15:0] invHit ,
+					output logic invStr ,						// Invader start logic
+					output logic invChg ,						// Invader change direction
+					output logic [7:0][15:0] invExs ,		// Invader exists
+					output logic [7:0][15:0] invHit ,		// Invader hit
 					
 					//Lrrr outputs
-					output logic lrrExs ,
-					output logic lrrHit ,
+					output logic lrrExs ,						// Lrrr exists
+					output logic lrrHit ,						// Lrrr hit
 					
-					// Bolt outputs
-					output logic [BOLT_MAX - 1:0] btpExs ,
-					output logic [BOLT_MAX - 1:0] btiExs ,
-					output logic [10:0] btxLoc ,
-					output logic [10:0] btyLoc ,
+					// Bolt outputs				
+					output logic [BOLT_MAX - 1:0] btpExs ,	// Player's bolt exists
+					output logic [BOLT_MAX - 1:0] btiExs , // Invader's bolt exists
+					output logic [10:0] btxLoc ,				// Bolt X location (invader)
+					output logic [10:0] btyLoc ,				// Bolt Y location (invader)
 					
 					// Block outputs
-					output logic [3:0][31:0] blkExs ,
-					output logic [3:0][31:0] blkHit ,
+					output logic [3:0][31:0] blkExs ,		// Block exists
+					output logic [3:0][31:0] blkHit ,		// Block hit
 					
 					// On screen info 
-					output logic stgMsg ,
-					output logic scrMsg ,
-					output logic edgMsg ,
-					output logic [9:0] scrNum ,
-					output logic [1:0] scrLiv ,
-					output logic [3:0] sndOut
+					output logic stgMsg ,						// Show start game massage
+					output logic scrMsg ,						// Show score
+					output logic edgMsg ,						// Show end game massage
+					output logic [9:0] scrNum ,				// Score Value
+					output logic [1:0] scrLiv ,				// Lives left
+					output logic [3:0] sndOut					// Sound out
 					
 );
 
@@ -84,7 +85,7 @@ const int R_BORDER = 635 ;
 const int L_BORDER = 5 ;
 const int F_BORDER = 400 ;
 const int T_BORDER = 5 ;
-const int B_BORDER = 465 ;
+const int B_BORDER = 450 ;
 
 int pixX , pixY ;
 int invX , invY ;
@@ -98,25 +99,25 @@ int invLiv = 128 ;
 
 int pScore = 0   ;
  
-logic prvKey ;
-logic btpCmd ;
-logic btiCmd ;
-logic btiUpd ;
+logic prvKey ;														// Previous cycle space key
+logic btpCmd ;														// Shoot player's bolt command
+logic btiCmd ;														// Shoot Invader's bolt command
+logic btiUpd ;														// Update location of spesific invader
 
-logic plrDwn ;
-logic lrrDwn ;
-logic invDwn ;
-logic scrInc ;
+logic plrDwn ;														// Player down 1 life
+logic lrrDwn ;														// Lrr down 1 life
+logic invDwn ;														// Invader down 1 life
+logic scrInc ;														// Score increase by 5
 
-logic invNew ;
-//logic blkNew ;
+logic invNew ;														// Create new invader array
+//logic blkNew ;													// Create new Block array
 
-logic	plrDwnT ;
-logic	invDwnT ;
-logic	lrrDwnT ;
-logic scrIncT ;
-logic	[BOLT_MAX-1:0] btpExsT ;
-logic	[BOLT_MAX-1:0] btiExsT ;
+logic	plrDwnT ;													// Player was hit in this frame
+logic	invDwnT ;													// Invader was hit in this frame
+logic	lrrDwnT ;													// Lrrr was hit in this frame
+logic scrIncT ;													// Score will increase this frame
+logic	[BOLT_MAX-1:0] btpExsT ;								// Player's bolt existed last frame
+logic	[BOLT_MAX-1:0] btiExsT ;								// Invader's bolt existed last frame
 
 
 enum logic [2:0] {
@@ -136,6 +137,9 @@ begin : fsm_sync
 		blkExs <= 128'h0 ;
 		blkHit <= 128'h0 ;
 		
+		btpExsT <= 1'b0 ;
+		btiExsT <= 1'b0 ;
+		
 		plrLiv <= 3   ;
 		lrrLiv <= 20  ;
 		invLiv <= 128 ;
@@ -143,14 +147,14 @@ begin : fsm_sync
 	end
 	else begin
 	
-		pixX = pixelX ;
-		pixY = pixelY ;
-		invX = invOSX>>5  ;
-		invY = invOSY>>5  ;
-//		blkX = blkOSX  ;
-//		blkY = blkOSY  ;
-		invI = rndNum>>4  ;
-		invJ = rndNum % 16 ;
+		pixX <= pixelX ;
+		pixY <= pixelY ;
+		invX <= invOSX>>5  ;
+		invY <= invOSY>>5  ;
+//		blkX <= blkOSX  ;
+//		blkY <= blkOSY  ;
+		invI <= rndNum>>4  ;
+		invJ <= rndNum % 16 ;
 			
 		prvKey = spcKey ;
 		
@@ -248,22 +252,22 @@ begin
 				stgMsg = 1'b1 ;
 			
 			if (spcKey == 1'b1) begin
-//				sndOut = 4'd7;
-//				#100;
-//				sndOut = 4'd7;
-//				#100;
-//				sndOut = 4'd2;
-//				#100;
-//				sndOut = 4'd3;
-//				#100;
-//				sndOut = 4'd9;
-//				#100;
-//				sndOut = 4'd9;
-//				#100;
-//				sndOut = 4'd5;
-//				#100;
-//				sndOut = 4'd7;
-//				#100;
+				sndOut = 4'd7;
+				#100;
+				sndOut = 4'd7;
+				#100;
+				sndOut = 4'd2;
+				#100;
+				sndOut = 4'd3;
+				#100;
+				sndOut = 4'd9;
+				#100;
+				sndOut = 4'd9;
+				#100;
+				sndOut = 4'd5;
+				#100;
+				sndOut = 4'd7;
+				#100;
 				nxt_st = InitGame ;
 			end
 		end
@@ -292,7 +296,8 @@ begin
 				btpCmd = 1'b1 ;
 				
 			for (int i = 0 ; i < BOLT_MAX ; i++) begin
-				if (btpCmd == 1'b1 && btpExs[i] == 1'b0)begin
+				
+				if ((btpCmd == 1'b1) && (btpExs[i] == 1'b0))begin
 					btpExs[i] = 1'b1 ;
 					btpCmd = 1'b0 ;
 				end
@@ -300,7 +305,7 @@ begin
 				if (btpExsT[i] == 1'b1)
 					btpExs[i] = 1'b1 ;
 					
-				if (btpReq[i] == 1'b1 && pixY == T_BORDER)
+				if ((btpReq[i] == 1'b1) && (pixY > T_BORDER))
 					btpExs[i] = 1'b0 ;
 					
 			end
@@ -308,11 +313,11 @@ begin
 				
 				
 		// Invader shooting randomly
-			if (invExs[invI][invJ] == 1'b1)
+			if (fstSec == 1'b1 && invExs[invI][invJ] == 1'b1)
 					btiCmd = 1'b1 ;
 					
 			for (int i = 0 ; i < BOLT_MAX ; i++) begin	
-				if (btiCmd == 1'b1 && btiExs[i] == 1'b0) begin
+				if ((btiCmd == 1'b1) && (btiExs[i] == 1'b0)) begin
 					btiExs[i] = 1'b1 ;
 					btiCmd = 1'b0 ;
 					btiUpd = 1'b1 ; //Check if needed to be piped
@@ -321,7 +326,7 @@ begin
 				if (btiExsT[i] == 1'b1)
 					btiExs[i] = 1'b1 ;
 					
-				if (btiReq[i] == 1'b1 && pixY == B_BORDER)
+				if (btiReq[i] == 1'b1 && pixY < B_BORDER)
 					btiExs[i] = 1'b0 ;
 					
 			end
@@ -330,7 +335,7 @@ begin
 			
 		// Player hit detection
 			for (int i = 0 ; i < BOLT_MAX ; i++) begin
-				if(plrReq == 1'b1 && btiReq[i]) begin
+				if((plrReq == 1'b1) && (btiReq[i])) begin
 					plrDwn = 1'b1 ;
 					plrHit = 1'b1 ;
 					btiExs[i] = 1'b0 ;

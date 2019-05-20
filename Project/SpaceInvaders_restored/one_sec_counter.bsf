@@ -59,7 +59,13 @@ agreement for further details.
 		(text "duty50" (rect 112 43 139 55)(font "Arial" ))
 		(line (pt 160 48)(pt 144 48)(line_width 1))
 	)
+	(parameter
+		"Time"
+		"5000071"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 144 96)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 176 -64 276 16))
 )

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Lab1Demo
-Mon May 20 08:19:43 2019
+Mon May 20 20:23:17 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -103,14 +103,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.31        ;
+; Average used               ; 1.46        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.3%      ;
-;     Processor 3            ;  10.2%      ;
-;     Processor 4            ;  10.1%      ;
+;     Processor 2            ;  15.3%      ;
+;     Processor 3            ;  15.3%      ;
+;     Processor 4            ;  15.2%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +119,7 @@ agreement for further details.
 +-------------------------+--------+--------------------------+
 ; SDC File Path           ; Status ; Read at                  ;
 +-------------------------+--------+--------------------------+
-; DE10_Standard_Audio.sdc ; OK     ; Mon May 20 08:18:48 2019 ;
+; DE10_Standard_Audio.sdc ; OK     ; Mon May 20 20:22:42 2019 ;
 +-------------------------+--------+--------------------------+
 
 
@@ -136,15 +136,15 @@ agreement for further details.
 +---------------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
 
 
-+----------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                       ;
-+-----------+-----------------+---------------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
-+-----------+-----------------+---------------------+------+
-; 54.39 MHz ; 54.39 MHz       ; altera_reserved_tck ;      ;
-; 90.91 MHz ; 90.91 MHz       ; CLOCK_50            ;      ;
-; 171.0 MHz ; 171.0 MHz       ; clk_audbck          ;      ;
-+-----------+-----------------+---------------------+------+
++-----------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                        ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 20.17 MHz  ; 20.17 MHz       ; CLOCK_50            ;      ;
+; 54.39 MHz  ; 54.39 MHz       ; altera_reserved_tck ;      ;
+; 173.13 MHz ; 173.13 MHz      ; clk_audbck          ;      ;
++------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -154,26 +154,26 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+----------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary          ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -9.074 ; -74.989       ;
-; CLOCK_50            ; 9.000  ; 0.000         ;
-; altera_reserved_tck ; 10.807 ; 0.000         ;
-+---------------------+--------+---------------+
++-----------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary           ;
++---------------------+---------+---------------+
+; Clock               ; Slack   ; End Point TNS ;
++---------------------+---------+---------------+
+; CLOCK_50            ; -29.589 ; -1063.939     ;
+; clk_audbck          ; -6.748  ; -78.198       ;
+; altera_reserved_tck ; 10.807  ; 0.000         ;
++---------------------+---------+---------------+
 
 
-+----------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary           ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -4.701 ; -9.199        ;
-; CLOCK_50            ; 0.221  ; 0.000         ;
-; altera_reserved_tck ; 0.267  ; 0.000         ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.160 ; 0.000         ;
+; CLOCK_50            ; 0.224 ; 0.000         ;
+; clk_audbck          ; 0.309 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -181,9 +181,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -9.000 ; -1539.231     ;
-; CLOCK_50            ; 9.696  ; 0.000         ;
-; altera_reserved_tck ; 34.078 ; 0.000         ;
+; clk_audbck          ; -7.744 ; -1493.615     ;
+; CLOCK_50            ; 10.057 ; 0.000         ;
+; altera_reserved_tck ; 34.440 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -192,9 +192,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.948 ; 0.000         ;
-; clk_audbck          ; 1.001 ; 0.000         ;
-; CLOCK_50            ; 1.425 ; 0.000         ;
+; clk_audbck          ; 0.338 ; 0.000         ;
+; altera_reserved_tck ; 0.602 ; 0.000         ;
+; CLOCK_50            ; 1.373 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -203,9 +203,9 @@ HTML report is unavailable in plain text report export.
 +---------------------+---------+-------------------+
 ; Clock               ; Slack   ; End Point TNS     ;
 +---------------------+---------+-------------------+
-; CLOCK_50            ; 8.884   ; 0.000             ;
-; altera_reserved_tck ; 18.542  ; 0.000             ;
-; clk_audbck          ; 140.091 ; 0.000             ;
+; CLOCK_50            ; 8.803   ; 0.000             ;
+; altera_reserved_tck ; 18.629  ; 0.000             ;
+; clk_audbck          ; 140.083 ; 0.000             ;
 +---------------------+---------+-------------------+
 
 
@@ -215,10 +215,10 @@ HTML report is unavailable in plain text report export.
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 63
+Number of Synchronizer Chains Found: 75
 Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-Worst Case Available Settling Time: 35.165 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+Worst Case Available Settling Time: 34.683 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -232,33 +232,33 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
+; 19.36 MHz  ; 19.36 MHz       ; CLOCK_50            ;      ;
 ; 54.84 MHz  ; 54.84 MHz       ; altera_reserved_tck ;      ;
-; 93.16 MHz  ; 93.16 MHz       ; CLOCK_50            ;      ;
-; 166.92 MHz ; 166.92 MHz      ; clk_audbck          ;      ;
+; 180.83 MHz ; 180.83 MHz      ; clk_audbck          ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+----------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary           ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -8.708 ; -72.500       ;
-; CLOCK_50            ; 9.266  ; 0.000         ;
-; altera_reserved_tck ; 10.882 ; 0.000         ;
-+---------------------+--------+---------------+
++-----------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary            ;
++---------------------+---------+---------------+
+; Clock               ; Slack   ; End Point TNS ;
++---------------------+---------+---------------+
+; CLOCK_50            ; -31.659 ; -1140.723     ;
+; clk_audbck          ; -6.520  ; -75.509       ;
+; altera_reserved_tck ; 10.882  ; 0.000         ;
++---------------------+---------+---------------+
 
 
-+----------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary            ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -4.467 ; -8.728        ;
-; CLOCK_50            ; 0.208  ; 0.000         ;
-; altera_reserved_tck ; 0.259  ; 0.000         ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.145 ; 0.000         ;
+; CLOCK_50            ; 0.216 ; 0.000         ;
+; clk_audbck          ; 0.285 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -266,9 +266,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -8.658 ; -1478.654     ;
-; CLOCK_50            ; 10.223 ; 0.000         ;
-; altera_reserved_tck ; 34.361 ; 0.000         ;
+; clk_audbck          ; -7.492 ; -1446.084     ;
+; CLOCK_50            ; 10.485 ; 0.000         ;
+; altera_reserved_tck ; 34.685 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -277,9 +277,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; clk_audbck          ; 0.839 ; 0.000         ;
-; altera_reserved_tck ; 0.890 ; 0.000         ;
-; CLOCK_50            ; 1.330 ; 0.000         ;
+; clk_audbck          ; 0.253 ; 0.000         ;
+; altera_reserved_tck ; 0.557 ; 0.000         ;
+; CLOCK_50            ; 1.291 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -288,9 +288,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+---------+------------------+
 ; Clock               ; Slack   ; End Point TNS    ;
 +---------------------+---------+------------------+
-; CLOCK_50            ; 8.911   ; 0.000            ;
-; altera_reserved_tck ; 18.534  ; 0.000            ;
-; clk_audbck          ; 140.084 ; 0.000            ;
+; CLOCK_50            ; 8.796   ; 0.000            ;
+; altera_reserved_tck ; 18.642  ; 0.000            ;
+; clk_audbck          ; 140.078 ; 0.000            ;
 +---------------------+---------+------------------+
 
 
@@ -300,10 +300,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 63
+Number of Synchronizer Chains Found: 75
 Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-Worst Case Available Settling Time: 35.224 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+Worst Case Available Settling Time: 34.704 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -317,21 +317,21 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -6.672 ; -55.868       ;
-; CLOCK_50            ; 12.597 ; 0.000         ;
+; CLOCK_50            ; -6.762 ; -232.453      ;
+; clk_audbck          ; -5.163 ; -58.951       ;
 ; altera_reserved_tck ; 12.888 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
-+----------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary           ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -2.658 ; -5.182        ;
-; CLOCK_50            ; 0.130  ; 0.000         ;
-; altera_reserved_tck ; 0.130  ; 0.000         ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.043 ; 0.000         ;
+; CLOCK_50            ; 0.130 ; 0.000         ;
+; clk_audbck          ; 0.183 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -339,9 +339,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -6.681 ; -1152.191     ;
-; CLOCK_50            ; 12.798 ; 0.000         ;
-; altera_reserved_tck ; 35.643 ; 0.000         ;
+; clk_audbck          ; -5.695 ; -1105.450     ;
+; CLOCK_50            ; 13.113 ; 0.000         ;
+; altera_reserved_tck ; 36.026 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -350,9 +350,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.515 ; 0.000         ;
-; CLOCK_50            ; 0.772 ; 0.000         ;
-; clk_audbck          ; 1.051 ; 0.000         ;
+; altera_reserved_tck ; 0.313 ; 0.000         ;
+; clk_audbck          ; 0.638 ; 0.000         ;
+; CLOCK_50            ; 0.795 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -361,9 +361,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+---------+-------------------+
 ; Clock               ; Slack   ; End Point TNS     ;
 +---------------------+---------+-------------------+
-; CLOCK_50            ; 8.482   ; 0.000             ;
-; altera_reserved_tck ; 18.330  ; 0.000             ;
-; clk_audbck          ; 139.690 ; 0.000             ;
+; CLOCK_50            ; 8.483   ; 0.000             ;
+; altera_reserved_tck ; 18.390  ; 0.000             ;
+; clk_audbck          ; 139.686 ; 0.000             ;
 +---------------------+---------+-------------------+
 
 
@@ -373,10 +373,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 63
+Number of Synchronizer Chains Found: 75
 Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-Worst Case Available Settling Time: 36.906 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+Worst Case Available Settling Time: 36.657 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -390,21 +390,21 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -5.781 ; -48.489       ;
+; CLOCK_50            ; -5.779 ; -197.098      ;
+; clk_audbck          ; -4.464 ; -51.073       ;
 ; altera_reserved_tck ; 13.011 ; 0.000         ;
-; CLOCK_50            ; 13.564 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
-+----------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary            ;
-+---------------------+--------+---------------+
-; Clock               ; Slack  ; End Point TNS ;
-+---------------------+--------+---------------+
-; clk_audbck          ; -2.556 ; -4.983        ;
-; altera_reserved_tck ; 0.113  ; 0.000         ;
-; CLOCK_50            ; 0.121  ; 0.000         ;
-+---------------------+--------+---------------+
++---------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.030 ; 0.000         ;
+; CLOCK_50            ; 0.123 ; 0.000         ;
+; clk_audbck          ; 0.166 ; 0.000         ;
++---------------------+-------+---------------+
 
 
 +----------------------------------------------+
@@ -412,9 +412,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; clk_audbck          ; -5.787 ; -993.229      ;
-; CLOCK_50            ; 13.725 ; 0.000         ;
-; altera_reserved_tck ; 36.167 ; 0.000         ;
+; clk_audbck          ; -4.972 ; -962.795      ;
+; CLOCK_50            ; 13.943 ; 0.000         ;
+; altera_reserved_tck ; 36.494 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -423,9 +423,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.458 ; 0.000         ;
-; clk_audbck          ; 0.587 ; 0.000         ;
-; CLOCK_50            ; 0.697 ; 0.000         ;
+; altera_reserved_tck ; 0.276 ; 0.000         ;
+; clk_audbck          ; 0.320 ; 0.000         ;
+; CLOCK_50            ; 0.713 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -435,8 +435,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; Clock               ; Slack   ; End Point TNS    ;
 +---------------------+---------+------------------+
 ; CLOCK_50            ; 8.437   ; 0.000            ;
-; altera_reserved_tck ; 18.342  ; 0.000            ;
-; clk_audbck          ; 139.647 ; 0.000            ;
+; altera_reserved_tck ; 18.417  ; 0.000            ;
+; clk_audbck          ; 139.644 ; 0.000            ;
 +---------------------+---------+------------------+
 
 
@@ -446,10 +446,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 63
+Number of Synchronizer Chains Found: 75
 Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-Worst Case Available Settling Time: 37.129 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+Worst Case Available Settling Time: 36.910 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -458,20 +458,20 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 
 
 
-+-------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                 ;
-+----------------------+---------+--------+-----------+---------+---------------------+
-; Clock                ; Setup   ; Hold   ; Recovery  ; Removal ; Minimum Pulse Width ;
-+----------------------+---------+--------+-----------+---------+---------------------+
-; Worst-case Slack     ; -9.074  ; -4.701 ; -9.000    ; 0.458   ; 8.437               ;
-;  CLOCK_50            ; 9.000   ; 0.121  ; 9.696     ; 0.697   ; 8.437               ;
-;  altera_reserved_tck ; 10.807  ; 0.113  ; 34.078    ; 0.458   ; 18.330              ;
-;  clk_audbck          ; -9.074  ; -4.701 ; -9.000    ; 0.587   ; 139.647             ;
-; Design-wide TNS      ; -74.989 ; -9.199 ; -1539.231 ; 0.0     ; 0.0                 ;
-;  CLOCK_50            ; 0.000   ; 0.000  ; 0.000     ; 0.000   ; 0.000               ;
-;  altera_reserved_tck ; 0.000   ; 0.000  ; 0.000     ; 0.000   ; 0.000               ;
-;  clk_audbck          ; -74.989 ; -9.199 ; -1539.231 ; 0.000   ; 0.000               ;
-+----------------------+---------+--------+-----------+---------+---------------------+
++--------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                  ;
++----------------------+-----------+-------+-----------+---------+---------------------+
+; Clock                ; Setup     ; Hold  ; Recovery  ; Removal ; Minimum Pulse Width ;
++----------------------+-----------+-------+-----------+---------+---------------------+
+; Worst-case Slack     ; -31.659   ; 0.030 ; -7.744    ; 0.253   ; 8.437               ;
+;  CLOCK_50            ; -31.659   ; 0.123 ; 10.057    ; 0.713   ; 8.437               ;
+;  altera_reserved_tck ; 10.807    ; 0.030 ; 34.440    ; 0.276   ; 18.390              ;
+;  clk_audbck          ; -6.748    ; 0.166 ; -7.744    ; 0.253   ; 139.644             ;
+; Design-wide TNS      ; -1216.232 ; 0.0   ; -1493.615 ; 0.0     ; 0.0                 ;
+;  CLOCK_50            ; -1140.723 ; 0.000 ; 0.000     ; 0.000   ; 0.000               ;
+;  altera_reserved_tck ; 0.000     ; 0.000 ; 0.000     ; 0.000   ; 0.000               ;
+;  clk_audbck          ; -78.198   ; 0.000 ; -1493.615 ; 0.000   ; 0.000               ;
++----------------------+-----------+-------+-----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -550,6 +550,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; VGA_R[2]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; VGA_R[1]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; VGA_R[0]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; MICROPHON_LED       ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; AUD_DACDAT          ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; AUD_XCK             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
@@ -558,7 +559,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; AUD_BCLK            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; AUD_DACLRCK         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; AUD_I2C_SDAT        ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
@@ -672,6 +672,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; VGA_R[2]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; VGA_R[1]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; VGA_R[0]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; MICROPHON_LED       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACDAT          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; AUD_XCK             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
@@ -680,7 +681,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; AUD_BCLK            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; AUD_DACLRCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; AUD_I2C_SDAT        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
-; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.2e-07 V                    ; 2.41 V              ; -0.0623 V           ; 0.154 V                              ; 0.113 V                              ; 4.52e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.2e-07 V                   ; 2.41 V             ; -0.0623 V          ; 0.154 V                             ; 0.113 V                             ; 4.52e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -761,6 +761,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; VGA_R[2]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[1]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[0]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
+; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; MICROPHON_LED       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
 ; AUD_DACDAT          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
 ; AUD_XCK             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
@@ -769,7 +770,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; AUD_BCLK            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACLRCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; AUD_I2C_SDAT        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
-; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.5e-05 V                    ; 2.37 V              ; -0.0421 V           ; 0.168 V                              ; 0.143 V                              ; 4.71e-10 s                  ; 4.57e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.5e-05 V                   ; 2.37 V             ; -0.0421 V          ; 0.168 V                             ; 0.143 V                             ; 4.71e-10 s                 ; 4.57e-10 s                 ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -850,6 +850,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; VGA_R[2]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[1]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[0]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
+; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; MICROPHON_LED       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACDAT          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; AUD_XCK             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
@@ -858,7 +859,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; AUD_BCLK            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACLRCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; AUD_I2C_SDAT        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
-; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.79e-06 V                   ; 2.9 V               ; -0.122 V            ; 0.313 V                              ; 0.277 V                              ; 2.78e-10 s                  ; 2.7e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 3.79e-06 V                  ; 2.9 V              ; -0.122 V           ; 0.313 V                             ; 0.277 V                             ; 2.78e-10 s                 ; 2.7e-10 s                  ; No                        ; No                        ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -939,6 +939,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; VGA_R[2]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[1]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; VGA_R[0]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
+; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; MICROPHON_LED       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACDAT          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; AUD_XCK             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
@@ -947,40 +948,39 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; AUD_BCLK            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; AUD_DACLRCK         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; AUD_I2C_SDAT        ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
-; VGA_BLANK_N         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000219 V                   ; 2.85 V              ; -0.0938 V           ; 0.339 V                              ; 0.156 V                              ; 3.08e-10 s                  ; 4.29e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000219 V                  ; 2.85 V             ; -0.0938 V          ; 0.339 V                             ; 0.156 V                             ; 3.08e-10 s                 ; 4.29e-10 s                 ; No                        ; No                        ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Setup Transfers                                                                         ;
-+---------------------+---------------------+------------+----------+----------+----------+
-; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
-+---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 14813      ; 57       ; 63       ; 0        ;
-; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; clk_audbck          ; 7435       ; 0        ; 4        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 18         ; 0        ; 0        ; 0        ;
-; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; CLOCK_50            ; 16         ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 197306     ; 0        ; 0        ; 0        ;
-+---------------------+---------------------+------------+----------+----------+----------+
++-------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                           ;
++---------------------+---------------------+--------------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+--------------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 10084        ; 58       ; 63       ; 0        ;
+; CLOCK_50            ; altera_reserved_tck ; false path   ; 0        ; 0        ; 0        ;
+; clk_audbck          ; clk_audbck          ; 7646         ; 0        ; 4        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 18           ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; CLOCK_50            ; false path   ; 0        ; 0        ; 0        ;
+; clk_audbck          ; CLOCK_50            ; 16           ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; > 2147483647 ; 0        ; 0        ; 0        ;
++---------------------+---------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-----------------------------------------------------------------------------------------+
-; Hold Transfers                                                                          ;
-+---------------------+---------------------+------------+----------+----------+----------+
-; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
-+---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 14813      ; 57       ; 63       ; 0        ;
-; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; clk_audbck          ; 7435       ; 0        ; 4        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 18         ; 0        ; 0        ; 0        ;
-; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; clk_audbck          ; CLOCK_50            ; 16         ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 197306     ; 0        ; 0        ; 0        ;
-+---------------------+---------------------+------------+----------+----------+----------+
++-------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                            ;
++---------------------+---------------------+--------------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+--------------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 10084        ; 58       ; 63       ; 0        ;
+; CLOCK_50            ; altera_reserved_tck ; false path   ; 0        ; 0        ; 0        ;
+; clk_audbck          ; clk_audbck          ; 7646         ; 0        ; 4        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 18           ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; CLOCK_50            ; false path   ; 0        ; 0        ; 0        ;
+; clk_audbck          ; CLOCK_50            ; 16           ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; > 2147483647 ; 0        ; 0        ; 0        ;
++---------------------+---------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -989,10 +989,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 1549       ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 201        ; 0        ; 2        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 960        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 205        ; 0        ; 2        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 647        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 666        ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1002,10 +1002,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 1549       ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; clk_audbck          ; 201        ; 0        ; 2        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 960        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; clk_audbck          ; 205        ; 0        ; 2        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 647        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 666        ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1030,9 +1030,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
 ; Unconstrained Input Ports       ; 6     ; 6    ;
-; Unconstrained Input Port Paths  ; 985   ; 985  ;
-; Unconstrained Output Ports      ; 46    ; 46   ;
-; Unconstrained Output Port Paths ; 133   ; 133  ;
+; Unconstrained Input Port Paths  ; 1117  ; 1117 ;
+; Unconstrained Output Ports      ; 53    ; 53   ;
+; Unconstrained Output Port Paths ; 161   ; 161  ;
 +---------------------------------+-------+------+
 
 
@@ -1086,6 +1086,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX1[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; MICROPHON_LED ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_BLANK_N   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1154,6 +1161,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX1[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX4[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; MICROPHON_LED ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_BLANK_N   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -1192,17 +1206,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Mon May 20 08:18:45 2019
+    Info: Processing started: Mon May 20 20:22:38 2019
 Info: Command: quartus_sta Lab1Demo -c Lab1Demo
 Info: qsta_default_script.tcl version: #1
-Warning (20013): Ignored 1 assignments for entity "altsyncram_6l84" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_6l84 -tag quartusii was ignored
-Warning (20013): Ignored 1 assignments for entity "altsyncram_cl84" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_cl84 -tag quartusii was ignored
-Warning (20013): Ignored 1 assignments for entity "altsyncram_lk84" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_lk84 -tag quartusii was ignored
-Warning (20013): Ignored 1 assignments for entity "altsyncram_qk84" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_qk84 -tag quartusii was ignored
+Warning (20013): Ignored 1 assignments for entity "altsyncram_3k84" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_3k84 -tag quartusii was ignored
+Warning (20013): Ignored 1 assignments for entity "altsyncram_ch84" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS NORMAL_COMPILATION -entity altsyncram_ch84 -tag quartusii was ignored
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1284,44 +1294,44 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.074
+Info (332146): Worst-case setup slack is -29.589
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.074             -74.989 clk_audbck 
-    Info (332119):     9.000               0.000 CLOCK_50 
+    Info (332119):   -29.589           -1063.939 CLOCK_50 
+    Info (332119):    -6.748             -78.198 clk_audbck 
     Info (332119):    10.807               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is -4.701
+Info (332146): Worst-case hold slack is 0.160
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.701              -9.199 clk_audbck 
-    Info (332119):     0.221               0.000 CLOCK_50 
-    Info (332119):     0.267               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -9.000
+    Info (332119):     0.160               0.000 altera_reserved_tck 
+    Info (332119):     0.224               0.000 CLOCK_50 
+    Info (332119):     0.309               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -7.744
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.000           -1539.231 clk_audbck 
-    Info (332119):     9.696               0.000 CLOCK_50 
-    Info (332119):    34.078               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.948
+    Info (332119):    -7.744           -1493.615 clk_audbck 
+    Info (332119):    10.057               0.000 CLOCK_50 
+    Info (332119):    34.440               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.338
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.948               0.000 altera_reserved_tck 
-    Info (332119):     1.001               0.000 clk_audbck 
-    Info (332119):     1.425               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.884
+    Info (332119):     0.338               0.000 clk_audbck 
+    Info (332119):     0.602               0.000 altera_reserved_tck 
+    Info (332119):     1.373               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.803
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.884               0.000 CLOCK_50 
-    Info (332119):    18.542               0.000 altera_reserved_tck 
-    Info (332119):   140.091               0.000 clk_audbck 
-Info (332114): Report Metastability: Found 63 synchronizer chains.
+    Info (332119):     8.803               0.000 CLOCK_50 
+    Info (332119):    18.629               0.000 altera_reserved_tck 
+    Info (332119):   140.083               0.000 clk_audbck 
+Info (332114): Report Metastability: Found 75 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 63
+    Info (332114): Number of Synchronizer Chains Found: 75
     Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-    Info (332114): Worst Case Available Settling Time: 35.165 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+    Info (332114): Worst Case Available Settling Time: 34.683 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -1335,44 +1345,44 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.708
+Info (332146): Worst-case setup slack is -31.659
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.708             -72.500 clk_audbck 
-    Info (332119):     9.266               0.000 CLOCK_50 
+    Info (332119):   -31.659           -1140.723 CLOCK_50 
+    Info (332119):    -6.520             -75.509 clk_audbck 
     Info (332119):    10.882               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is -4.467
+Info (332146): Worst-case hold slack is 0.145
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.467              -8.728 clk_audbck 
-    Info (332119):     0.208               0.000 CLOCK_50 
-    Info (332119):     0.259               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -8.658
+    Info (332119):     0.145               0.000 altera_reserved_tck 
+    Info (332119):     0.216               0.000 CLOCK_50 
+    Info (332119):     0.285               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -7.492
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.658           -1478.654 clk_audbck 
-    Info (332119):    10.223               0.000 CLOCK_50 
-    Info (332119):    34.361               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.839
+    Info (332119):    -7.492           -1446.084 clk_audbck 
+    Info (332119):    10.485               0.000 CLOCK_50 
+    Info (332119):    34.685               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.253
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.839               0.000 clk_audbck 
-    Info (332119):     0.890               0.000 altera_reserved_tck 
-    Info (332119):     1.330               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.911
+    Info (332119):     0.253               0.000 clk_audbck 
+    Info (332119):     0.557               0.000 altera_reserved_tck 
+    Info (332119):     1.291               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.796
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.911               0.000 CLOCK_50 
-    Info (332119):    18.534               0.000 altera_reserved_tck 
-    Info (332119):   140.084               0.000 clk_audbck 
-Info (332114): Report Metastability: Found 63 synchronizer chains.
+    Info (332119):     8.796               0.000 CLOCK_50 
+    Info (332119):    18.642               0.000 altera_reserved_tck 
+    Info (332119):   140.078               0.000 clk_audbck 
+Info (332114): Report Metastability: Found 75 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 63
+    Info (332114): Number of Synchronizer Chains Found: 75
     Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-    Info (332114): Worst Case Available Settling Time: 35.224 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+    Info (332114): Worst Case Available Settling Time: 34.704 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -1386,44 +1396,44 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.672
+Info (332146): Worst-case setup slack is -6.762
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.672             -55.868 clk_audbck 
-    Info (332119):    12.597               0.000 CLOCK_50 
+    Info (332119):    -6.762            -232.453 CLOCK_50 
+    Info (332119):    -5.163             -58.951 clk_audbck 
     Info (332119):    12.888               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is -2.658
+Info (332146): Worst-case hold slack is 0.043
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.658              -5.182 clk_audbck 
+    Info (332119):     0.043               0.000 altera_reserved_tck 
     Info (332119):     0.130               0.000 CLOCK_50 
-    Info (332119):     0.130               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is -6.681
+    Info (332119):     0.183               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -5.695
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.681           -1152.191 clk_audbck 
-    Info (332119):    12.798               0.000 CLOCK_50 
-    Info (332119):    35.643               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.515
+    Info (332119):    -5.695           -1105.450 clk_audbck 
+    Info (332119):    13.113               0.000 CLOCK_50 
+    Info (332119):    36.026               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.313
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.515               0.000 altera_reserved_tck 
-    Info (332119):     0.772               0.000 CLOCK_50 
-    Info (332119):     1.051               0.000 clk_audbck 
-Info (332146): Worst-case minimum pulse width slack is 8.482
+    Info (332119):     0.313               0.000 altera_reserved_tck 
+    Info (332119):     0.638               0.000 clk_audbck 
+    Info (332119):     0.795               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.482               0.000 CLOCK_50 
-    Info (332119):    18.330               0.000 altera_reserved_tck 
-    Info (332119):   139.690               0.000 clk_audbck 
-Info (332114): Report Metastability: Found 63 synchronizer chains.
+    Info (332119):     8.483               0.000 CLOCK_50 
+    Info (332119):    18.390               0.000 altera_reserved_tck 
+    Info (332119):   139.686               0.000 clk_audbck 
+Info (332114): Report Metastability: Found 75 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 63
+    Info (332114): Number of Synchronizer Chains Found: 75
     Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-    Info (332114): Worst Case Available Settling Time: 36.906 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+    Info (332114): Worst Case Available Settling Time: 36.657 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -1435,44 +1445,44 @@ Warning (332060): Node: VGA_Controller:VGA|oVGA_HS was determined to be a clock 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.781
+Info (332146): Worst-case setup slack is -5.779
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.781             -48.489 clk_audbck 
+    Info (332119):    -5.779            -197.098 CLOCK_50 
+    Info (332119):    -4.464             -51.073 clk_audbck 
     Info (332119):    13.011               0.000 altera_reserved_tck 
-    Info (332119):    13.564               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is -2.556
+Info (332146): Worst-case hold slack is 0.030
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.556              -4.983 clk_audbck 
-    Info (332119):     0.113               0.000 altera_reserved_tck 
-    Info (332119):     0.121               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -5.787
+    Info (332119):     0.030               0.000 altera_reserved_tck 
+    Info (332119):     0.123               0.000 CLOCK_50 
+    Info (332119):     0.166               0.000 clk_audbck 
+Info (332146): Worst-case recovery slack is -4.972
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.787            -993.229 clk_audbck 
-    Info (332119):    13.725               0.000 CLOCK_50 
-    Info (332119):    36.167               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.458
+    Info (332119):    -4.972            -962.795 clk_audbck 
+    Info (332119):    13.943               0.000 CLOCK_50 
+    Info (332119):    36.494               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.276
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.458               0.000 altera_reserved_tck 
-    Info (332119):     0.587               0.000 clk_audbck 
-    Info (332119):     0.697               0.000 CLOCK_50 
+    Info (332119):     0.276               0.000 altera_reserved_tck 
+    Info (332119):     0.320               0.000 clk_audbck 
+    Info (332119):     0.713               0.000 CLOCK_50 
 Info (332146): Worst-case minimum pulse width slack is 8.437
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     8.437               0.000 CLOCK_50 
-    Info (332119):    18.342               0.000 altera_reserved_tck 
-    Info (332119):   139.647               0.000 clk_audbck 
-Info (332114): Report Metastability: Found 63 synchronizer chains.
+    Info (332119):    18.417               0.000 altera_reserved_tck 
+    Info (332119):   139.644               0.000 clk_audbck 
+Info (332114): Report Metastability: Found 75 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 63
+    Info (332114): Number of Synchronizer Chains Found: 75
     Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.746
-    Info (332114): Worst Case Available Settling Time: 37.129 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.787
+    Info (332114): Worst Case Available Settling Time: 36.910 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -1480,10 +1490,10 @@ Info (332114): Report Metastability: Found 63 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 17.8
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 1182 megabytes
-    Info: Processing ended: Mon May 20 08:19:43 2019
-    Info: Elapsed time: 00:00:58
-    Info: Total CPU time (on all processors): 00:01:11
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 1155 megabytes
+    Info: Processing ended: Mon May 20 20:23:17 2019
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:50
 
 

@@ -14,7 +14,9 @@ module one_sec_counter
    output logic one_sec, duty50
    );
 	
-	localparam logic [25:0] oneSec = 26'd5000071; // For real one sec clock
+	
+	parameter int Time = 5000071 ;
+	localparam logic [25:0] oneSec = Time ; // For real one sec clock
 	//localparam logic [25:0] oneSec = 26'd20;  //smaller parameter for simulation
 	localparam logic [25:0] oneSecTurbo = oneSec/26'd10; 
 	logic  [25:0] oneSecCount = 26'd0;

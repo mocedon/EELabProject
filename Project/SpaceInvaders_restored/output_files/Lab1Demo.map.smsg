@@ -2,4 +2,4 @@ Warning (10268): Verilog HDL information at lpf.sv(42): always construct contain
 Warning (10268): Verilog HDL information at byterec.sv(68): always construct contains both blocking and non-blocking assignments File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/byterec.sv Line: 68
 Warning (10268): Verilog HDL information at bitrec.sv(54): always construct contains both blocking and non-blocking assignments File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/KEYBOARD/bitrec.sv Line: 54
 Warning (10268): Verilog HDL information at square_object.sv(36): always construct contains both blocking and non-blocking assignments File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/square_object.sv Line: 36
-Warning (10268): Verilog HDL information at controller.sv(130): always construct contains both blocking and non-blocking assignments File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 130
+Warning (10268): Verilog HDL information at controller.sv(131): always construct contains both blocking and non-blocking assignments File: Z:/EELabProject/Project/SpaceInvaders_restored/RTL/VGA/controller.sv Line: 131
